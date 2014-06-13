@@ -1,0 +1,38 @@
+body {
+	background: #ccc;
+}
+
+.container {
+	overflow: hidden;
+	margin: 0 auto;
+	max-width: 50em;
+	padding: 10% 0;
+}
+
+.card {
+	background: #fff;
+	border: 1px solid #b3b3b3; 
+	padding: 1em;
+	position: relative; 
+	z-index: 10;
+  -webkit-border-radius: 5px;
+  	 -moz-border-radius: 5px;
+  				border-radius: 5px;	
+}
+
+.card img {
+	display: block;
+	height: 5em;
+	margin: 0 auto;
+	position: relative;
+	top: -3em;
+	width: 5em;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;	
+}
+
+.card h2 {
+	margin: 0;
+	text-align: center;
+}
