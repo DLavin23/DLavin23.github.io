@@ -1,17 +1,18 @@
 body {
-	background: #ccc;
+	background: #4285F4;
 }
 
 .container {
 	overflow: hidden;
 	margin: 0 auto;
-	max-width: 50em;
+	max-width: 60em;
 	padding: 10% 0;
 }
 
 .card {
 	background: #fff;
 	border: 1px solid #b3b3b3; 
+	margin: 1em;
 	padding: 1em;
 	position: relative; 
 	z-index: 10;
@@ -21,12 +22,13 @@ body {
 }
 
 .card img {
+	border: 3px solid #fff;
 	display: block;
-	height: 5em;
+	height: 6em;
 	margin: 0 auto;
 	position: relative;
 	top: -3em;
-	width: 5em;
+	width: 6em;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;	
