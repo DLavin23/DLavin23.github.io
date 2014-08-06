@@ -38,3 +38,11 @@ body {
 	margin: 0;
 	text-align: center;
 }
+
+.card h2:before {
+	border: 1px solid #ccc;
+}
+
+.card h2:after {
+	border: 1px solid #ccc;
+}
