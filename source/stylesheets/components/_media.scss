@@ -1,0 +1,51 @@
+// =============================================
+// Media Settings
+// =============================================
+
+
+// =============================================
+// Media Styles
+// =============================================
+.media {
+	@include clearfix;
+}
+
+.media-object {
+	float: left;
+	margin-right: $base-unit;
+	@include clearfix;
+}
+
+.media-object-alt {
+	float: right;
+	margin-left: $base-unit;
+	@include clearfix;
+}
+
+.media-object-responsive {
+	display: block;
+	float: none;
+	@include breakpoint($palm-medium, $no-query: '.lt-ie9') {
+		float: left;
+		margin-right: $base-unit;
+	}
+}
+
+.media-object-alt-responsive {
+	display: block;
+	float: none;
+	@include breakpoint($palm-medium, $no-query: '.lt-ie9') {
+		float: right;
+		margin-left: $base-unit;
+	}
+}
+
+// =======================================
+// Media Body - contains text
+// =======================================
+.media-body {
+	@include clearfix;
+	p {
+		margin-top: 0;
+	}
+}

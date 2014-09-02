@@ -1,0 +1,48 @@
+// =======================================
+// List Settings
+// =======================================
+
+// =======================================
+// List Styles
+// =======================================
+ul,
+ol {
+	padding: 0 0 0 $base-unit * 2;
+}
+
+dl {
+	& > dt {
+		font-weight: bold;
+	}
+	& > dd {
+		margin: 0 0 0 $base-unit;
+	}
+}
+
+%list,
+.list {
+	margin-top: $base-unit;
+	margin-bottom: $base-unit;
+	padding-left: $base-unit-half;
+	@include clearfix;
+}
+
+.list-icon {
+	@extend %list;
+	@include list('icon');
+}
+
+.list-inline {
+	@extend %list;
+	@include list('inline');
+}
+
+.list-inline-divider {
+	@extend %list;
+	@include list('inline-divider');
+}
+
+.list-unstyled {
+	@extend %list;
+	@include list('unstyled');
+}

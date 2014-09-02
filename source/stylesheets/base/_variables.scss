@@ -1,0 +1,77 @@
+// =============================================
+// Base Color Variables
+// =============================================
+$color-white: #fff;
+$color-black: #000;
+$color-black-light: #303033;
+
+$color-gray: #adadad;
+$color-gray-light: lighten($color-gray, 20%);
+$color-gray-dark: darken($color-gray, 20%);
+
+$color-slate: #507790;
+
+$color-blue: #028CDF;
+$color-blue-light: lighten($color-blue, 10%);
+$color-blue-dark: #353D46;
+
+$color-green: #245c3c;
+$color-green-light: lighten($color-green, 10%);
+$color-green-dark: darken($color-green, 10%);
+
+$color-yellow: #ee9d26;
+$color-yellow-light: lighten($color-yellow, 10%);
+$color-yellow-dark: darken($color-yellow, 10%);
+
+$color-red: #DB4437;
+$color-red-light: lighten($color-red, 10%);
+$color-red-dark: darken($color-red, 10%);
+
+// =============================================
+// Global Base Variables
+// =============================================
+$font-open-sans: "Open Sans", sans-serif;
+$font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-fontAwesome: "FontAwesome";
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+$base-font-family: $font-open-sans;
+$base-font-size: 1em;
+$base-background-color: $color-white;
+$base-border-color: $color-gray-light;
+$base-border: 1px solid $base-border-color;
+$base-border-radius: 0.25em;
+$base-font-color: $color-black-light;
+$base-line-height: $base-font-size * 1.4;
+$base-border-color: $color-gray-light;
+$base-border: 1px solid $base-border-color;
+$base-link-color: darken(#53aee0, 10%);
+$hover-link-color: lighten($base-link-color, 10%);
+
+// =============================================
+// Spacing Variables
+// =============================================
+$base-unit: 1em;
+$base-unit-half: 0.5em;
+$base-unit-quarter: 0.25em;
+
+// =============================================
+// Breakpoint variables
+// =============================================
+$palm-small  : 25em;	// 400px
+$palm-medium : 30em;  // 480px
+$palm-large  : 35em;  // 560px
+
+$lap-small   : 40em;	// 640px
+$lap-medium  : 48em;	// 768px
+$lap-large   : 60em;	// 960px
+
+$desk-small  : 65em;	// 1040px
+$desk-medium : 80em;	// 1280px
+$desk-large  : 90em; 	// 1440px
+
+$breakpoint-no-queries: false;
+$breakpoint-no-query-fallbacks: true;

@@ -1,0 +1,118 @@
+// =======================================
+// Grid Settings
+// =======================================
+
+// ======================================
+// Grid Styles
+// ======================================
+%g-row,
+.g-row {
+	@include container($desk-small);
+}
+
+%g-col-12,
+.g-col-12 {
+	@include span(12 of 12);
+}
+
+%g-col-11,
+.g-col-11 {
+	@include span(11 of 12);
+}
+
+%g-col-10,
+.g-col-10 {
+	@include span(10 of 12);
+}
+
+%g-col-9,
+.g-col-9 {
+	@include span(9 of 12);
+}
+
+%g-col-8,
+.g-col-8 {
+	@include span(8 of 12);
+}
+
+%g-col-7,
+.g-col-7 {
+	@include span(7 of 12);
+}
+
+%g-col-6,
+.g-col-6 {
+	@include span(6 of 12);
+}
+
+%g-col-5,
+.g-col-5 {
+	@include span(5 of 12);
+}
+
+%g-col-4,
+.g-col-4 {
+	@include span(4 of 12);
+}
+
+%g-col-3,
+.g-col-3 {
+	@include span(3 of 12);
+}
+
+%g-col-2,
+.g-col-2 {
+	@include span(2 of 12);
+}
+
+%g-col-1,
+.g-col-1 {
+	@include span(1 of 12);
+}
+
+%g-one-half,
+.g-one-half {
+	@extend %full-width;
+	@include breakpoint($lap-medium, $no-query: '.lt-ie9') {
+		@include span(6 of 12);
+	}
+}
+
+%g-one-third,
+.g-one-third {
+	@extend %full-width;
+	@include breakpoint($lap-medium, $no-query: '.lt-ie9') {
+		@include span(4 of 12);
+	}
+}
+
+.g-one-fourth {
+	@extend %full-width;
+	@include breakpoint($lap-small, $no-query: '.lt-ie9') {
+		@include span(6 of 12);
+	}	
+	@include breakpoint($lap-large, $no-query: '.lt-ie9') {
+		@include span(3 of 12);
+	}
+}
+
+.g-one-fourth:nth-child(2n) {
+	@include breakpoint($lap-small $lap-large) {
+		@include omega;
+	}
+}
+
+.g-one-fourth:nth-child(4n) {
+	@include breakpoint($lap-large, $no-query: '.lt-ie9') {
+		@include omega;
+	}
+}
+
+// ======================================
+// Clears the last column in a row
+// ======================================
+%g-last,
+.g-last,
+.lt-ie9 div[class^="g-"].g-last  {
+	@include omega;
+}

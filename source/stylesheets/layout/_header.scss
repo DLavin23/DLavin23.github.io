@@ -1,0 +1,21 @@
+// =============================================
+// Header Settings
+// =============================================
+$logo-size: 4em;
+
+// =============================================
+// Header Styles
+// =============================================
+.header-primary {
+	@include clearfix;
+}
+
+.header-primary .logo {
+	float: left;
+}
+
+.logo img { 
+	height: $logo-size;
+	width: $logo-size;
+	@include border-radius(50%);
+}

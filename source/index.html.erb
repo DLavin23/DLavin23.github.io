@@ -1,0 +1,19 @@
+<section class="primary-hero">
+	<%= partial('header') %>	
+	<div class="g-row mobile-gutter">
+		<h1>Hi! My name's Dan Lavin.</h1>
+		<h2>I'm a front-end designer and developer based in Chicago.</h2>		
+	</div>
+</section>
+
+
+<div class="g-row" data-ng-controller="playerCtrl">
+	<div class="player">
+		<ul class="list-unstyled">
+			<li><img src="{{ greeting.icon}}" alt=""></li>
+			<li>{{ greeting.name }}</li>
+			<li>{{ greeting.artist }}</li>			
+		</ul>		
+	</div>
+</div>
+
