@@ -1,0 +1,19 @@
+// =============================================
+// Button Settings
+// =============================================
+$btn-background-default: $color-gray;
+$btn-background-primary: $color-blue;
+$btn-background-secondary: $color-blue-light;
+$btn-background-success: $color-green-light;
+$btn-background-danger: $color-red;
+$btn-background-cta: $color-yellow;
+$btn-color-default: $color-white;
+$btn-small: $base-unit-quarter $base-unit-half;
+$btn-normal: $base-unit-half $base-unit;
+$btn-large: $base-unit ($base-unit * 1.5);
+$btn-width: auto;
+$btn-width-full: 100%;
+$btn-radius: 5px;
+$btn-radius-none: 0;
+
+

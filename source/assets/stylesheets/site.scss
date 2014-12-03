@@ -1,29 +1,29 @@
 // =======================================
 // Vendor Imports
 // =======================================
-@import 'compass';
 @import 'susy';
 @import 'breakpoint';
 
 // =======================================
 // Base Imports
 // =======================================
-@import 'base/boilerplate';
 @import 'base/variables';
-@import 'base/extends';
-@import 'base/mixins';
+@import 'base/extends/box_model';
+@import 'base/extends/utilities';
+@import 'base/extends/grid';
+@import 'base/extends/typography';
+@import 'base/mixins/misc';
 @import 'base/typography';
-@import 'base/grid';
+@import 'base/boilerplate';
 
 // =======================================
 // Components
 // =======================================
+@import 'components/grid';
 @import 'components/media';
 @import 'components/nav';
 @import 'components/lists';
-@import 'components/panel';
 @import 'components/buttons';
-@import 'components/player';;
 
 // =======================================
 // Layout(s)

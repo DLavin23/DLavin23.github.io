@@ -1,0 +1,90 @@
+// =======================================
+// Silent, extendablem sass utilities
+// i.e. @extend %clearfix;
+// =======================================
+%pull-right {
+	float: right;
+}
+
+%pull-left {
+	float: left;
+}
+
+%clearfix {
+	&:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+  	clear: both;
+  }
+}
+
+%inline {
+	display: inline;
+}
+
+%inline-block {
+	display: inline-block;
+}
+
+%block {
+	display: block;
+}
+
+%margin-auto {
+	margin: 0 auto;
+}
+
+%overflow-hidden {
+	overflow: hidden;
+}
+
+%overflow-visible {
+	overflow: visible;
+}
+
+%position-relative {
+	position: relative;
+}
+
+%text-align-right {
+	text-align: right;
+}
+
+%text-align-left {
+	text-align: left;
+}
+
+%text-align-center {
+	text-align: center;
+}
+
+%content-empty {
+	content: '';
+}
+
+%fixed-bottom,
+.fixed-bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+%fixed-top,
+.fixed-top {
+	position: absolute;
+	top: 0;
+}
+
+%remove-appearance {
+	-webkit-appearance: none;
+  	 -moz-appearance: none;
+  		-ms-appearance: none;
+  		 -o-appearance: none;
+  				appearance: none;
+}
+
+%font-weight-light {
+	font-weight: 300;
+}

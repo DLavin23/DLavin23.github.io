@@ -1,0 +1,32 @@
+// =======================================
+// List Settings
+// =======================================
+
+// =======================================
+// List Styles
+// =======================================
+ul,
+ol {
+	padding: 0 0 0 $base-unit * 2;
+}
+
+dl {
+	& > dt {
+		font-weight: bold;
+	}
+	& > dd {
+		margin: 0 0 0 $base-unit;
+	}
+}
+
+.social-list {
+	@extend %clearfix;
+	@extend %no-margin;
+	@extend %no-padding;
+	@extend %text-align-center;
+
+	li {
+		@extend %inline-block;
+		font-size: $h5-font-size;
+	}
+}

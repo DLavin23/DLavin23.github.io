@@ -1,74 +1,37 @@
 // =======================================
 // Grid Settings
 // =======================================
+$grid-columns: (12);
 
 // ======================================
 // Grid Styles
 // ======================================
 %g-row,
 .g-row {
-	@include container($desk-small);
+	@extend %clearfix;
+	@include container($lap-large);
 }
 
-%g-col-12,
-.g-col-12 {
-	@include span(12 of 12);
+// Sets up 12 columns grid classes and
+// placeholder selectors that can be extended.
+@for $i from 1 to $grid-columns + 1 {
+	%g-col-#{$i},
+	.g-col-#{$i} {
+		@include span($i of $grid-columns);
+	}
 }
 
-%g-col-11,
-.g-col-11 {
-	@include span(11 of 12);
+// ======================================
+// Clears the last column in a row
+// ======================================
+.omega,
+.lt-ie9 div[class^="g-"].omega  {
+	@include omega;
 }
 
-%g-col-10,
-.g-col-10 {
-	@include span(10 of 12);
-}
-
-%g-col-9,
-.g-col-9 {
-	@include span(9 of 12);
-}
-
-%g-col-8,
-.g-col-8 {
-	@include span(8 of 12);
-}
-
-%g-col-7,
-.g-col-7 {
-	@include span(7 of 12);
-}
-
-%g-col-6,
-.g-col-6 {
-	@include span(6 of 12);
-}
-
-%g-col-5,
-.g-col-5 {
-	@include span(5 of 12);
-}
-
-%g-col-4,
-.g-col-4 {
-	@include span(4 of 12);
-}
-
-%g-col-3,
-.g-col-3 {
-	@include span(3 of 12);
-}
-
-%g-col-2,
-.g-col-2 {
-	@include span(2 of 12);
-}
-
-%g-col-1,
-.g-col-1 {
-	@include span(1 of 12);
-}
+// ======================================
+// Custom Grid Styles
+// ======================================
 
 %g-one-half,
 .g-one-half {
@@ -90,7 +53,7 @@
 	@extend %full-width;
 	@include breakpoint($lap-small, $no-query: '.lt-ie9') {
 		@include span(6 of 12);
-	}	
+	}
 	@include breakpoint($lap-large, $no-query: '.lt-ie9') {
 		@include span(3 of 12);
 	}
@@ -106,13 +69,4 @@
 	@include breakpoint($lap-large, $no-query: '.lt-ie9') {
 		@include omega;
 	}
-}
-
-// ======================================
-// Clears the last column in a row
-// ======================================
-%g-last,
-.g-last,
-.lt-ie9 div[class^="g-"].g-last  {
-	@include omega;
 }

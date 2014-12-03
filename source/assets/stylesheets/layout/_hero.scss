@@ -1,0 +1,69 @@
+// =============================================
+// Footer Settings
+// =============================================
+
+// =============================================
+// Footer Styles
+// =============================================
+
+%hero {
+	// @extend %clearfix;
+	min-height: 100vh;
+}
+
+.hero {
+	@extend %hero;
+	@extend %position-relative;
+	background: $color-blue-light;
+	color: $color-white;
+	@include breakpoint($lap-small) {
+		background: url(../images/big-hero.jpg) no-repeat center $color-blue-light;
+		background-size: cover;
+	}
+}
+
+.styleguide-hero {
+	@extend %hero;
+	background: $color-blue-dark;
+	color: $color-white;
+}
+
+.blog-hero {
+	@extend %hero;
+	background: $color-slate;
+	color: $color-white;
+}
+
+.hero-overlay {
+	background-color: rgba(23, 167, 253, 0.7);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	// background-image: url(../images/big-hero.jpg);
+	// background-repeat: no-repeat;
+	// z-index: -1;
+	// position: relative;
+}
+
+.intro {
+	@extend %text-align-center;
+	@extend %position-relative;
+	padding-top: 12em;
+}
+
+.info {
+	@extend %clearfix;
+	@extend %g-row;
+}
+
+.hero-headline {
+	font-size: 3em;
+	font-weight: 800;
+}
+
+.hero-tagline {
+	font-size: $h1-font-size;
+	font-weight: 600;
+}

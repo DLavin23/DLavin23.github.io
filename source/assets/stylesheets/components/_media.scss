@@ -7,19 +7,19 @@
 // Media Styles
 // =============================================
 .media {
-	@include clearfix;
+	@extend %clearfix;
 }
 
 .media-object {
 	float: left;
 	margin-right: $base-unit;
-	@include clearfix;
+	@extend %clearfix;
 }
 
 .media-object-alt {
 	float: right;
 	margin-left: $base-unit;
-	@include clearfix;
+	@extend %clearfix;
 }
 
 .media-object-responsive {
@@ -44,7 +44,7 @@
 // Media Body - contains text
 // =======================================
 .media-body {
-	@include clearfix;
+	@extend %clearfix;
 	p {
 		margin-top: 0;
 	}

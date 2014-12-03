@@ -1,0 +1,37 @@
+// =======================================
+// Transition animation mixin
+// =======================================
+@mixin transition($val...) {
+   -webkit-transition: $val;
+      -moz-transition: $val;
+        -o-transition: $val;
+           transition: $val;
+}
+
+// =============================================
+// Mixin to easily use font awesome icons
+// with css :before and :after
+// i.e. @include fa-icon('\f028');
+// =============================================
+@mixin fa-icon($icon, $placement: false) {
+  content: $icon;
+  font-family: $font-fontAwesome;
+  @if $placement == before {
+    padding-right: $base-unit-half;
+  }
+  @if $placement == after {
+    padding-left: $base-unit-half;
+  }
+}
+
+// =============================================
+// use to style placeholder text
+// across browsers
+// =============================================
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}

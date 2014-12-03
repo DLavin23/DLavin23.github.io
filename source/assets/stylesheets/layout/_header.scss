@@ -7,15 +7,17 @@ $logo-size: 4em;
 // Header Styles
 // =============================================
 .header-primary {
-	@include clearfix;
+	@extend %clearfix;
+	background-color: darken($color-blue, 10%);
 }
 
 .header-primary .logo {
 	float: left;
 }
 
-.logo img { 
+.logo img {
+	border-radius: 50%;
 	height: $logo-size;
 	width: $logo-size;
-	@include border-radius(50%);
+
 }
