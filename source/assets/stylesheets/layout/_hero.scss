@@ -7,35 +7,39 @@
 // =============================================
 
 %hero {
+	@extend %margin-bottom;
 	// @extend %clearfix;
-	min-height: 100vh;
+	// min-height: 100vh;
 }
 
-.hero {
-	@extend %hero;
-	@extend %position-relative;
-	background: $color-blue-light;
-	color: $color-white;
-	@include breakpoint($lap-small) {
-		background: url(../images/big-hero.jpg) no-repeat center $color-blue-light;
-		background-size: cover;
-	}
-}
+// .hero {
+// 	@extend %hero;
+// 	@extend %position-relative;
+// 	background: $color-blue-light;
+// 	color: $color-white;
+// 	@include breakpoint($lap-small) {
+// 		// background: url(../images/big-hero.jpg) no-repeat center $color-blue-light;
+// 		// background-size: cover;
+// 	}
+// }
 
 .styleguide-hero {
-	@extend %hero;
+	// @extend %hero;
 	background: $color-blue-dark;
 	color: $color-white;
 }
 
 .blog-hero {
-	@extend %hero;
+	// @extend %hero;
 	background: $color-slate;
 	color: $color-white;
 }
 
 .hero-overlay {
-	background-color: rgba(23, 167, 253, 0.7);
+	// background-color: rgba(23, 167, 253, 0.7);
+	// background-color: rgba(80, 119, 144, 0.7);
+	// background-color: rgba(2, 140, 223, 0.7);
+	background-color: rgba(90, 180, 225, 0.7);
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -50,12 +54,13 @@
 .intro {
 	@extend %text-align-center;
 	@extend %position-relative;
-	padding-top: 12em;
+	padding-top: 4em;
+	padding-bottom: 4em;
 }
 
 .info {
 	@extend %clearfix;
-	@extend %g-row;
+	// @extend %g-row;
 }
 
 .hero-headline {

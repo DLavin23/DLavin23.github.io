@@ -30,3 +30,13 @@ dl {
 		font-size: $h5-font-size;
 	}
 }
+
+.list-inline {
+	@extend %no-margin;
+	@extend %no-padding;
+	@extend %text-align-center;
+
+	li {
+		@extend %inline-block;
+	}
+}

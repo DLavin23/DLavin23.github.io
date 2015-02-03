@@ -1,23 +1,30 @@
 // =============================================
 // Header Settings
 // =============================================
-$logo-size: 4em;
 
 // =============================================
 // Header Styles
 // =============================================
 .header-primary {
+	// border: 1px solid black;
 	@extend %clearfix;
-	background-color: darken($color-blue, 10%);
+
+	a {
+		// border: 1px solid red;
+		display: inline-block;
+		text-decoration: none;
+	}
+	.logo {
+		@extend %text-align-center;
+		font-size: $h3-font-size;
+		@include breakpoint($lap-small) {
+			float: left;
+		}
+	}
 }
 
-.header-primary .logo {
-	float: left;
-}
+// .header-primary .logo {
+// 	float: left;
+// }
 
-.logo img {
-	border-radius: 50%;
-	height: $logo-size;
-	width: $logo-size;
 
-}

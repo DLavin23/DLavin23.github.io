@@ -7,9 +7,9 @@
 // Nav Styles
 // =============================================
 .nav-primary {
-	float: right;
-	a,
-	li {
-		color: $color-white;
+	// border: 1px solid blue;
+	margin-top: $base-unit-half;
+	@include breakpoint($lap-small) {
+		float: right;
 	}
 }

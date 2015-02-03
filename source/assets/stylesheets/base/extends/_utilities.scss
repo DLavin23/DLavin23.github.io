@@ -2,11 +2,13 @@
 // Silent, extendablem sass utilities
 // i.e. @extend %clearfix;
 // =======================================
-%pull-right {
+%pull-right,
+.pull-right {
 	float: right;
 }
 
-%pull-left {
+%pull-left,
+.pull-left {
 	float: left;
 }
 
@@ -47,6 +49,10 @@
 
 %position-relative {
 	position: relative;
+}
+
+%position-absolute {
+	position: absolute;
 }
 
 %text-align-right {

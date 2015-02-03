@@ -9,7 +9,7 @@ $grid-columns: (12);
 %g-row,
 .g-row {
 	@extend %clearfix;
-	@include container($lap-large);
+	// @include full;
 }
 
 // Sets up 12 columns grid classes and
@@ -21,52 +21,37 @@ $grid-columns: (12);
 	}
 }
 
+@for $i from 1 to $grid-columns + 1 {
+	%g-col-resp-#{$i},
+	.g-col-resp-#{$i} {
+		@include breakpoint($lap-small) {
+			@include span($i of $grid-columns);
+		}
+	}
+}
+
+@for $i from 1 to $grid-columns + 1 {
+	%g-gallery-resp-#{$i},
+	.g-gallery-resp-#{$i} {
+		@include full;
+		@include breakpoint($lap-small) {
+			@include gallery($i of $grid-columns);
+		}
+	}
+}
+
+.g-gallery-4 {
+	border: 1px solid black;
+	@include breakpoint($lap-small) {
+		@include gallery(4 of 12);
+	}
+}
+
 // ======================================
 // Clears the last column in a row
 // ======================================
-.omega,
-.lt-ie9 div[class^="g-"].omega  {
+.last-col,
+.lt-ie9 div[class^="g-"].last-col  {
 	@include omega;
 }
 
-// ======================================
-// Custom Grid Styles
-// ======================================
-
-%g-one-half,
-.g-one-half {
-	@extend %full-width;
-	@include breakpoint($lap-medium, $no-query: '.lt-ie9') {
-		@include span(6 of 12);
-	}
-}
-
-%g-one-third,
-.g-one-third {
-	@extend %full-width;
-	@include breakpoint($lap-medium, $no-query: '.lt-ie9') {
-		@include span(4 of 12);
-	}
-}
-
-.g-one-fourth {
-	@extend %full-width;
-	@include breakpoint($lap-small, $no-query: '.lt-ie9') {
-		@include span(6 of 12);
-	}
-	@include breakpoint($lap-large, $no-query: '.lt-ie9') {
-		@include span(3 of 12);
-	}
-}
-
-.g-one-fourth:nth-child(2n) {
-	@include breakpoint($lap-small $lap-large) {
-		@include omega;
-	}
-}
-
-.g-one-fourth:nth-child(4n) {
-	@include breakpoint($lap-large, $no-query: '.lt-ie9') {
-		@include omega;
-	}
-}

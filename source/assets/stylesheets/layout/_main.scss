@@ -1,0 +1,32 @@
+.container {
+	@include container($lap-large);
+}
+
+.main {
+}
+
+.articles {
+	@extend %margin-bottom;
+}
+
+.about {
+	@extend %margin-bottom;
+
+	.bio-photo {
+		@extend %margin-auto;
+		@extend %block;
+		border-radius: 50%;
+		max-width: 50%;
+		@include breakpoint($lap-small) {
+			max-width: 100%;
+		}
+	}
+}
+
+.toolset {
+	@extend %margin-bottom;
+
+	// ul {
+	// 	@include gallery(4 of 12);
+	// }
+}

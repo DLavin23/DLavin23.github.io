@@ -10,7 +10,6 @@
 @import 'base/variables';
 @import 'base/extends/box_model';
 @import 'base/extends/utilities';
-@import 'base/extends/grid';
 @import 'base/extends/typography';
 @import 'base/mixins/misc';
 @import 'base/typography';
@@ -20,7 +19,6 @@
 // Components
 // =======================================
 @import 'components/grid';
-@import 'components/media';
 @import 'components/nav';
 @import 'components/lists';
 @import 'components/buttons';
@@ -30,6 +28,7 @@
 // =======================================
 @import 'layout/header';
 @import 'layout/hero';
+@import 'layout/main';
 @import 'layout/footer';
 
 // =======================================
