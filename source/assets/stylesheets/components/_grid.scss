@@ -8,11 +8,16 @@ $grid-columns: (12);
 // ======================================
 %g-row,
 .g-row {
-	@extend %clearfix;
-	// @include full;
+	padding-left: $base-unit;
+	padding-right: $base-unit;
+	@include container($desk-small);
+	@include breakpoint($desk-small) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
-// Sets up 12 columns grid classes and
+// Sets up 12 columns grid with classes and
 // placeholder selectors that can be extended.
 @for $i from 1 to $grid-columns + 1 {
 	%g-col-#{$i},
@@ -21,6 +26,7 @@ $grid-columns: (12);
 	}
 }
 
+// Sets up 12 columns responsive grid (resp)
 @for $i from 1 to $grid-columns + 1 {
 	%g-col-resp-#{$i},
 	.g-col-resp-#{$i} {
@@ -30,6 +36,8 @@ $grid-columns: (12);
 	}
 }
 
+// Sets up 12 columns responsive grid (resp)
+// using the gallery mixin
 @for $i from 1 to $grid-columns + 1 {
 	%g-gallery-resp-#{$i},
 	.g-gallery-resp-#{$i} {
@@ -37,13 +45,6 @@ $grid-columns: (12);
 		@include breakpoint($lap-small) {
 			@include gallery($i of $grid-columns);
 		}
-	}
-}
-
-.g-gallery-4 {
-	border: 1px solid black;
-	@include breakpoint($lap-small) {
-		@include gallery(4 of 12);
 	}
 }
 

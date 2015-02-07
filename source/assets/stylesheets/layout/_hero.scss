@@ -1,74 +1,35 @@
 // =============================================
-// Footer Settings
+// Hero Settings
+// =============================================
+$hero-bg: map-get($global-colors, blue);
+
+// =============================================
+// Hero Styles
 // =============================================
 
-// =============================================
-// Footer Styles
-// =============================================
 
-%hero {
-	@extend %margin-bottom;
-	// @extend %clearfix;
-	// min-height: 100vh;
-}
-
-// .hero {
-// 	@extend %hero;
-// 	@extend %position-relative;
-// 	background: $color-blue-light;
-// 	color: $color-white;
-// 	@include breakpoint($lap-small) {
-// 		// background: url(../images/big-hero.jpg) no-repeat center $color-blue-light;
-// 		// background-size: cover;
-// 	}
-// }
-
-.styleguide-hero {
-	// @extend %hero;
-	background: $color-blue-dark;
-	color: $color-white;
-}
-
-.blog-hero {
-	// @extend %hero;
-	background: $color-slate;
-	color: $color-white;
-}
-
-.hero-overlay {
-	// background-color: rgba(23, 167, 253, 0.7);
-	// background-color: rgba(80, 119, 144, 0.7);
-	// background-color: rgba(2, 140, 223, 0.7);
-	background-color: rgba(90, 180, 225, 0.7);
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	// background-image: url(../images/big-hero.jpg);
-	// background-repeat: no-repeat;
-	// z-index: -1;
-	// position: relative;
-}
-
-.intro {
+.hero {
 	@extend %text-align-center;
 	@extend %position-relative;
-	padding-top: 4em;
-	padding-bottom: 4em;
-}
-
-.info {
-	@extend %clearfix;
-	// @extend %g-row;
+	@extend %margin-bottom;
+	// background: $hero-bg;
+	// background: rgba();
+	// color: map-get($global-colors, white);
+	padding-top: 3em;
+	padding-bottom: 3em;
 }
 
 .hero-headline {
-	font-size: 3em;
-	font-weight: 800;
+	font-size: $h3-font-size;
+	margin-bottom: $base-unit-half;
+	@include breakpoint($lap-medium) {
+		font-size: $h1-font-size;
+	}
 }
 
 .hero-tagline {
-	font-size: $h1-font-size;
-	font-weight: 600;
+	font-size: $h5-font-size;
+	@include breakpoint($lap-medium) {
+		font-size: $h3-font-size;
+	}
 }

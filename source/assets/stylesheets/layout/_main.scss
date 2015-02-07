@@ -1,13 +1,4 @@
-.container {
-	@include container($lap-large);
-}
-
-.main {
-}
-
-.articles {
-	@extend %margin-bottom;
-}
+$section-color: map-get($global-colors, black);
 
 .about {
 	@extend %margin-bottom;
@@ -23,10 +14,20 @@
 	}
 }
 
+.thoughts {
+	@extend %margin-bottom;
+}
+
 .toolset {
 	@extend %margin-bottom;
+}
 
-	// ul {
-	// 	@include gallery(4 of 12);
-	// }
+.section-headline {
+	border-bottom: 1px solid map-get($global-colors, gray);
+	// color: lighten($section-color, 5%);
+	margin-bottom: $base-unit-half;
+	font-size: $h4-font-size;
+	@include breakpoint($lap-small) {
+		font-size: $h3-font-size;
+	}
 }

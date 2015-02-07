@@ -1,30 +1,44 @@
 // =============================================
 // Header Settings
 // =============================================
-
+$header-color: map-get($global-colors, blue);
+$header-border: 3px solid $header-color;
 // =============================================
 // Header Styles
 // =============================================
 .header-primary {
-	// border: 1px solid black;
 	@extend %clearfix;
-
+	@extend %pad-top;
+	@extend %pad-bottom;
+	border-top: $header-border;
 	a {
-		// border: 1px solid red;
-		display: inline-block;
+		@extend %inline-block;
+		color: $header-color;
 		text-decoration: none;
 	}
 	.logo {
 		@extend %text-align-center;
-		font-size: $h3-font-size;
+		font-size: $h4-font-size;
 		@include breakpoint($lap-small) {
 			float: left;
 		}
 	}
 }
 
-// .header-primary .logo {
-// 	float: left;
-// }
-
-
+.nav-primary {
+	margin-top: $base-unit-quarter;
+	@include breakpoint($lap-small) {
+		float: right;
+	}
+	a {
+		color: $header-color;
+		font-size: $base-font-size;
+		padding-top: $base-unit-quarter;
+		padding-right: $base-unit-half;
+		padding-bottom: $base-unit-quarter;
+		padding-left: $base-unit-half;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+}
