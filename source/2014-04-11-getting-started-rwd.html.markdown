@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Responsive Design
 date: 2014-04-11
-tags: example
+tags: responsive web design
 ---
 
 <!-- Introduction -->

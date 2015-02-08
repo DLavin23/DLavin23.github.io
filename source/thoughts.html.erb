@@ -3,60 +3,64 @@ pageable: true
 per_page: 10
 ---
 
-<section class="blog-hero">
-  <div class="g-row mobile-gutter">
-    <h2>Blog!</h2>
+<section class="hero hero-thoughts">
+  <div class="g-row">
+    <h2 class="hero-headline">Thoughts</h2>
+    <h3 class="hero-tagline">Writings on Product Design, Development, and User Experience </h3>
   </div>
 </section>
 
-<div class="g-row mobile-gutter">
-  <div class="g-col-4">
-    <aside class="recent-articles">
-      <h2>Recent Articles</h2>
-      <ol>
-        <% blog.articles[0...10].each do |article| %>
-          <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+<section class="thoughts">
+  <div class="g-row">
+    <div class="g-col-resp-4">
+      <aside class="recent-articles">
+        <h2>Recent Articles</h2>
+        <ol>
+          <% blog.articles[0...10].each do |article| %>
+            <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+          <% end %>
+        </ol>
+
+        <h2>Tags</h2>
+        <ol>
+          <% blog.tags.each do |tag, articles| %>
+            <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+          <% end %>
+        </ol>
+
+        <h2>By Year</h2>
+        <ol>
+          <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+            <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
+          <% end %>
+        </ol>
+      </aside>
+    </div>
+
+    <div class="g-col-resp-8 g-last">
+      <% if paginate && num_pages > 1 %>
+        <p>Page <%= page_number %> of <%= num_pages %></p>
+
+        <% if prev_page %>
+          <p><%= link_to 'Previous page', prev_page %></p>
         <% end %>
-      </ol>
-
-      <h2>Tags</h2>
-      <ol>
-        <% blog.tags.each do |tag, articles| %>
-          <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
-        <% end %>
-      </ol>
-
-      <h2>By Year</h2>
-      <ol>
-        <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
-        <% end %>
-      </ol>
-    </aside>
-  </div>
-
-  <div class="g-col-8 g-last">
-    <% if paginate && num_pages > 1 %>
-      <p>Page <%= page_number %> of <%= num_pages %></p>
-
-      <% if prev_page %>
-        <p><%= link_to 'Previous page', prev_page %></p>
       <% end %>
-    <% end %>
 
-    <% page_articles.each_with_index do |article, i| %>
-      <div class="g-row">
-        <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
-        <!-- use article.summary(250) if you have Nokogiri available to show just
-             the first 250 characters -->
-        <%= article.body %>
-      </div>
-    <% end %>
-
-    <% if paginate %>
-      <% if next_page %>
-        <p><%= link_to 'Next page', next_page %></p>
+      <% page_articles.each_with_index do |article, i| %>
+        <div class="g-row">
+          <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
+          <!-- use article.summary(250) if you have Nokogiri available to show just
+               the first 250 characters -->
+          <%= article.body %>
+        </div>
       <% end %>
-    <% end %>
+
+      <% if paginate %>
+        <% if next_page %>
+          <p><%= link_to 'Next page', next_page %></p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+</section>
+

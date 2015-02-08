@@ -1,12 +1,14 @@
 $section-color: map-get($global-colors, black);
 
 .about {
+	@extend %margin-top;
 	@extend %margin-bottom;
 
 	.bio-photo {
 		@extend %margin-auto;
 		@extend %block;
-		border-radius: 50%;
+		// border-radius: 50%;
+		border-radius: 8px;
 		max-width: 50%;
 		@include breakpoint($lap-small) {
 			max-width: 100%;
@@ -15,10 +17,12 @@ $section-color: map-get($global-colors, black);
 }
 
 .thoughts {
+	@extend %margin-top;
 	@extend %margin-bottom;
 }
 
 .toolset {
+	@extend %margin-top;
 	@extend %margin-bottom;
 }
 

@@ -45,11 +45,11 @@ body {
   background-color: $base-background-color;
   color: $base-font-color;
   font-family: $base-font-family;
-  font-size: 90%;
+  // font-size: 90%;
   line-height: $base-line-height;
-  @include breakpoint($lap-small) {
-    font-size: 100%;
-  }
+  // @include breakpoint($lap-small) {
+  //   font-size: 100%;
+  // }
 }
 
 p {

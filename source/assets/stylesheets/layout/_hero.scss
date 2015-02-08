@@ -9,7 +9,7 @@ $hero-bg: map-get($global-colors, blue);
 
 
 .hero {
-	@extend %text-align-center;
+	// @extend %text-align-center;
 	@extend %position-relative;
 	@extend %margin-bottom;
 	// background: $hero-bg;
@@ -17,6 +17,9 @@ $hero-bg: map-get($global-colors, blue);
 	// color: map-get($global-colors, white);
 	padding-top: 3em;
 	padding-bottom: 3em;
+	// @include breakpoint($lap-small) {
+	// 	text-align: center;
+	// }
 }
 
 .hero-headline {

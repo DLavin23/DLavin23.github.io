@@ -2,7 +2,8 @@
 // Header Settings
 // =============================================
 $header-color: map-get($global-colors, blue);
-$header-border: 3px solid $header-color;
+$header-border: 5px solid $header-color;
+
 // =============================================
 // Header Styles
 // =============================================
@@ -33,12 +34,18 @@ $header-border: 3px solid $header-color;
 	a {
 		color: $header-color;
 		font-size: $base-font-size;
-		padding-top: $base-unit-quarter;
-		padding-right: $base-unit-half;
-		padding-bottom: $base-unit-quarter;
-		padding-left: $base-unit-half;
+		padding: $base-unit-half $base-unit-quarter;
+		@include breakpoint($palm-large) {
+			padding: $base-unit-quarter $base-unit-half;
+		}
 	}
 	a:hover {
 		text-decoration: underline;
+	}
+	i {
+		display: none;
+		@include breakpoint($palm-large) {
+			display: inline-block;
+		}
 	}
 }

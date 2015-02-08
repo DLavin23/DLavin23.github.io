@@ -4,9 +4,9 @@
 
 # Time.zone = "UTC"
 
-activate :blog do |blog|  
+activate :blog do |blog|
   blog.prefix = "blog"
-  blog.permalink = "{year}/{month}/{day}/{title}.html"  
+  blog.permalink = "{year}/{month}/{day}/{title}.html"
   blog.sources = "{year}-{month}-{day}-{title}.html"
   blog.taglink = "tags/{tag}.html"
   blog.layout = "layout"
@@ -85,10 +85,10 @@ activate :autoprefixer
 
 
 # Build-specific configuration
-configure :build do    
+configure :build do
   activate :minify_css
   activate :minify_javascript
-  activate :asset_hash
+  # activate :asset_hash
 
   # Use relative URLs
   # activate :relative_assets
@@ -101,7 +101,7 @@ activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = "master"
   deploy.build_before = true
-  
+
   # Optional Settings
   # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
   # deploy.branch   = 'custom-branch' # default: gh-pages

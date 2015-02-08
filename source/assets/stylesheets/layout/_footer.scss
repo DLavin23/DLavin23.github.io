@@ -1,10 +1,16 @@
 // =============================================
 // Footer Settings
 // =============================================
+$footer-bg: map-get($global-colors, gray);
+
 
 // =============================================
 // Footer Styles
 // =============================================
+.footer-primary {
+	background: $footer-bg;
+}
+
 .copyright {
 	@extend %text-align-center;
 	@extend %block;
