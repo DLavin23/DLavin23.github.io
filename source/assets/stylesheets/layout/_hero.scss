@@ -12,6 +12,8 @@ $hero-bg: map-get($global-colors, blue);
 	// @extend %text-align-center;
 	@extend %position-relative;
 	@extend %margin-bottom;
+	background: lighten(map-get($global-colors, gray), 25%);
+	box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
 	// background: $hero-bg;
 	// background: rgba();
 	// color: map-get($global-colors, white);

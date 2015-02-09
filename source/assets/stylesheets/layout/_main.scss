@@ -7,10 +7,10 @@ $section-color: map-get($global-colors, black);
 	.bio-photo {
 		@extend %margin-auto;
 		@extend %block;
-		// border-radius: 50%;
-		border-radius: 8px;
+		border-radius: 50%;
 		max-width: 50%;
 		@include breakpoint($lap-small) {
+			border-radius: 8px;
 			max-width: 100%;
 		}
 	}
@@ -19,6 +19,12 @@ $section-color: map-get($global-colors, black);
 .thoughts {
 	@extend %margin-top;
 	@extend %margin-bottom;
+
+	article {
+		@include breakpoint($palm-large) {
+			@include gallery(6 of 12);
+		}
+	}
 }
 
 .toolset {
@@ -26,12 +32,40 @@ $section-color: map-get($global-colors, black);
 	@extend %margin-bottom;
 }
 
+.playground {
+	@extend %margin-top;
+	@extend %margin-bottom;
+
+	img {
+		border-radius: 8px;
+		margin-bottom: 1em;
+	}
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding:0;
+	}
+	li {
+		@include gallery(6 of 12);
+	}
+}
+
 .section-headline {
-	border-bottom: 1px solid map-get($global-colors, gray);
-	// color: lighten($section-color, 5%);
+	border-bottom: 1px solid map-get($global-colors, light-gray);
 	margin-bottom: $base-unit-half;
+	padding-bottom: $base-unit-quarter;
 	font-size: $h4-font-size;
 	@include breakpoint($lap-small) {
 		font-size: $h3-font-size;
+	}
+}
+
+.blog-headline {
+	color: map-get($global-colors, dark-blue);
+	font-size: $h6-font-size;
+	margin-bottom: $base-unit-half;
+
+	&:hover {
+		color: map-get($global-colors, blue);
 	}
 }

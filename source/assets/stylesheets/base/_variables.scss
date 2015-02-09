@@ -5,6 +5,7 @@ $global-colors: (
 	white: #fff,
 	black: #49494d,
 	gray: #adadad,
+	light-gray: lighten(gray, 30%),
 	dark-gray: darken(gray, 10%),
 	blue: #027cc6,
 	dark-blue: #4e5571,

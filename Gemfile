@@ -12,7 +12,7 @@ gem "middleman-livereload"
 # http://sass-lang.com/
 gem "sass"
 
-# http://susy.oddbird.net/ 
+# http://susy.oddbird.net/
 gem "susy"
 
 # http://breakpoint-sass.com/
@@ -23,3 +23,6 @@ gem "middleman-autoprefixer"
 
 # https://github.com/karlfreeman/middleman-deploy
 gem "middleman-deploy"
+
+# https://github.com/plasticine/middleman-imageoptim
+gem 'middleman-imageoptim'

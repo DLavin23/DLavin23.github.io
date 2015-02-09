@@ -29,6 +29,12 @@ dl {
 		@extend %inline-block;
 		font-size: $h5-font-size;
 	}
+	a {
+		color: map-get($global-colors, black);
+	}
+	a:hover {
+		color: map-get($global-colors, blue);
+	}
 }
 
 .list-inline {

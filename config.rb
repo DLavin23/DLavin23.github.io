@@ -3,7 +3,6 @@
 ###
 
 # Time.zone = "UTC"
-
 activate :blog do |blog|
   blog.prefix = "blog"
   blog.permalink = "{year}/{month}/{day}/{title}.html"
@@ -88,7 +87,9 @@ activate :autoprefixer
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  # activate :asset_hash
+  activate :asset_hash
+  activate :gzip
+  activate :imageoptim
 
   # Use relative URLs
   # activate :relative_assets
