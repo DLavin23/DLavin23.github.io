@@ -47,14 +47,15 @@ $global-colors: (
 // Global Base Variables
 // =============================================
 $font-open-sans: "Open Sans", sans-serif;
+$font-lato: "Lato", sans-serif;
 $font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-fontAwesome: "FontAwesome";
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
-$font-weight-extra-bold: 800;
+$font-weight-extra-bold: 900;
 
-$base-font-family: $font-open-sans;
+$base-font-family: $font-lato;
 $base-font-size: 1em;
 $base-background-color: map-get($global-colors, white);
 // $base-border-color: $color-gray-light;

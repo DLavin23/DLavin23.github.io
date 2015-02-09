@@ -40,7 +40,8 @@ $header-border: 5px solid $header-color;
 		}
 	}
 	a:hover {
-		text-decoration: underline;
+		border-bottom: 2px solid $header-color;
+		text-decoration: none;
 	}
 	i {
 		display: none;

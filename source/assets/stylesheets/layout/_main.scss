@@ -27,6 +27,11 @@ $section-color: map-get($global-colors, black);
 	}
 }
 
+.work {
+	@extend %margin-top;
+	@extend %margin-bottom;
+}
+
 .toolset {
 	@extend %margin-top;
 	@extend %margin-bottom;

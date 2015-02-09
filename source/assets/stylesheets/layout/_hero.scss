@@ -26,6 +26,8 @@ $hero-bg: map-get($global-colors, blue);
 
 .hero-headline {
 	font-size: $h3-font-size;
+	font-family: $font-lato;
+	font-weight: 900;
 	margin-bottom: $base-unit-half;
 	@include breakpoint($lap-medium) {
 		font-size: $h1-font-size;
