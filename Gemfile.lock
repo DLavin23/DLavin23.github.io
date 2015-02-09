@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.6)
+    addressable (2.3.7)
     autoprefixer-rails (5.1.5)
       execjs
       json
@@ -37,7 +37,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
-    eventmachine (1.0.5)
+    eventmachine (1.0.6)
     execjs (2.3.0)
     exifr (1.2.0)
     ffi (1.9.6)
