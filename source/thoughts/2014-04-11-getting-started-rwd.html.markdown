@@ -5,7 +5,6 @@ tags: responsive web design
 ---
 
 <!-- Introduction -->
-
 It's been a little over 3 years since <a href="http://ethanmarcotte.com/" target="_blank">Ethan Marcotte</a> coined the term <a href="http://alistapart.com/article/responsive-web-design/" target="_blank
 ">"Responsive Web Design"</a>, and I think we can all agree that it has proven to be more than just a fad. As the Web continues to evolve into a larger part of our everyday lives, it will become
 increasingly more important to deliver optimal user experiences for the growing number of Web-enabled devices and contexts.

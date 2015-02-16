@@ -1,76 +1,129 @@
-$section-color: map-get($global-colors, black);
+// =======================================
+// Main Layout Settings
+// =======================================
+$section-color-black: map-get($global-colors, black);
+$image-radius: 8px;
 
+%section-spacing,
+.section-spacing {
+	margin-bottom: 2em;
+}
+
+.section-headline {
+	border-bottom: 1px solid map-get($global-colors, light-gray);
+	color: map-get($global-colors, dark-blue);;
+	margin-bottom: 0.75em;
+	padding-bottom: $base-unit-quarter;
+	font-size: $h4-font-size;
+	// text-align: center;
+	@include media($lap-small) {
+		font-size: $h3-font-size;
+	}
+}
+// =======================================
+// About Section
+// =======================================
 .about {
-	@extend %margin-top;
-	@extend %margin-bottom;
+	@extend %clearfix;
+	@extend %section-spacing;
+}
 
-	.bio-photo {
+.about-photo {
+	@include span-columns(12);
+	@include media($lap-small) {
+		@include span-columns(3 of 12);
+	}
+	img {
 		@extend %margin-auto;
 		@extend %block;
 		border-radius: 50%;
 		max-width: 50%;
-		@include breakpoint($lap-small) {
+		@include media($lap-small) {
 			border-radius: 8px;
 			max-width: 100%;
 		}
 	}
 }
 
+.about-content {
+	margin-top: $base-unit;
+	@include span-columns(12);
+	@include media($lap-small) {
+		margin-top: 0;
+		@include span-columns(9 of 12);
+	}
+}
+
+// =======================================
+// Thoughts Section
+// =======================================
 .thoughts {
-	@extend %margin-top;
-	@extend %margin-bottom;
+	@extend %clearfix;
+	@extend %section-spacing;
+}
 
-	article {
-		@include breakpoint($palm-large) {
-			@include gallery(6 of 12);
-		}
+.thoughts-article {
+	@extend %section-spacing;
+	@include span-columns(12);
+	@include media($lap-small) {
+		@include span-columns(6 of 12);
+		@include omega(2n);
 	}
 }
 
-.work {
-	@extend %margin-top;
-	@extend %margin-bottom;
-}
-
-.toolset {
-	@extend %margin-top;
-	@extend %margin-bottom;
-}
-
-.playground {
-	@extend %margin-top;
-	@extend %margin-bottom;
-
-	img {
-		border-radius: 8px;
-		margin-bottom: 1em;
-	}
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding:0;
-	}
-	li {
-		@include gallery(6 of 12);
-	}
-}
-
-.section-headline {
-	border-bottom: 1px solid map-get($global-colors, light-gray);
-	margin-bottom: $base-unit-half;
-	padding-bottom: $base-unit-quarter;
-	font-size: $h4-font-size;
-	@include breakpoint($lap-small) {
-		font-size: $h3-font-size;
-	}
-}
-
-.blog-headline {
-	color: map-get($global-colors, dark-blue);
+.thoughts-headline {
 	font-size: $h6-font-size;
 	margin-bottom: $base-unit-half;
-
-	&:hover {
+	a {
+		color: map-get($global-colors, dark-blue);
+	}
+	a:hover {
 		color: map-get($global-colors, blue);
+		text-decoration: none;
+	}
+	span {
+		color: map-get($global-colors, blue);
+		font-size: 80%;
+	}
+}
+
+.article-wrapper {
+	// @include outer-container(58em);
+	@include outer-container;
+}
+
+// =======================================
+// Playground Section
+// =======================================
+.playground {
+	@extend %clearfix;
+	@extend %section-spacing;
+
+	img {
+		border-radius: $image-radius;
+		margin-bottom: $base-unit;
+	}
+}
+
+.playground-content,
+.playground-gallery {
+	@include span-columns(12);
+	@include media($lap-medium) {
+		@include span-columns(6 of 12);
+	}
+}
+
+.playground-gallery {
+	@extend %clearfix;
+	ul {
+		@extend %no-margin;
+		@extend %no-padding;
+		@include row();
+	}
+	li {
+		list-style-type: none;
+		@extend %no-margin;
+		@include span-columns(6 of 12);
+		@include omega(2n);
 	}
 }

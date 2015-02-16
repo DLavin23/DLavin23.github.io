@@ -2,12 +2,8 @@
 // Button Settings
 // =============================================
 // $btn-background-default: $color-gray;
-// $btn-background-primary: $color-blue;
-// $btn-background-secondary: $color-blue-light;
-// $btn-background-success: $color-green-light;
-// $btn-background-danger: $color-red;
-// $btn-background-cta: $color-yellow;
-// $btn-color-default: $color-white;
+$btn-blue: map-get($global-colors, blue);
+$btn-white: map-get($global-colors, white);
 $btn-small: $base-unit-quarter $base-unit-half;
 $btn-normal: $base-unit-half $base-unit;
 $btn-large: $base-unit ($base-unit * 1.5);
@@ -15,5 +11,61 @@ $btn-width: auto;
 $btn-width-full: 100%;
 $btn-radius: 5px;
 $btn-radius-none: 0;
+
+@mixin btn-style($bg-color, $text-color, $radius) {
+	background: $bg-color;
+	border: 1px solid darken($bg-color, 10%);
+	border-radius: $radius;
+	color: $text-color;
+
+	&:hover {
+		background: lighten($bg-color, 10%);
+		color: $text-color;
+		text-decoration: none;
+	}
+}
+
+// @mixin btn-size($top $right $bottom $left) {
+// 	padding: $top $right $bottom $left;
+// }
+
+%btn,
+.btn {
+  appearance: value;
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	margin: 0;
+	padding-top: $base-unit-half;
+	padding-right: $base-unit;
+	padding-bottom: $base-unit-half;
+	padding-left: $base-unit;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.btn-primary {
+	@include btn-style($btn-blue, $btn-white, $btn-radius);
+}
+
+.btn-hollow {
+	background: $btn-white;
+	border: 1px solid $btn-blue;
+	border-radius: $btn-radius;
+	color: $btn-blue;
+
+
+	&:hover {
+		background: $btn-blue;
+		border: 1px solid darken($btn-blue, 10%);
+		color: $btn-white;
+		text-decoration: none;
+		@include transition(background 0.5s ease-in);
+	}
+}
 
 

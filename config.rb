@@ -4,13 +4,13 @@
 
 # Time.zone = "UTC"
 activate :blog do |blog|
-  blog.prefix = "blog"
+  blog.prefix = "thoughts"
   blog.permalink = "{year}/{month}/{day}/{title}.html"
   blog.sources = "{year}-{month}-{day}-{title}.html"
   blog.taglink = "tags/{tag}.html"
-  blog.layout = "layout"
+  blog.layout = "thought_layout"
   # blog.summary_separator = /(READMORE)/
-  blog.summary_length = 250
+  blog.summary_length = 200
   blog.year_link = "{year}.html"
   blog.month_link = "{year}/{month}.html"
   blog.day_link = "{year}/{month}/{day}.html"
@@ -47,7 +47,8 @@ page "/feed.xml", layout: false
 #
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
-#
+page "thoughts/*", :layout => :thought_layout
+
 # A path which all have the same layout
 # with_layout :admin do
 #   page "/admin/*"

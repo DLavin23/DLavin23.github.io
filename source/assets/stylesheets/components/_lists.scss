@@ -30,7 +30,7 @@ dl {
 		font-size: $h5-font-size;
 	}
 	a {
-		color: map-get($global-colors, black);
+		color: map-get($global-colors, dark-blue);
 		padding: $base-unit-half $base-unit-quarter;
 	}
 	a:hover {
@@ -38,6 +38,7 @@ dl {
 	}
 }
 
+%list-inline,
 .list-inline {
 	@extend %no-margin;
 	@extend %no-padding;

@@ -1,0 +1,47 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" data-ng-app="app"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>Dan Lavin<%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+    <%= stylesheet_link_tag 'assets/stylesheets/site' %>
+    <link rel="canonical" href="http://dlavin23.github.io">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body data-ng-controller="AppCtrl">
+  <!-- <body class="<%= page_classes %>" data-ng-controller="AppCtrl"> -->
+    <header class="header-primary">
+      <%= partial "header" %>
+    </header>
+
+    <section class="main" role="main">
+      <section class="hero">
+        <header class="hero-intro">
+          <h2 class="hero-headline">Article Hero...</h2>
+          <h3 class="hero-tagline">I can be your Hero, baby!!</h3>
+        </header>
+      </section>
+
+      <article class="article-wrapper">
+        <%= yield %>
+      </article>
+    </section>
+
+    <footer class="footer-primary" id="contact">
+      <%= partial "footer" %>
+    </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+    <script src="assets/javascripts/app.js"></script>
+  </body>
+</html>
