@@ -1,9 +1,8 @@
-
 <section class="hero">
-	<div class="g-row">
+	<header class="hero-intro">
 		<h2 class="hero-headline">Hello, I'm Dan...</h2>
 		<h3 class="hero-tagline">A Front-End Engineer With a Passion for Design &amp; User Experience.</h3>
-	</div>
+	</header>
 </section>
 
 <section class="about">
@@ -12,27 +11,16 @@
 			<h3 class="section-headline">About Me</h3>
 		</header>
 
-		<div class="g-col-resp-3">
-			<%= image_tag "bio-photo.jpg", :class => "bio-photo", :alt => "Dan Lavin" %>
+		<div class="about-photo">
+			<%= image_tag "bio-photo.jpg", :alt => "Dan Lavin" %>
 		</div>
 
-		<div class="g-col-resp-9 last-col">
-			<p>Currently, I work at <a href="http://www.leapfrogonline.com/">Leapfrog Online</a>, where I focus on building scalable and maintainble user interfaces that work beautifully across all platforms (responsive design). I believe <a href="https://developers.google.com/speed/pagespeed/insights/?url=dlavin23.github.io">performance</a> IS design. I strive to write clean and understandable code using object oriented and <a href="https://smacss.com/">SMACSS</a> based principles. I speed up and automate front end workflows with tools like gulp and work with tools and frameworks like node, express, middleman, angular, and ruby on rails.</p>
-			<p>Outside of work, I enjoy spending time with my wife, traveling, reading, drinking unnecessary amounts of <a href="http://revbrew.com/home">beer</a> &amp; <a href="http://www.heritagebicycles.com/">coffee</a>, and trying all of great <a href="http://www.yelp.com/search?find_desc=Restaurants&find_loc=Chicago%2C+IL&ns=1#start=0&sortby=review_count">food</a> the Windy City has to offer. When the Chicago weather permits, I love spending time outdoors. In the summer you can usually find me running along the lake, attempting to golf, or playing sand volleyball and basketball.</p>
+		<div class="about-content">
+			<p>Currently, I work at <a href="http://www.leapfrogonline.com/">Leapfrog Online</a>, where I focus on building scalable and maintainble user interfaces that work beautifully across all platforms (responsive design). I believe <a href="https://developers.google.com/speed/pagespeed/insights/?url=dlavin23.github.io">performance</a> IS design. I strive to write clean and understandable code using object oriented and <a href="https://smacss.com/">SMACSS</a> based principles. I speed up and automate front end workflows with tools like gulp and have experience working with tools, libraries and frameworks like: node, express, middleman, ruby on rails, jQuery, Angular, and Sass.</p>
+			<p>Outside of work, I enjoy spending time with my wife, traveling, reading, learning new things, drinking unnecessary amounts of <a href="http://revbrew.com/home">beer</a> &amp; <a href="http://www.heritagebicycles.com/">coffee</a>, and trying all of great <a href="http://www.yelp.com/search?find_desc=Restaurants&find_loc=Chicago%2C+IL&ns=1#start=0&sortby=review_count">food</a> the Windy City has to offer. When the Chicago weather permits, I love spending time outdoors. In the summer you can usually find me running along the lake, attempting to golf, or playing sand volleyball and basketball.</p>
 		</div>
-
-<!-- 		<div class="g-col-resp-5">
-			<p>Currently, I work at <a href="http://www.leapfrogonline.com/">Leapfrog Online</a>, where I focus on building scalable and maintainble user interfaces that work beautifully across all platforms (responsive design).</p>
-			<p>I believe <a href="https://developers.google.com/speed/pagespeed/insights/?url=dlavin23.github.io">performance</a> IS design. I strive to write clean and understandable code using object oriented and SMACSS based principles. I speed up and automate front end workflows with tools like gulp and work with frameworks like middleman, angular, and ruby on rails.</p>
-		</div>
-
-		<div class="g-col-resp-5 last-col">
-			<p>Outside of work, I enjoy spending time with my wife, traveling, reading, drinking unnecessary amounts of <a href="http://revbrew.com/home">beer</a> &amp; <a href="http://www.heritagebicycles.com/">coffee</a>, and trying all of great <a href="http://www.yelp.com/search?find_desc=Restaurants&find_loc=Chicago%2C+IL&ns=1#start=0&sortby=review_count">food</a> the Windy City has to offer.</p>
-			<p>When the Chicago weather permits, I love spending time outdoors. In the summer you can usually find me running along the lake, attempting to golf, or playing sand volleyball and basketball.</p>
-		</div> -->
 	</div>
 </section>
-<!-- Curiosity passion for solving problems -->
 
 <section class="thoughts">
 	<div class="g-row">
@@ -40,111 +28,21 @@
 			<h3 class="section-headline">Recent Thoughts</h3>
 		</header>
 	</div>
+
 	<div class="g-row">
-		<article>
-			<header>
-				<h5 class="blog-headline">Blog Title 1</h5>
-			</header>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, voluptate assumenda alias debitis perferendis harum aperiam, animi fugiat doloremque quidem, sequi sapiente voluptatem libero sit odit sint inventore quis quae! <a href="#">Read More</a></p>
-		</article>
-
-		<article>
-			<header>
-				<h5 class="blog-headline">Blog Title 2</h5>
-			</header>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, voluptate assumenda alias debitis perferendis harum aperiam, animi fugiat doloremque quidem, sequi sapiente voluptatem libero sit odit sint inventore quis quae! <a href="#">Read More</a></p>
-		</article>
-
-		<article>
-			<header>
-				<h5 class="blog-headline">Blog Title 3</h5>
-			</header>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, voluptate assumenda alias debitis perferendis harum aperiam, animi fugiat doloremque quidem, sequi sapiente voluptatem libero sit odit sint inventore quis quae! <a href="#">Read More</a></p>
-		</article>
-
-		<article>
-			<header>
-				<h5 class="blog-headline">Blog Title 4</h5>
-			</header>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, voluptate assumenda alias debitis perferendis harum aperiam, animi fugiat doloremque quidem, sequi sapiente voluptatem libero sit odit sint inventore quis quae! <a href="#">Read More</a></p>
-		</article>
+    <% blog.articles[0...4].each do |article| %>
+			<article class="thoughts-article">
+				<header>
+					<h5 class="thoughts-headline">
+						<%= link_to article.title, article %>
+						<span><%= article.date.strftime('%b %e') %></span>
+					</h5>
+				</header>
+				<p><%= article.summary %></p>
+				<a href="<%= article.url %>" class="btn btn-hollow">Read more</a>
+			</article>
+    <% end %>
 	</div>
 </section>
 
-<section class="playground">
-	<div class="g-row">
-		<header>
-			<h3 class="section-headline">Playground</h3>
-		</header>
-	</div>
-	<div class="g-row">
-		<div class="g-gallery-resp-6">
-			<p>This is a place to showcase code and design related stuff that I do...</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam illo excepturi a quia eum fugiat cupiditate! Fuga ratione minus sit, id porro dolores dolorem, voluptates, expedita officiis facere aliquid, obcaecati?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat neque veritatis recusandae autem mollitia ullam laboriosam animi quaerat id repudiandae deleniti minima quis maiores eveniet culpa accusamus voluptatibus, nesciunt facilis.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque molestias commodi, earum deserunt et iusto qui possimus eos velit, recusandae dolorum reprehenderit ut maiores illum totam natus dicta nam tempora!</p>
-		</div>
-
-		<div class="g-gallery-resp-6">
-			<ul class="g-row">
-				<li>
-					<a href="#">
-						<img src="http://placehold.it/250x150">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="http://placehold.it/250x150">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="http://placehold.it/250x150">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="http://placehold.it/250x150">
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</section>
-
-<section class="toolset">
-	<div class="g-row">
-		<header>
-			<h3 class="section-headline">My Developer Toolbox</h3>
-		</header>
-		<p>The world of design and front end development are constantly in flux. As such, I think it's extremely important to constantly be learning.  Here are some things I use on a daily basis: </p>
-		<div class="clearfix">
-			<div class="g-gallery-resp-4">
-				<ul>
-					<li>HTML5</li>
-					<li>CSS3</li>
-					<li>Sass</li>
-					<li>Javascript</li>
-				</ul>
-			</div>
-
-			<div class="g-gallery-resp-4">
-				<ul>
-					<li>jQuery</li>
-					<li>Angular JS</li>
-					<li>Node</li>
-					<li>Gulp &amp; Grunt</li>
-				</ul>
-			</div>
-
-			<div class="g-gallery-resp-4">
-				<ul>
-					<li>Git/Github</li>
-					<li>Unix/CLI</li>
-					<li>Middleman</li>
-					<li>Ruby on Rails</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
-
+<%= partial "playground" %>

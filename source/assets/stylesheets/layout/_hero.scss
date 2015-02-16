@@ -1,26 +1,37 @@
 // =============================================
 // Hero Settings
 // =============================================
-$hero-bg: map-get($global-colors, blue);
+$hero-blue: map-get($global-colors, blue);
+$hero-blue-dark: darken($hero-blue, 10%);
 
 // =============================================
 // Hero Styles
 // =============================================
-
-
 .hero {
-	// @extend %text-align-center;
-	@extend %position-relative;
-	@extend %margin-bottom;
-	background: lighten(map-get($global-colors, gray), 25%);
+	@extend %section-spacing;
+	// background: lighten(map-get($global-colors, gray), 25%);
+	background: map-get($global-colors, blue);
 	box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
-	// background: $hero-bg;
-	// background: rgba();
-	// color: map-get($global-colors, white);
 	padding-top: 3em;
 	padding-bottom: 3em;
-	// @include breakpoint($lap-small) {
-	// 	text-align: center;
+	@include media($lap-small) {
+		padding-top: 5em;
+		padding-bottom: 5em;
+		min-height: 15em;
+	}
+}
+
+.hero-intro {
+	@extend %g-row;
+	color: map-get($global-colors, white);
+	// text-align: center;
+}
+
+.hero-thoughts {
+	// @include media($lap-small) {
+	// 	background: url(../images/workspace.png) center center;
+	// 	color: map-get($global-colors, white);
+	// 	min-height: 20em;
 	// }
 }
 
@@ -29,14 +40,14 @@ $hero-bg: map-get($global-colors, blue);
 	font-family: $font-lato;
 	font-weight: 900;
 	margin-bottom: $base-unit-half;
-	@include breakpoint($lap-medium) {
+	@include media($lap-medium) {
 		font-size: $h1-font-size;
 	}
 }
 
 .hero-tagline {
 	font-size: $h5-font-size;
-	@include breakpoint($lap-medium) {
+	@include media($lap-medium) {
 		font-size: $h3-font-size;
 	}
 }

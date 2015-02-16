@@ -1,58 +1,28 @@
-// =======================================
-// Grid Settings
-// =======================================
+// // =======================================
+// // Grid Settings
+// // =======================================
 $grid-columns: (12);
 
-// ======================================
-// Grid Styles
-// ======================================
+// // ======================================
+// // Grid Styles
+// // ======================================
 %g-row,
 .g-row {
 	padding-left: $base-unit;
 	padding-right: $base-unit;
-	@include container($desk-small);
-	@include breakpoint($desk-small) {
+	@include outer-container(70em);
+	@include media($desk-medium) {
 		padding-left: 0;
 		padding-right: 0;
 	}
 }
 
-// Sets up 12 columns grid with classes and
-// placeholder selectors that can be extended.
+// // Sets up 12 columns grid with classes and
+// // placeholder selectors that can be extended.
 @for $i from 1 to $grid-columns + 1 {
 	%g-col-#{$i},
 	.g-col-#{$i} {
-		@include span($i of $grid-columns);
+		@include span-columns($i of $grid-columns);
 	}
-}
-
-// Sets up 12 columns responsive grid (resp)
-@for $i from 1 to $grid-columns + 1 {
-	%g-col-resp-#{$i},
-	.g-col-resp-#{$i} {
-		@include breakpoint($lap-small) {
-			@include span($i of $grid-columns);
-		}
-	}
-}
-
-// Sets up 12 columns responsive grid (resp)
-// using the gallery mixin
-@for $i from 1 to $grid-columns + 1 {
-	%g-gallery-resp-#{$i},
-	.g-gallery-resp-#{$i} {
-		@include full;
-		@include breakpoint($lap-small) {
-			@include gallery($i of $grid-columns);
-		}
-	}
-}
-
-// ======================================
-// Clears the last column in a row
-// ======================================
-.last-col,
-.lt-ie9 div[class^="g-"].last-col  {
-	@include omega;
 }
 

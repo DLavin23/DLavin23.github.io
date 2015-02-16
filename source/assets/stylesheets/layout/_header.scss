@@ -20,32 +20,36 @@ $header-border: 5px solid $header-color;
 	.logo {
 		@extend %text-align-center;
 		font-size: $h4-font-size;
-		@include breakpoint($lap-small) {
+		@include media($lap-small) {
 			float: left;
 		}
 	}
 }
 
 .nav-primary {
-	margin-top: $base-unit-quarter;
-	@include breakpoint($lap-small) {
+	@include media($lap-small) {
 		float: right;
 	}
 	a {
 		color: $header-color;
 		font-size: $base-font-size;
-		padding: $base-unit-half $base-unit-quarter;
-		@include breakpoint($palm-large) {
-			padding: $base-unit-quarter $base-unit-half;
-		}
+		padding: $base-unit-half;
+		position: relative;
 	}
 	a:hover {
-		border-bottom: 2px solid $header-color;
 		text-decoration: none;
+	}
+	a:hover:after {
+		content: '';
+		border-bottom: 3px solid $header-color;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
 	}
 	i {
 		display: none;
-		@include breakpoint($palm-large) {
+		@include media($palm-large) {
 			display: inline-block;
 		}
 	}

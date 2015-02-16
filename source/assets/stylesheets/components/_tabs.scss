@@ -1,0 +1,28 @@
+.tabs {
+	@extend %no-padding;
+	margin: 0 0 $base-unit 0;
+
+	li {
+		float: left;
+		list-style-type: none;
+		margin-right: 1%;
+		margin-bottom: $base-unit;
+		width: 49%;
+		@include media($lap-medium) {
+			display: inline-block;
+			float: none;
+			margin-bottom: 0;
+			width: auto;
+		}
+	}
+	button {
+		width: 100%;
+		@include media($lap-medium) {
+			width: auto;
+		}
+	}
+}
+
+.tabs .active .btn-hollow {
+	@include btn-style($btn-blue, $btn-white, $btn-radius);
+}

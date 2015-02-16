@@ -2,9 +2,13 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
+# http://middlemanapp.com/
 gem "middleman"
 gem "middleman-core"
 gem "middleman-blog"
+
+# https://rubygems.org/gems/nokogiri
+gem 'nokogiri', '~> 1.6.6.2'
 
 # Live-reloading plugin
 gem "middleman-livereload"
@@ -12,11 +16,11 @@ gem "middleman-livereload"
 # http://sass-lang.com/
 gem "sass"
 
-# http://susy.oddbird.net/
-gem "susy"
+# http://neat.bourbon.io/
+gem 'neat', '~> 1.7.1'
 
-# http://breakpoint-sass.com/
-gem "breakpoint"
+# http://bourbon.io/
+gem 'bourbon', '~> 4.2.0'
 
 # https://github.com/middleman/middleman-autoprefixer
 gem "middleman-autoprefixer"
