@@ -20,6 +20,7 @@ $image-radius: 8px;
 		font-size: $h3-font-size;
 	}
 }
+
 // =======================================
 // About Section
 // =======================================
@@ -54,6 +55,10 @@ $image-radius: 8px;
 	}
 }
 
+.link-spacing {
+	padding: $base-unit-quarter 0;
+}
+
 // =======================================
 // Thoughts Section
 // =======================================
@@ -68,6 +73,24 @@ $image-radius: 8px;
 	@include media($lap-small) {
 		@include span-columns(6 of 12);
 		@include omega(2n);
+	}
+}
+
+.thoughts-sidebar {
+	@include span-columns(12);
+	@include media($lap-medium) {
+		@include span-columns(4 of 12);
+	}
+}
+
+.thoughts-content {
+	@include span-columns(12);
+	@include media($lap-medium) {
+		@include span-columns(8 of 12);
+	}
+
+	article {
+		margin-bottom: $base-unit;
 	}
 }
 

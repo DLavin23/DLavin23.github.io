@@ -2,42 +2,94 @@
 // Header Settings
 // =============================================
 $header-color: map-get($global-colors, blue);
+$header-color-alt: map-get($global-colors, white);
 $header-border: 5px solid $header-color;
 
 // =============================================
 // Header Styles
 // =============================================
-.header-primary {
+.header {
 	@extend %clearfix;
-	@extend %pad-top;
-	@extend %pad-bottom;
-	border-top: $header-border;
+	padding-top: $base-unit-half;
+	padding-bottom: $base-unit-half;
+	@include media($lap-small) {
+		@include outer-container(70em);
+	}
 	a {
 		@extend %inline-block;
-		color: $header-color;
 		text-decoration: none;
-	}
-	.logo {
-		@extend %text-align-center;
-		font-size: $h4-font-size;
-		@include media($lap-small) {
-			float: left;
-		}
-	}
-}
-
-.nav-primary {
-	@include media($lap-small) {
-		float: right;
-	}
-	a {
-		color: $header-color;
-		font-size: $base-font-size;
-		padding: $base-unit-half;
-		position: relative;
 	}
 	a:hover {
 		text-decoration: none;
+	}
+	.logo {
+		font-size: $h4-font-size;
+		float: left;
+	}
+}
+
+.header-wrap {
+	@extend %clearfix;
+	padding: $base-unit-half $base-unit;
+	@include media($lap-small) {
+		float: left;
+	}
+}
+
+.btn-menu {
+	background: transparent;
+	color: $header-color;
+	float: right;
+	font-size: $h6-font-size;
+	padding: $base-unit-quarter;
+	@include media($lap-small) {
+		display: none;
+	}
+	&:before {
+		@include fa-icon('\f0c9', before);
+	}
+	&.active:before {
+		@include fa-icon('\f00d', before);
+	}
+}
+
+.nav.is-open {
+	margin-top: 0;
+}
+
+.nav {
+	background: $header-color;
+	margin-top: -195px;
+	padding-top: $base-unit-half;
+	@include transition(margin 0.5s ease-in-out);
+	@include media($lap-small) {
+		@include transition(none);
+		background: none;
+		float: right;
+		margin-top: 0;
+	}
+	ul {
+		@extend %no-margin;
+		@extend %no-padding;
+	}
+}
+
+.nav-item {
+	list-style-type: none;
+	@include media($lap-small) {
+		display: inline-block;
+	}
+	a {
+		color: $header-color-alt;
+		padding: $base-unit * 0.75;
+		text-align: center;
+		width: 100%;
+		@include media($lap-small) {
+			color: $header-color;
+			padding: $base-unit-half;
+			position: relative;
+			width: auto;
+		}
 	}
 	a:hover:after {
 		content: '';
@@ -46,11 +98,5 @@ $header-border: 5px solid $header-color;
 		left: 0;
 		position: absolute;
 		width: 100%;
-	}
-	i {
-		display: none;
-		@include media($palm-large) {
-			display: inline-block;
-		}
 	}
 }

@@ -22,7 +22,9 @@ $grid-columns: (12);
 @for $i from 1 to $grid-columns + 1 {
 	%g-col-#{$i},
 	.g-col-#{$i} {
-		@include span-columns($i of $grid-columns);
+		@include media($lap-small) {
+			@include span-columns($i of $grid-columns);
+		}
 	}
 }
 

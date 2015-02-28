@@ -45,12 +45,14 @@ body {
   background-color: $base-background-color;
   color: $base-font-color;
   font-family: $base-font-family;
-  // font-weight: ;
   // font-size: 90%;
   line-height: $base-line-height;
   // @include breakpoint($lap-small) {
   //   font-size: 100%;
   // }
+  @include media($lap-small) {
+    border-top: 5px solid map-get($global-colors, blue);
+  }
 }
 
 p {

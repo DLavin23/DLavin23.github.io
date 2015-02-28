@@ -1,4 +1,4 @@
-.tabs {
+.tab-control {
 	@extend %no-padding;
 	margin: 0 0 $base-unit 0;
 
@@ -22,6 +22,14 @@
 		}
 	}
 }
+
+// .tab-content {
+// 	display: none;
+// }
+
+// .tab-content.active {
+// 	display: block;
+// }
 
 .tabs .active .btn-hollow {
 	@include btn-style($btn-blue, $btn-white, $btn-radius);

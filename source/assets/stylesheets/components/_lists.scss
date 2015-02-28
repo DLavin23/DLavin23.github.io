@@ -19,6 +19,23 @@ dl {
 	}
 }
 
+%no-style,
+.no-style {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.list-inline {
+	margin: 0;
+	padding: 0;
+
+	li {
+		float: left;
+		margin-right: $base-unit-half;
+	}
+}
+
 .social-list {
 	@extend %clearfix;
 	@extend %no-margin;
@@ -40,11 +57,23 @@ dl {
 
 %list-inline,
 .list-inline {
-	@extend %no-margin;
-	@extend %no-padding;
-	@extend %text-align-center;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 
 	li {
-		@extend %inline-block;
+		display: inline-block;
+	}
+}
+
+%list-block,
+.list-block {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+
+	li {
+		display: block;
+		width: 100%;
 	}
 }

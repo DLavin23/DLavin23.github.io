@@ -16,8 +16,8 @@
 		</div>
 
 		<div class="about-content">
-			<p>Currently, I work at <a href="http://www.leapfrogonline.com/">Leapfrog Online</a>, where I focus on building scalable and maintainble user interfaces that work beautifully across all platforms (responsive design). I believe <a href="https://developers.google.com/speed/pagespeed/insights/?url=dlavin23.github.io">performance</a> IS design. I strive to write clean and understandable code using object oriented and <a href="https://smacss.com/">SMACSS</a> based principles. I speed up and automate front end workflows with tools like gulp and have experience working with tools, libraries and frameworks like: node, express, middleman, ruby on rails, jQuery, Angular, and Sass.</p>
-			<p>Outside of work, I enjoy spending time with my wife, traveling, reading, learning new things, drinking unnecessary amounts of <a href="http://revbrew.com/home">beer</a> &amp; <a href="http://www.heritagebicycles.com/">coffee</a>, and trying all of great <a href="http://www.yelp.com/search?find_desc=Restaurants&find_loc=Chicago%2C+IL&ns=1#start=0&sortby=review_count">food</a> the Windy City has to offer. When the Chicago weather permits, I love spending time outdoors. In the summer you can usually find me running along the lake, attempting to golf, or playing sand volleyball and basketball.</p>
+			<p>Currently, I work at <a href="http://www.leapfrogonline.com/">Leapfrog Online</a>, where I focus on building scalable and maintainble user interfaces that work beautifully across all platforms (responsive design). I believe <a href="https://developers.google.com/speed/pagespeed/insights/?url=dan-lavin.com">performance</a> IS design. I strive to write clean and understandable code using object oriented and <a href="https://smacss.com/">SMACSS</a> based principles. I speed up and automate front end workflows with tools like gulp and have experience working with tools, libraries and frameworks like: node, express, middleman, ruby on rails, jQuery, Angular, and Sass.</p>
+			<p>Outside of work, I enjoy spending time with my wife, traveling, reading, learning new things, drinking unnecessary amounts of <a href="http://revbrew.com/home"><span class="link-spacing">beer</span></a> &amp; <a href="http://www.heritagebicycles.com/"><span class="link-spacing">coffee</span></a>, and trying all of great <a href="http://www.yelp.com/search?find_desc=Restaurants&find_loc=Chicago%2C+IL&ns=1#start=0&sortby=review_count">food</a> the Windy City has to offer. When the Chicago weather permits, I love spending time outdoors. In the summer you can usually find me running along the lake, attempting to golf, or playing sand volleyball and basketball.</p>
 		</div>
 	</div>
 </section>
@@ -45,4 +45,82 @@
 	</div>
 </section>
 
-<%= partial "playground" %>
+<section class="playground">
+	<div class="g-row">
+		<header>
+			<h3 class="section-headline">Playground</h3>
+		</header>
+	</div>
+
+	<div class="g-row">
+		<div class="playground-content">
+			<ul class="tab-control">
+				<li class="tab-item"><button class="btn btn-hollow">Personal</button></li>
+				<li class="tab-item"><button class="btn btn-hollow">Work</button></li>
+			</ul>
+
+			<div class="tab-content active" class="tab-1">
+				<p>This is a place to showcase code and design related stuff that I do...</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam illo excepturi a quia eum fugiat cupiditate! Fuga ratione minus sit, id porro dolores dolorem, voluptates, expedita officiis facere aliquid, obcaecati?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat neque veritatis recusandae autem mollitia ullam laboriosam animi quaerat id repudiandae deleniti minima quis maiores eveniet culpa accusamus voluptatibus, nesciunt facilis.</p>
+			</div>
+
+			<div class="tab-content" class="tab-2">
+				<p>This is a place to showcase code and design related stuff that I do...</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam illo excepturi a quia eum fugiat cupiditate! Fuga ratione minus sit, id porro dolores dolorem, voluptates, expedita officiis facere aliquid, obcaecati?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat neque veritatis recusandae autem mollitia ullam laboriosam animi quaerat id repudiandae deleniti minima quis maiores eveniet culpa accusamus voluptatibus, nesciunt facilis.</p>
+			</div>
+		</div>
+
+		<div class="playground-gallery">
+			<div class="tab-content active" class="tab-1">
+				<ul>
+					<li>
+						<a href="#">
+							<%= image_tag "codepen-buttons.png", :class => "", :alt => "CodePen" %>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<%= image_tag "codepen-buttons.png", :class => "", :alt => "CodePen" %>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<%= image_tag "codepen-buttons.png", :class => "", :alt => "CodePen" %>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<%= image_tag "codepen-buttons.png", :class => "", :alt => "CodePen" %>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tab-content" data="tab-2">
+				<ul>
+					<li>
+						<a href="#">
+							<%= image_tag "tech-blog.png", :class => "", :alt => "Tech Blog" %>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<%= image_tag "tech-blog.png", :class => "", :alt => "Tech Blog" %>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<%= image_tag "tech-blog.png", :class => "", :alt => "Tech Blog" %>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<%= image_tag "tech-blog.png", :class => "", :alt => "Tech Blog" %>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+

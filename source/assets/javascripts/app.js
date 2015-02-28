@@ -1,31 +1,24 @@
-angular.module('app', [function() {
-	console.log('hello, world!');
-}])
+document.addEventListener("DOMContentLoaded", function() {
+  console.log('loaded vanilla');
 
-.controller('AppCtrl', ['$scope', function($scope){
-  console.log('App controller');
-}])
+  var navButton  = document.querySelector('.btn-menu'),
+      navMenu     = document.querySelector('.nav'),
+      tabButton  = document.querySelector('.tab-btn'),
+      tabItem    = document.querySelector('.tab-item'),
+      tabContent = document.querySelector('.tab-content');
 
-.controller('TabsCtrl', ['$scope', function ($scope) {
-		console.log('tabs');
-    // $scope.tabs = [{
-    //         title: 'One',
-    //         url: 'one.tpl.html'
-    //     }, {
-    //         title: 'Two',
-    //         url: 'two.tpl.html'
-    //     }, {
-    //         title: 'Three',
-    //         url: 'three.tpl.html'
-    // }];
+  navButton.onclick = function() {
+    // document.body.classList.toggle('is-open');
+    this.classList.toggle('active');
+    navMenu.classList.toggle('is-open');
+  };
 
-    // $scope.currentTab = 'one.tpl.html';
+});
 
-    // $scope.onClickTab = function (tab) {
-    //     $scope.currentTab = tab.url;
-    // }
+// angular.module('app', [function() {
+// 	console.log('hello, world!');
+// }])
 
-    // $scope.isActiveTab = function(tabUrl) {
-    //     return tabUrl == $scope.currentTab;
-    // }
-}]);
+// .controller('AppCtrl', ['$scope', function($scope){
+//   console.log('App controller');
+// }]);
