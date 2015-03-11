@@ -23,25 +23,10 @@ $hero-blue-dark: darken($hero-blue, 10%);
 .hero-intro {
 	@extend %g-row;
 	color: map-get($global-colors, white);
-	text-shadow: 1px 1px 1px darken($header-color, 5%);
-	@include animation(scale 1.0s ease-in);
+	text-shadow: 2px 2px 2px darken($header-color, 10%);
+	@include animation(heroIntro 1.2s ease-in);
+	@include transition(all 1.2s ease-in);
 }
-
-// .hero-thoughts {
-// 	@include media($lap-small) {
-// 		background: transparent url(../images/workspace.jpg) top center;
-// 		color: map-get($global-colors, white);
-// 		min-height: 30em;
-// 	}
-// }
-
-// .hero-playground {
-// 	@include media($lap-small) {
-// 		background: transparent url(../images/ux-notepad.jpg) top center;
-// 		color: map-get($global-colors, white);
-// 		min-height: 30em;
-// 	}
-// }
 
 .hero-headline {
 	font-size: $h3-font-size;

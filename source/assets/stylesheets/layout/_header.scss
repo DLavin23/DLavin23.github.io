@@ -10,8 +10,6 @@ $header-border: 5px solid $header-color;
 // =============================================
 .header {
 	@extend %clearfix;
-	padding-top: $base-unit-half;
-	padding-bottom: $base-unit-half;
 	@include media($lap-small) {
 		@include outer-container(70em);
 	}
@@ -22,10 +20,11 @@ $header-border: 5px solid $header-color;
 	a:hover {
 		text-decoration: none;
 	}
-	.logo {
-		font-size: $h4-font-size;
-		float: left;
-	}
+}
+
+.logo {
+	font-size: $h4-font-size;
+	float: left;
 }
 
 .header-wrap {
@@ -59,7 +58,7 @@ $header-border: 5px solid $header-color;
 
 .nav {
 	background: $header-color;
-	margin-top: -195px;
+	margin-top: -185px;
 	padding-top: $base-unit-half;
 	@include transition(margin 0.5s ease-in-out);
 	@include media($lap-small) {
@@ -84,6 +83,7 @@ $header-border: 5px solid $header-color;
 		padding: $base-unit * 0.75;
 		text-align: center;
 		width: 100%;
+		@include transition(transform 0.5s ease-in-out);
 		@include media($lap-small) {
 			color: $header-color;
 			padding: $base-unit-half;
@@ -91,12 +91,18 @@ $header-border: 5px solid $header-color;
 			width: auto;
 		}
 	}
-	a:hover:after {
-		content: '';
-		border-bottom: 3px solid $header-color;
-		bottom: 0;
-		left: 0;
-		position: absolute;
-		width: 100%;
+	a:hover {
+		@include media($lap-small) {
+			@include transform(translateY(-0.25em));
+			color: darken($header-color, 5%);
+		}
 	}
+	// a:hover:after {
+	// 	content: '';
+	// 	border-bottom: 3px solid $header-color;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	position: absolute;
+	// 	width: 100%;
+	// }
 }

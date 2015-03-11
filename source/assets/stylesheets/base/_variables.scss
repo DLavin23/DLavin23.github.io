@@ -15,33 +15,6 @@ $global-colors: (
 	slate: #507790
 );
 
-// darkblue:#4e5571
-// gray:#8a8d9c;
-// blue: #028CDF
-
-
-// $color-gray: #adadad;
-// $color-gray-light: lighten($color-gray, 20%);
-// $color-gray-dark: darken($color-gray, 20%);
-
-
-
-// $color-blue: #028CDF;
-// $color-blue-light: lighten($color-blue, 10%);
-// $color-blue-dark: #353D46;
-
-// $color-green: #245c3c;
-// $color-green-light: lighten($color-green, 10%);
-// $color-green-dark: darken($color-green, 10%);
-
-// $color-yellow: #ee9d26;
-// $color-yellow-light: lighten($color-yellow, 10%);
-// $color-yellow-dark: darken($color-yellow, 10%);
-
-// $color-red: #DB4437;
-// $color-red-light: lighten($color-red, 10%);
-// $color-red-dark: darken($color-red, 10%);
-
 // =============================================
 // Global Base Variables
 // =============================================
@@ -57,13 +30,9 @@ $font-weight-extra-bold: 900;
 $base-font-family: $font-lato;
 $base-font-size: 1em;
 $base-background-color: map-get($global-colors, white);
-// $base-border-color: $color-gray-light;
-// $base-border: 1px solid $base-border-color;
 $base-border-radius: 0.25em;
 $base-font-color: map-get($global-colors, black);
 $base-line-height: $base-font-size * 1.4;
-// $base-border-color: $color-gray-light;
-// $base-border: 1px solid $base-border-color;
 $base-link-color: darken(#53aee0, 10%);
 $hover-link-color: lighten($base-link-color, 10%);
 

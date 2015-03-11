@@ -2,6 +2,7 @@
 // Main Layout Settings
 // =======================================
 $section-color-black: map-get($global-colors, black);
+$section-color-blue: map-get($global-colors, dark-blue);
 $image-radius: 8px;
 
 %section-spacing,
@@ -11,11 +12,10 @@ $image-radius: 8px;
 
 .section-headline {
 	border-bottom: 1px solid map-get($global-colors, light-gray);
-	color: map-get($global-colors, dark-blue);;
+	color: $section-color-blue;
+	font-size: $h4-font-size;
 	margin-bottom: 0.75em;
 	padding-bottom: $base-unit-quarter;
-	font-size: $h4-font-size;
-	// text-align: center;
 	@include media($lap-small) {
 		font-size: $h3-font-size;
 	}
@@ -95,7 +95,7 @@ $image-radius: 8px;
 }
 
 .thoughts-headline {
-	font-size: $h6-font-size;
+	font-size: $h5-font-size;
 	margin-bottom: $base-unit-half;
 	a {
 		color: map-get($global-colors, dark-blue);
@@ -108,6 +108,14 @@ $image-radius: 8px;
 		color: map-get($global-colors, blue);
 		font-size: 80%;
 	}
+}
+
+.thoughts-sidebar-headline {
+	@extend %clearfix;
+	border-bottom: 1px solid map-get($global-colors, gray);
+	font-size: $h6-font-size;
+	margin-bottom: $base-unit-half;
+	padding-bottom: $base-unit-half;
 }
 
 .article-wrapper {

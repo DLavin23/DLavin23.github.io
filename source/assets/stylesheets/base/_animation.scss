@@ -1,0 +1,8 @@
+@include keyframes(heroIntro) {
+	from {
+		@include transform(translateY(-1em));
+	}
+	to {
+		@include transform(translateY(0));
+	}
+}

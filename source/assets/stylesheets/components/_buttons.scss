@@ -50,6 +50,7 @@ $btn-radius-none: 0;
 
 .btn-primary {
 	@include btn-style($btn-blue, $btn-white, $btn-radius);
+	@include transition(background 0.5s ease-in-out)
 }
 
 .btn-hollow {
@@ -57,7 +58,7 @@ $btn-radius-none: 0;
 	border: 1px solid $btn-blue;
 	border-radius: $btn-radius;
 	color: $btn-blue;
-	@include transition(background 0.3s ease-in);
+	@include transition(background 0.5s ease-in-out);
 
 	&:hover {
 		background: $btn-blue;
@@ -71,3 +72,6 @@ $btn-radius-none: 0;
 	padding: $btn-small;
 }
 
+.btn-medium {
+	padding: $base-unit-half;
+}

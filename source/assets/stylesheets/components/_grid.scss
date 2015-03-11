@@ -1,11 +1,11 @@
-// // =======================================
-// // Grid Settings
-// // =======================================
+//=======================================
+//Grid Settings
+//=======================================
 $grid-columns: (12);
 
-// // ======================================
-// // Grid Styles
-// // ======================================
+//======================================
+//Grid Styles
+//======================================
 %g-row,
 .g-row {
 	padding-left: $base-unit;
@@ -17,9 +17,7 @@ $grid-columns: (12);
 	}
 }
 
-// // Sets up 12 columns grid with classes and
-// // placeholder selectors that can be extended.
-@for $i from 1 to $grid-columns + 1 {
+@for $i from 1 through $grid-columns {
 	%g-col-#{$i},
 	.g-col-#{$i} {
 		@include media($lap-small) {
