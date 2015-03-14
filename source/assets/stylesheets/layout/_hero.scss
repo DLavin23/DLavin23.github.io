@@ -24,8 +24,8 @@ $hero-blue-dark: darken($hero-blue, 10%);
 	@extend %g-row;
 	color: map-get($global-colors, white);
 	text-shadow: 2px 2px 2px darken($header-color, 10%);
-	@include animation(heroIntro 1.2s ease-in);
-	@include transition(all 1.2s ease-in);
+	@include animation(heroIntro 1s ease-in);
+	@include transition(all 1s ease-in);
 }
 
 .hero-headline {

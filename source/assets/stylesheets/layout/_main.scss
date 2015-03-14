@@ -119,8 +119,10 @@ $image-radius: 8px;
 }
 
 .article-wrapper {
-	// @include outer-container(58em);
-	@include outer-container;
+	padding-left: $base-unit;
+	padding-right: $base-unit;
+	@include outer-container(60em);
+	// @include outer-container;
 }
 
 // =======================================

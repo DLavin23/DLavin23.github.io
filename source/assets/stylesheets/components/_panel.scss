@@ -1,0 +1,11 @@
+$panel-gray: lighten(map-get($global-colors, gray), 10%);
+
+.panel {
+	border: 1px solid darken($panel-gray, 10%);
+	background: $panel-gray;
+	overflow: hidden;
+	padding-top: $base-unit-quarter;
+	padding-right: $base-unit-half;
+	padding-left: $base-unit-half;
+	margin-bottom: $base-unit;
+}

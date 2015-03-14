@@ -19,12 +19,9 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   </head>
   <body class="body">
-  <!-- <body class="<%= page_classes %>" data-ng-controller="AppCtrl"> -->
-
     <header class="header">
       <%= partial "header" %>
     </header>
-
 
     <section class="main" role="main">
       <%= yield %>
@@ -34,8 +31,7 @@
       <%= partial "footer" %>
     </footer>
 
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script> -->
-    <script src="assets/javascripts/app.js"></script>
+    <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    <%= javascript_include_tag 'assets/javascripts/app' %>
   </body>
 </html>
