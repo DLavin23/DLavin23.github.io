@@ -30,3 +30,7 @@ gem "middleman-deploy"
 
 # https://github.com/plasticine/middleman-imageoptim
 gem 'middleman-imageoptim'
+
+gem "middleman-syntax"
+
+gem "redcarpet"

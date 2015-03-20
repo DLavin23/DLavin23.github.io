@@ -79,11 +79,12 @@ $header-border: 5px solid $header-color;
 		display: inline-block;
 	}
 	a {
+		border-radius: 15px;
 		color: $header-color-alt;
 		padding: $base-unit * 0.75;
 		text-align: center;
 		width: 100%;
-		@include transition(transform 0.5s ease-in-out);
+		@include transition(all 0.5s ease-in-out);
 		@include media($lap-small) {
 			color: $header-color;
 			padding: $base-unit-half;
@@ -92,17 +93,6 @@ $header-border: 5px solid $header-color;
 		}
 	}
 	a:hover {
-		@include media($lap-small) {
-			@include transform(translateY(-0.25em));
-			color: darken($header-color, 5%);
-		}
+		text-decoration: underline;
 	}
-	// a:hover:after {
-	// 	content: '';
-	// 	border-bottom: 3px solid $header-color;
-	// 	bottom: 0;
-	// 	left: 0;
-	// 	position: absolute;
-	// 	width: 100%;
-	// }
 }

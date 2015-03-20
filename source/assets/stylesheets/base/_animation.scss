@@ -1,6 +1,6 @@
 @include keyframes(heroIntro) {
 	from {
-		@include transform(translateY(-2em));
+		@include transform(translateY(-1.5em));
 	}
 	to {
 		@include transform(translateY(0));

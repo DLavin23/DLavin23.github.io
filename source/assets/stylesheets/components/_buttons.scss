@@ -32,7 +32,7 @@ $btn-radius-none: 0;
 %btn,
 .btn {
   appearance: value;
-	border-radius: 0;
+	border-radius: $btn-radius;
 	border: none;
 	cursor: pointer;
 	display: inline-block;
@@ -49,14 +49,25 @@ $btn-radius-none: 0;
 }
 
 .btn-primary {
-	@include btn-style($btn-blue, $btn-white, $btn-radius);
-	@include transition(background 0.5s ease-in-out)
+	@include transition(all 0.2s ease-in-out);
+	background: $btn-blue;
+	border: 1px solid darken($btn-blue, 10%);
+	border-radius: $btn-radius;
+	color: $btn-white;
+	box-shadow: darken($btn-blue, 10%) 0 4px 0 0, $btn-blue 0 1px 0 inset;
+
+	&:hover {
+		color: $btn-white;
+		text-decoration: none;
+	}
+	&:active {
+		box-shadow: darken($btn-blue, 10%) 0 1px 0 0, $btn-blue 0 1px 0 inset;
+	}
 }
 
 .btn-hollow {
 	background: $btn-white;
 	border: 1px solid $btn-blue;
-	border-radius: $btn-radius;
 	color: $btn-blue;
 	@include transition(background 0.5s ease-in-out);
 

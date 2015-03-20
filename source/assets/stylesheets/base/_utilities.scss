@@ -1,0 +1,129 @@
+// =======================================
+// Silent, extendable box model objects
+// =======================================
+.no-margin {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.vertical-margin {
+	margin-top: $base-unit;
+	margin-bottom: $base-unit;
+}
+
+.horizontal {
+	margin-right: $base-unit;
+	margin-left: $base-unit;
+}
+
+.margin-bottom {
+  margin-bottom: $base-unit;
+}
+
+.margin-top {
+  margin-top: $base-unit;
+}
+
+.margin-right {
+	margin-right: $base-unit;
+}
+
+.margin-left {
+	margin-left: $base-unit;
+}
+
+.pad-bottom {
+  padding-bottom: $base-unit;
+}
+
+.pad-top {
+  padding-top: $base-unit;
+}
+
+.pad-left {
+  padding-left: $base-unit;
+}
+
+.pad-right {
+  padding-right: $base-unit;
+}
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.clearfix {
+	&:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+  	clear: both;
+  }
+}
+
+.inline {
+	display: inline;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.block {
+	display: block;
+}
+
+.margin-auto {
+	margin: 0 auto;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.overflow-visible {
+	overflow: visible;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.content-empty {
+	content: '';
+}
+
+.fixed-bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+.fixed-top {
+	position: absolute;
+	top: 0;
+}
+
+.remove-appearance {
+	-webkit-appearance: none;
+  	 -moz-appearance: none;
+  		-ms-appearance: none;
+  		 -o-appearance: none;
+  				appearance: none;
+}

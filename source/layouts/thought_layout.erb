@@ -14,6 +14,7 @@
 
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
     <%= stylesheet_link_tag 'assets/stylesheets/site' %>
+    <%= stylesheet_link_tag 'assets/stylesheets/highlight' %>
     <link rel="canonical" href="http://dlavin23.github.io">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -26,8 +27,7 @@
     <section class="main" role="main">
       <section class="hero">
         <header class="hero-intro">
-          <h2 class="hero-headline">Article Hero...</h2>
-          <h3 class="hero-tagline">I can be your Hero, baby!!</h3>
+          <h2 class="article-headline"><%= current_article.title %></h2>
         </header>
       </section>
 

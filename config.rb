@@ -10,7 +10,7 @@ activate :blog do |blog|
   blog.taglink = "tags/{tag}.html"
   blog.layout = "thought_layout"
   # blog.summary_separator = /(READMORE)/
-  blog.summary_length = 350
+  blog.summary_length = 310
   blog.year_link = "{year}.html"
   blog.month_link = "{year}/{month}.html"
   blog.day_link = "{year}/{month}/{day}.html"
@@ -75,6 +75,11 @@ set :images_dir, 'assets/images'
 
 # Auto-prefix vendor prefixes to styles post-processing
 activate :autoprefixer
+
+# Activate syntax highlighting
+set :markdown_engine, :redcarpet
+set :markdown, :smartypants => true, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
+activate :syntax
 
 # Methods defined in the helpers block are available in templates
 # helpers do
