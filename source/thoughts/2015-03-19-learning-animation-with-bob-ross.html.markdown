@@ -1,6 +1,6 @@
 ---
 title: Learning Animation, with Bob Ross
-date: 2015-03-19 02:15 UTC
+date: 2015-03-19
 tags: animation, design, CSS
 ---
 
