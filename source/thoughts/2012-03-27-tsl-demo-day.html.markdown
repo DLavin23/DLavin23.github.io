@@ -1,5 +1,5 @@
 ---
-title: "Code Academy Demo Day"
+title: Code Academy Demo Day
 date: 2012-03-27
 tags: code academy, starter league, demo day, learning
 ---

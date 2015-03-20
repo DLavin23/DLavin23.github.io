@@ -1,7 +1,7 @@
 ---
-title: "Getting Started with Responsive Design"
+title: Getting Started with Responsive Design
 date: 2014-04-11
-tags: responsive web design
+tags: responsive, web, design
 ---
 
 <!-- Introduction -->
@@ -9,7 +9,7 @@ It's been a little over 3 years since <a href="http://ethanmarcotte.com/" target
 ">"Responsive Web Design"</a>, and I think we can all agree that it has proven to be more than just a fad. As the Web continues to evolve into a larger part of our everyday lives, it will become
 increasingly more important to deliver optimal user experiences for the growing number of Web-enabled devices and contexts.
 
-<img src="/images/flat-rwd.png" alt="rwd-image">
+<!-- <img src="/assets/images/flat-rwd.png" alt="rwd-image"> -->
 
 > "Day by day, the number of devices, platforms, and browsers that need to work with your site grows. Responsive web design represents a fundamental shift in how we'll build websites for the decade to come." *Jeffery Veen*
 

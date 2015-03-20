@@ -1,5 +1,5 @@
 ---
-title: "Code Academy: Week 4"
+title: Code Academy Week 4
 date: 2012-02-06
 tags: codeacademy, starter league, learning, rails
 ---

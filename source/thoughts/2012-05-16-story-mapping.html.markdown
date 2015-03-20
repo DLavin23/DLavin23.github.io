@@ -1,5 +1,5 @@
 ---
-title: "Story Mapping Workshop"
+title: Story Mapping Workshop
 date: 2012-05-16
 tags: story mapping, agile, ux
 ---

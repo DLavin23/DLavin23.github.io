@@ -1,5 +1,5 @@
 ---
-title: "Code Academy: Week 1"
+title: Code Academy Week 1
 date: 2012-01-13
 tags: codeacademy, starter league, learning
 ---

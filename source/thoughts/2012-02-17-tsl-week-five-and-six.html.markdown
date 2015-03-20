@@ -1,5 +1,5 @@
 ---
-title: "Code Academy: Weeks 5 and 6"
+title: Code Academy Weeks 5 and 6
 date: 2012-02-17
 tags: codeacademy, starter league, learning
 ---

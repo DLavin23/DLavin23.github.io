@@ -1,5 +1,5 @@
 ---
-title: "Code Academy: Week 2"
+title: Code Academy Week 2
 date: 2012-01-21
 tags: codeacademy, starter league, learning, rails, pair programming
 ---

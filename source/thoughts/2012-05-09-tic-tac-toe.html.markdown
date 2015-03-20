@@ -1,5 +1,5 @@
 ---
-title: "Lessons Learned Building a Child's game"
+title: Lessons Learned Building a Child's game
 date: 2012-05-09
 tags: ruby, learning
 ---
