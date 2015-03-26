@@ -6,13 +6,13 @@ $global-colors: (
 	black: #49494d,
 	gray: #adadad,
 	light-gray: lighten(gray, 30%),
-	dark-gray: darken(gray, 10%),
+	dark-gray: #657380,
 	blue: #027cc6,
 	dark-blue: #4e5571,
 	green: #245c3c,
 	red: #DB4437,
 	yellow: #ee9d26,
-	slate: #507790
+	slate: #5a6772
 );
 
 // =============================================
@@ -31,8 +31,8 @@ $base-font-family: $font-lato;
 $base-font-size: 1em;
 $base-background-color: map-get($global-colors, white);
 $base-border-radius: 0.25em;
-$base-font-color: map-get($global-colors, black);
-$base-line-height: $base-font-size * 1.4;
+$base-font-color: map-get($global-colors, dark-gray);
+$base-line-height: $base-font-size * 1.45;
 $base-link-color: darken(#53aee0, 10%);
 $hover-link-color: lighten($base-link-color, 10%);
 

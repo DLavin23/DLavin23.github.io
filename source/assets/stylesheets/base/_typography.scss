@@ -45,11 +45,7 @@ body {
   background-color: $base-background-color;
   color: $base-font-color;
   font-family: $base-font-family;
-  font-size: 90%;
   line-height: $base-line-height;
-  @include breakpoint($lap-small) {
-    font-size: 100%;
-  }
   @include media($lap-small) {
     border-top: 5px solid map-get($global-colors, blue);
   }
@@ -77,11 +73,18 @@ a:active {
 
 blockquote {
   border-left: 5px solid map-get($global-colors, blue);
-  margin: $base-unit 0;
-  padding-left: $base-unit-half;
+  font-size: $base-font-size;
+  font-style: italic;
+  margin: ($base-unit * 2) 0;
+  padding-left: $base-unit;
 }
 
 pre {
   border-radius: 5px;
   padding: $base-unit;
+}
+
+iframe {
+  padding: ($base-unit * 2) 0;
+  max-width: 100%;
 }

@@ -15,3 +15,11 @@
 		color: map-get($global-colors, dark-blue);
 	}
 }
+
+.copyright {
+	@include span-columns(5 of 12);
+}
+
+.social {
+	@include span-columns(7 of 12);
+}

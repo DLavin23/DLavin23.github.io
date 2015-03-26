@@ -9,7 +9,7 @@ It's been a little over 3 years since <a href="http://ethanmarcotte.com/" target
 ">"Responsive Web Design"</a>, and I think we can all agree that it has proven to be more than just a fad. As the Web continues to evolve into a larger part of our everyday lives, it will become
 increasingly more important to deliver optimal user experiences for the growing number of Web-enabled devices and contexts.
 
-<!-- <img src="/assets/images/flat-rwd.png" alt="rwd-image"> -->
+<img src="/assets/images/flat-rwd.png" alt="rwd-image">
 
 > "Day by day, the number of devices, platforms, and browsers that need to work with your site grows. Responsive web design represents a fundamental shift in how we'll build websites for the decade to come." *Jeffery Veen*
 
@@ -26,7 +26,7 @@ how we decided to implement it at our company.
 For those new to Responsive Web Design (RWD), it is an approach, or set of techniques, that when applied, delivers an elegant visual experience to the user interacting with it regardless of device,
 screen size, platform, and/or orientation.
 
-###At a high level, RWD is made up of the following concepts:
+####At a high level, RWD is made up of the following concepts:
 
 1. <a href="http://alistapart.com/article/fluidgrids">Fluid grids:</a> Contrary to a traditional fixed width layout, where the design is constrained to
 a fixed number of pixels, say 960, a fluid layout is designed so elements proportionally resize their widths in relation to one another using percentage-based values.

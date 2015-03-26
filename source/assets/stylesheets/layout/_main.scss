@@ -2,7 +2,7 @@
 // Main Layout Settings
 // =======================================
 $section-color-black: map-get($global-colors, black);
-$section-color-blue: map-get($global-colors, dark-blue);
+$section-color-blue: map-get($global-colors, slate);
 $image-radius: 8px;
 
 %section-spacing,
@@ -90,7 +90,7 @@ $image-radius: 8px;
 	}
 
 	article {
-		margin-bottom: $base-unit;
+		margin-bottom: $base-unit * 2.5;
 	}
 }
 
@@ -113,6 +113,7 @@ $image-radius: 8px;
 .thoughts-sidebar-headline {
 	@extend %clearfix;
 	border-bottom: 1px solid map-get($global-colors, gray);
+	color: map-get($global-colors, dark-blue);
 	font-size: $h6-font-size;
 	margin-bottom: $base-unit-half;
 	padding-bottom: $base-unit-half;
@@ -121,7 +122,7 @@ $image-radius: 8px;
 .article-wrapper {
 	padding-left: $base-unit;
 	padding-right: $base-unit;
-	@include outer-container(50em);
+	@include outer-container(48em);
 	// @include outer-container;
 
 	img {
@@ -129,6 +130,33 @@ $image-radius: 8px;
 		display: block;
 		max-width: 100%;
 		margin: 0 auto;
+	}
+	p {
+		font-size: 18px;
+		font-family: $font-open-sans;
+		line-height: 1.5;
+	}
+	h2,
+	h3 {
+		margin: 0 0 $base-unit-quarter;
+	}
+	h2 {
+		font-size: $h4-font-size;
+		@include breakpoint($lap-small) {
+			font-size: $h3-font-size;
+		}
+	}
+	h3 {
+		font-size: $h6-font-size;
+		@include breakpoint($lap-small) {
+			font-size: $h4-font-size;
+		}
+	}
+	h4 {
+		font-size: $h6-font-size;
+		@include breakpoint($lap-small) {
+			font-size: $h5-font-size;
+		}
 	}
 }
 

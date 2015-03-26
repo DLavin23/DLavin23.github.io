@@ -25,6 +25,7 @@ $header-border: 5px solid $header-color;
 .logo {
 	font-size: $h4-font-size;
 	float: left;
+	// text-shadow: 1px 1px 1px darken(map-get($global-colors, blue), 15%);
 }
 
 .header-wrap {
@@ -58,7 +59,7 @@ $header-border: 5px solid $header-color;
 
 .nav {
 	background: $header-color;
-	margin-top: -185px;
+	margin-top: -100px;
 	padding-top: $base-unit-half;
 	@include transition(margin 0.5s ease-in-out);
 	@include media($lap-small) {

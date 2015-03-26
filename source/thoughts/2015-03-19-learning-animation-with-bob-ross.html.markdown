@@ -3,10 +3,8 @@ title: Learning Animation, with Bob Ross
 date: 2015-03-19
 tags: animation, design, CSS
 ---
-
-I remember flipping through the channels one Saturday morning, trying to find something good to
-watch, when I suddenly came across a goofy looking man with a paintbrush and one of the best damn
-afros you've ever seen. That man was none other than Bob Ross, artist and host of the PBS series,
+I remember flipping through the channels one Saturday morning, trying to find something good to watch,
+when I suddenly came across a goofy looking man with a paintbrush and one of the best damn afros you've ever seen. That man was none other than Bob Ross, artist and host of the PBS series,
 "The Joys of Painting."
 
 ![Bob Ross](/assets/images/bob_ross.jpg)
