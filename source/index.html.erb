@@ -1,7 +1,7 @@
 <section>
 	<header>
-		<h2>Hello, I'm Dan...</h2>
-		<h3>Product Manager, Designer, Engineer</h3>
+		<h2>Hello, I'm Dan.</h2>
+		<h3>A Product Manager, Engineer, and Designer based in Chicago, IL.</h3>
 	</header>
 </section>
 
@@ -10,24 +10,23 @@
 		<h3>About Me</h3>
 	</header>
 
-	<p>Currently, I work at <a href="http://www.bellycard.com/">Belly</a>, where I focus on building scalable and maintainble user interfaces that work seamlessly across all platforms (see responsive design). I believe <a href="https://developers.google.com/speed/pagespeed/insights/?url=dan-lavin.com">performance</a> is design. I strive to write clean and understandable code using object oriented and <a href="https://smacss.com/">SMACSS</a> based principles. I speed up and automate front end workflows with gulp and have experience working with tools, libraries and frameworks such as: node, express, middleman, ruby on rails, bower, jQuery, Angular, and Sass. I try to approach every problem with a <a href="http://shop.oreilly.com/product/9780596518387.do">"beginners mind"</a> and strive to embrace constraints.</p>
-	<p>Outside of work, I enjoy spending time with my wife, traveling, reading, learning new things, drinking ample amounts of <a href="http://revbrew.com/home"><span class="link-spacing">beer</span></a> &amp; <a href="http://www.heritagebicycles.com/"><span class="link-spacing">coffee</span></a>, and trying all of great <a href="http://www.yelp.com/search?find_desc=Restaurants&find_loc=Chicago%2C+IL&ns=1#start=0&sortby=review_count">food</a> the Windy City has to offer. When the Chicago weather permits, I love spending time outdoors. In the summer you can usually find me running along the lake, attempting to golf, or playing sand volleyball.</p>
+	<p>I currently work at <a href="http://www.bellycard.com/">Belly</a>, where I focus on building scalable and maintainble user interfaces that work seamlessly across all platforms (see responsive design). I believe <a href="https://developers.google.com/speed/pagespeed/insights/?url=dan-lavin.com">performance</a> is design. I strive to write clean and understandable code using object oriented and <a href="https://smacss.com/">SMACSS</a> based principles. I speed up and automate front end workflows with gulp and have experience working with tools, libraries and frameworks such as: node, express, middleman, ruby on rails, bower, jQuery, Angular, and Sass. I try to approach every problem with a <a href="http://shop.oreilly.com/product/9780596518387.do">"beginners mind"</a> and strive to embrace constraints.</p>
+
+	<p>Outside of work, I enjoy spending time with my wife, traveling, reading, learning, drinking ample amounts of <a href="http://revbrew.com/home"><span >beer</span></a> &amp; <a href="http://www.heritagebicycles.com/"><span>coffee</span></a>, and trying all of great <a href="http://www.yelp.com/search?find_desc=Restaurants&find_loc=Chicago%2C+IL&ns=1#start=0&sortby=review_count">food</a> the Windy City has to offer. When the Chicago weather permits, I love spending time outdoors. In the summer you can usually find me running along the lake, attempting to golf, or playing sand volleyball.</p>
 </section>
 
 <section>
-	<div>
-		<h3>Recent Thoughts</h3>
-    <% blog.articles[0...4].each do |article| %>
-			<article>
-				<header>
-					<h5>
-						<%= link_to article.title, article %>
-						<span><%= article.date.strftime('%b %e') %></span>
-					</h5>
-				</header>
-				<p><%= article.summary %></p>
-				<a href="<%= article.url %>">Read more</a>
-			</article>
-    <% end %>
-	</div>
+	<h3>Recent Thoughts</h3>
+  <% blog.articles[0...4].each do |article| %>
+		<article>
+			<header>
+				<h5>
+					<%= link_to article.title, article %>
+					<span><%= article.date.strftime('%b %e') %></span>
+				</h5>
+			</header>
+			<p><%= article.summary %></p>
+			<a href="<%= article.url %>">Read more</a>
+		</article>
+  <% end %>
 </section>

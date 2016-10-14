@@ -1,0 +1,29 @@
+// ========================================
+// Typography
+// ========================================
+
+// Scale
+
+$base-font-size: 16px;
+
+$s-giga:    60px;
+$s-mega:    48px;
+
+$s-alpha:   36px;
+$s-bravo:   24px;
+$s-charlie: 21px;
+$s-delta:   18px;
+$s-echo:    $base-font-size;
+$s-foxtrot: 14px;
+$s-golf:    12px;
+$s-hotel:   11px;
+
+// Font families
+
+$font-family-helvetica: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-monospace: "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+
+$font-families: (
+  "helvetica", $font-family-helvetica
+  "monospace", $font-family-monospace
+);

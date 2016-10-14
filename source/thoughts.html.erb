@@ -3,33 +3,31 @@ pageable: true
 per_page: 10
 ---
 
-<section class="hero hero-thoughts">
-  <header class="hero-intro">
-    <h2 class="hero-headline">Thoughts on...</h2>
-    <h3 class="hero-tagline">Product Design, Development, and User Experience </h3>
+<section>
+  <header>
+    <h2>Thoughts on...</h2>
+    <h3>Product Design, Development, and User Experience </h3>
   </header>
 </section>
 
-<section class="thoughts">
-  <div class="g-row">
-    <div class="thoughts-content">
+<section>
+  <div>
+    <div>
       <% page_articles.each_with_index do |article, i| %>
         <article>
-          <h3 class="thoughts-headline">
-            <%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span>
-          </h3>
+          <h3><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h3>
           <%= article.summary %>
-          <a href="<%= article.url %>" class="btn btn-primary btn-medium">Read more <i class="fa fa-chevron-circle-right"></i></a>
+          <a href="<%= article.url %>">Read more</a>
         </article>
       <% end %>
     </div>
 
-    <aside class="thoughts-sidebar">
+    <aside>
       <header>
-        <h4 class="thoughts-sidebar-headline">Recent Articles</h4>
+        <h4>Recent Articles</h4>
       </header>
-      <div class="margin-bottom">
-        <ol class="no-style">
+      <div>
+        <ol>
           <% blog.articles[0...5].each do |article| %>
             <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
           <% end %>
@@ -37,24 +35,24 @@ per_page: 10
       </div>
 
       <header>
-        <h4 class="thoughts-sidebar-headline">Tags</h4>
+        <h4>Tags</h4>
       </header>
-      <div class="margin-bottom">
-        <ol class="list-inline pull-left">
+      <div>
+        <ol>
           <% blog.tags.each do |tag, articles| %>
-            <li class="margin-bottom">
-              <%= link_to "#{tag} (#{articles.size})", tag_path(tag), :class => 'btn btn-hollow btn-small' %>
+            <li>
+              <%= link_to "#{tag} (#{articles.size})", tag_path(tag) %>
             </li>
           <% end %>
         </ol>
       </div>
 
       <header>
-        <h4 class="thoughts-sidebar-headline">By Year</h4>
+        <h4>By Year</h4>
       </header>
-      <ol class="pull-left list-inline">
+      <ol>
         <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year), :class => 'btn btn-hollow btn-small' %></li>
+          <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
         <% end %>
       </ol>
     </aside>

@@ -7,18 +7,25 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
-    <title>Dan Lavin<%= ' - ' + current_article.title unless current_article.nil? %></title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Dan Lavin | Product Person <%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <meta name="author" content="Dan Lavin">
+    <meta name="description" content="Portfolio of Dan Lavin, a Chicago based product manager, designer, and developer">
+    <meta name="keywords" content="product management, product design, web development">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
     <%= stylesheet_link_tag 'assets/stylesheets/site' %>
     <link rel="canonical" href="http://dlavin23.github.io">
   </head>
-  <body class="bg-white-offset">
+  <body>
     <header>
-      <%= partial "header" %>
+      <nav role="navigation">
+        <ul>
+          <li><a href="/">Dan Lavin</a></li>
+          <li><a href="/thoughts.html">Thoughts</a></li>
+          <li><a href="mailto:daniel.e.lavin@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section role="main">
@@ -26,7 +33,14 @@
     </section>
 
     <footer>
-      <%= partial "footer" %>
+      <p>&copy; 2015 Dan Lavin</p>
+
+      <ul>
+        <li><a href="https://twitter.com/danlavin">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/lavindan">Linkedin</a></li>
+        <li><a href="https://github.com/DLavin23/">Github</li>
+        <li><a href="mailto:daniel.e.lavin@gmail.com">Email</a></li>
+      </ul>
     </footer>
 
     <%= javascript_include_tag 'assets/javascripts/app' %>
