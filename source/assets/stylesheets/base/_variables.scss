@@ -1,47 +1,32 @@
 // =============================================
 // Base Color Variables
 // =============================================
-$global-colors: (
-	white: #fff,
-	black: #49494d,
-	gray: #adadad,
-	light-gray: lighten(gray, 30%),
-	dark-gray: #657380,
-	blue: #027cc6,
-	dark-blue: #4e5571,
-	green: #245c3c,
-	red: #DB4437,
-	yellow: #ee9d26,
-	slate: #5a6772
-);
+
+$white: #fff;
+$white-offset: #fafafa; // #f6f6f6 | #fbfbfb
+$black: #49494d;
+$gray: #adadad;
+$gray-light: lighten(gray, 30%);
+$gray-dark: #657380;
+$blue: #027cc6;
+$blue-dark: #4e5571;
+$green: #245c3c;
+$red: #DB4437;
+$yellow: #ee9d26;
 
 // =============================================
 // Global Base Variables
 // =============================================
-$font-open-sans: "Open Sans", sans-serif;
-$font-lato: "Lato", sans-serif;
 $font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-fontAwesome: "FontAwesome";
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 $font-weight-extra-bold: 900;
 
-$base-font-family: $font-lato;
+$base-font-family: $font-helvetica;
 $base-font-size: 1em;
-$base-background-color: map-get($global-colors, white);
-$base-border-radius: 0.25em;
-$base-font-color: map-get($global-colors, dark-gray);
+$base-font-color: $gray-dark;
 $base-line-height: $base-font-size * 1.45;
-$base-link-color: darken(#53aee0, 10%);
-$hover-link-color: lighten($base-link-color, 10%);
-
-// =============================================
-// Spacing Variables
-// =============================================
-$base-unit: 1em;
-$base-unit-half: 0.5em;
-$base-unit-quarter: 0.25em;
 
 // =============================================
 // Breakpoint variables
@@ -57,6 +42,3 @@ $lap-large   : 60em;	// 960px
 $desk-small  : 65em;	// 1040px
 $desk-medium : 80em;	// 1280px
 $desk-large  : 90em; 	// 1440px
-
-$breakpoint-no-queries: false;
-$breakpoint-no-query-fallbacks: true;

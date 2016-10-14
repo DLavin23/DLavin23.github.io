@@ -1,39 +1,11 @@
 // =======================================
-// Vendor Imports
-// =======================================
-@import "bourbon";
-@import "neat";
-
-// =======================================
 // Base Imports
 // =======================================
 @import "base/variables";
-@import "base/extends/box_model";
-@import "base/extends/utilities";
-@import "base/mixins/misc";
 @import "base/normalize";
 @import "base/boilerplate";
-@import "base/typography";
-@import "base/animation";
+@import "base/colors";
 
 // =======================================
 // Components
 // =======================================
-@import "components/grid";
-@import "components/lists";
-@import "components/buttons";
-@import "components/tabs";
-@import "components/panel";
-
-// =======================================
-// Layout(s)
-// =======================================
-@import "layout/header";
-@import "layout/main";
-@import "layout/hero";
-@import "layout/footer";
-
-// =======================================
-// Shame Import
-// =======================================
-@import "shame/shame";

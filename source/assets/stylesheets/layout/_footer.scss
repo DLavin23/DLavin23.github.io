@@ -1,25 +1,25 @@
-// =============================================
-// Footer Settings
-// =============================================
+// // =============================================
+// // Footer Settings
+// // =============================================
 
-// =============================================
-// Footer Styles
-// =============================================
-.footer-primary {
-	@extend %pad-top;
-	@extend %pad-bottom;
-	background: lighten(map-get($global-colors, gray), 25%);
-	box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+// // =============================================
+// // Footer Styles
+// // =============================================
+// .footer-primary {
+// 	@extend %pad-top;
+// 	@extend %pad-bottom;
+// 	background: lighten(map-get($global-colors, gray), 25%);
+// 	box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
 
-	p {
-		color: map-get($global-colors, dark-blue);
-	}
-}
+// 	p {
+// 		color: map-get($global-colors, dark-blue);
+// 	}
+// }
 
-.copyright {
-	@include span-columns(5 of 12);
-}
+// .copyright {
+// 	@include span-columns(5 of 12);
+// }
 
-.social {
-	@include span-columns(7 of 12);
-}
+// .social {
+// 	@include span-columns(7 of 12);
+// }

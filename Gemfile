@@ -16,12 +16,6 @@ gem "middleman-livereload"
 # http://sass-lang.com/
 gem "sass"
 
-# http://neat.bourbon.io/
-gem 'neat', '~> 1.7.1'
-
-# http://bourbon.io/
-gem 'bourbon', '~> 4.2.0'
-
 # https://github.com/middleman/middleman-autoprefixer
 gem "middleman-autoprefixer"
 

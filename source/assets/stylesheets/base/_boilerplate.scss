@@ -12,7 +12,7 @@
 html {
   color: #222;
   font-size: 1em;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /*
@@ -105,59 +105,6 @@ img {
 
 .bold {
   font-weight: $font-weight-bold;
-}
-
-// =======================================
-// box model objects to be used in markup
-// =======================================
-.no-margin {
-  margin: 0;
-}
-
-.no-padding {
-  padding: 0;
-}
-
-.vertical-margin {
-  margin-top: $base-unit;
-  margin-bottom: $base-unit;
-}
-
-.horizontal-margin {
-  margin-right: $base-unit;
-  margin-left: $base-unit;
-}
-
-.margin-bottom {
-  margin-bottom: $base-unit;
-}
-
-.margin-top {
-  margin-top: $base-unit;
-}
-
-.margin-right {
-  margin-right: $base-unit;
-}
-
-.margin-left {
-  margin-left: $base-unit;
-}
-
-.pad-bottom {
-  padding-bottom: $base-unit;
-}
-
-.pad-top {
-  padding-top: $base-unit;
-}
-
-.pad-left {
-  padding-left: $base-unit;
-}
-
-.pad-right {
-  padding-right: $base-unit;
 }
 
 /* ==========================================================================
