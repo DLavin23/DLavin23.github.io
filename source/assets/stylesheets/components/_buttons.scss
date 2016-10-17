@@ -1,0 +1,17 @@
+.btn {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  line-height: 1.5;
+  margin: 0;
+  padding: $baseline-small $gutter-half;
+  font-size: inherit;
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  vertical-align: middle;
+}

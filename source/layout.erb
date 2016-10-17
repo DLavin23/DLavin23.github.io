@@ -18,30 +18,14 @@
     <link rel="canonical" href="http://dlavin23.github.io">
   </head>
   <body>
-    <header>
-      <nav role="navigation">
-        <ul>
-          <li><a href="/">Dan Lavin</a></li>
-          <li><a href="/thoughts.html">Thoughts</a></li>
-          <li><a href="mailto:daniel.e.lavin@gmail.com">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <section role="main">
+    <%= render partial: "header" %>
+
+    <main class="bg-white-offset py-base px-half px-md" role="main">
       <%= yield %>
-    </section>
+    </main>
 
-    <footer>
-      <p>&copy; 2015 Dan Lavin</p>
-
-      <ul>
-        <li><a href="https://twitter.com/danlavin">Twitter</a></li>
-        <li><a href="https://www.linkedin.com/in/lavindan">Linkedin</a></li>
-        <li><a href="https://github.com/DLavin23/">Github</li>
-        <li><a href="mailto:daniel.e.lavin@gmail.com">Email</a></li>
-      </ul>
-    </footer>
+    <%= render partial: "footer" %>
 
     <%= javascript_include_tag 'assets/javascripts/app' %>
   </body>

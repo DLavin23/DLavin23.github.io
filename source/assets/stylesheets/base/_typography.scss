@@ -1,144 +1,147 @@
-// // Typography
-// // ========================================
+// Typography
+// ========================================
 
-// // Base
+// Base
 
-// html {
-//   color: $black-offset;
-//   font-family: sans-serif;
-//   line-height: 24px;
-//   line-height: 1.5;
-//   -ms-text-size-adjust: 100%;
-//   -webkit-text-size-adjust: 100% ;
-// }
+html {
+  color: $black-offset;
+  font-family: sans-serif;
+  font-size: $base-font-size;
+  line-height: 24px;
+  line-height: 1.5;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100% ;
+}
 
+// Heading sizes
 
-// // Heading sizes
+h1 {
+  font-size: $s-alpha;
+}
 
-// h1 {
-//   +h-alpha
-// }
+h2 {
+  font-size: $s-bravo;
+}
 
-// h2
-//   +h-bravo
+h3 {
+  font-size: $s-charlie;
+}
 
-// h3
-//   +h-charlie
+h4 {
+  font-size: $s-delta;
+}
 
-// h4
-//   +h-delta
+h5 {
+  font-size: $s-echo;
+}
 
-// h5
-//   +h-echo
+h6 {
+  font-size: $s-foxtrot;
+}
 
-// h6
-//   +h-foxtrot
+// Margins
 
-// // Margins
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 $baseline-base 0;
+}
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6,
-// p {
-//   // +rem(margin, 0 0 $baseline-base 0)
-// }
+// Bolds
 
-// // Bolds
+b,
+strong {
+  font-weight: 600;
+}
 
-// b,
-// strong {
-//   font-weight: 600;
-// }
+// Abbreviations
 
-// // Abbreviations
+abbr[title] {
+  border-bottom: 1px dotted;
+}
 
-// abbr[title] {
-//   // +rem(border-bottom, 1px dotted)
-// }
+// Horizontal rule
 
-// // Horizontal rule
+hr {
+  box-sizing: border-box;
+  height: 0;
+}
 
-// hr
-//   box-sizing: border-box
-//   height: 0
+// Code
 
-// // Code
+code,
+kbd,
+pre,
+samp {
+  color: $gray;
+  font-family: $font-family-monospace;
+}
 
-// code,
-// kbd,
-// pre,
-// samp {
-//   // color: $gray;
-//   font-family: $font-family-monospace;
-// }
+pre {
+  // +rem(margin, 0 0 $baseline-base 0);
+  white-space: pre-wrap;
+}
 
+// Address
 
-// pre {
-//   // +rem(margin, 0 0 $baseline-base 0);
-//   white-space: pre-wrap;
-// }
+address {
+  font-style: normal;
+}
 
+// Quotes
 
-// // Address
+blockquote {
+  margin: 0;
+}
 
-// address {
-//   font-style: normal;
-// }
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
 
-// // Quotes
+// Small
 
-// blockquote {
-//   margin: 0;
-// }
+small {
+  font-size: $s-golf;
+}
 
-// q {
-//   quotes: "\201C" "\201D" "\2018" "\2019";
-// }
+// Sub & sup
 
-// // Small
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
 
-// small {
-//   // +s-golf;
-// }
+sup {
+  top: -0.5em;
+}
 
-// // Sub & sup
+sub {
+  bottom: -0.25em;
+}
 
-// sub,
-// sup {
-//   font-size: 75%;
-//   line-height: 0;
-//   position: relative;
-//   vertical-align: baseline;
-// }
+// Links
 
-// sup {
-//   top: -0.5em;
-// }
+a {
+  background: transparent;
+  color: $blue;
+  outline: 0;
+  text-decoration: none;
 
-// sub {
-//   bottom: -0.25em;
-// }
+  &:focus {
+    outline: thin dotted;
+  }
 
-// // Links
-
-// a {
-//   background: transparent;
-//   // color: $blue;
-//   outline: 0;
-//   text-decoration: none;
-//   // transition: $transition-all;
-
-//   &:focus {
-//     outline: thin dotted;
-//   }
-
-//   &:active,
-//   &:hover {
-//     outline: 0;
-//     // color: $blue-dark;
-//   }
-// }
+  &:active,
+  &:hover {
+    outline: 0;
+    color: $blue-dark;
+  }
+}
 

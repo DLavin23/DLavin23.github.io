@@ -16,30 +16,24 @@
     <%= stylesheet_link_tag 'assets/stylesheets/site' %>
     <%= stylesheet_link_tag 'assets/stylesheets/highlight' %>
     <link rel="canonical" href="http://dlavin23.github.io">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <header class="header">
-      <%= partial "header" %>
-    </header>
 
-    <section class="main" role="main">
-      <section class="hero">
-        <header class="hero-intro">
-          <h1 class="article-headline"><%= current_resource.data.title %></h1>
+    <%= render partial: "header" %>
+
+    <section role="main">
+      <section>
+        <header>
+          <h1><%= current_resource.data.title %></h1>
         </header>
       </section>
 
-      <article class="article-wrapper">
+      <article>
         <%= yield %>
       </article>
     </section>
 
-    <footer class="footer-primary" id="contact">
-      <%= partial "footer" %>
-    </footer>
+    <%= render partial: "footer" %>
 
     <%= javascript_include_tag 'assets/javascripts/app' %>
   </body>
