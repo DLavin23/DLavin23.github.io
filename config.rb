@@ -25,16 +25,15 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
-page "/feed.xml", layout: false
+activate :external_pipeline,
+         name: :webpack,
+         command: build? ?
+         "./node_modules/webpack/bin/webpack.js --bail -p" :
+         "./node_modules/webpack/bin/webpack.js --watch -d --progress --color",
+         source: ".tmp/dist",
+         latency: 1
 
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+# page "/feed.xml", layout: false
 
 ###
 # Page options, layouts, aliases and proxies
@@ -62,24 +61,23 @@ page "thoughts/*", :layout => :thought_layout
 # Helpers
 ###
 
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
 # Reload the browser automatically whenever files change
-activate :livereload
+configure :development do
+  activate :livereload
+end
 
 # Minify Assets
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'assets/images'
+# set :css_dir, 'stylesheets'
+# set :js_dir, 'javascripts'
+# set :images_dir, 'assets/images'
 
 # Auto-prefix vendor prefixes to styles post-processing
-activate :autoprefixer
+# activate :autoprefixer
 
 # Activate syntax highlighting
 set :markdown_engine, :redcarpet
 set :markdown, :smartypants => true, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
-activate :syntax
+
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -90,28 +88,28 @@ activate :syntax
 
 
 # Build-specific configuration
-configure :build do
-  activate :minify_css
-  activate :minify_javascript
-  # activate :asset_hash
-  activate :gzip
-  activate :imageoptim
+# configure :build do
+#   activate :minify_css
+#   activate :minify_javascript
+#   # activate :asset_hash
+#   activate :gzip
+#   activate :imageoptim
 
-  # Use relative URLs
-  # activate :relative_assets
+#   # Use relative URLs
+#   # activate :relative_assets
 
-  # Or use a different image path
-  # set :http_prefix, "/Content/images/"
-end
+#   # Or use a different image path
+#   # set :http_prefix, "/Content/images/"
+# end
 
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.branch = "master"
-  deploy.build_before = true
+# activate :deploy do |deploy|
+#   deploy.method = :git
+#   deploy.branch = "master"
+#   deploy.build_before = true
 
-  # Optional Settings
-  # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
-  # deploy.branch   = 'custom-branch' # default: gh-pages
-  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
-  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
-end
+#   # Optional Settings
+#   # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
+#   # deploy.branch   = 'custom-branch' # default: gh-pages
+#   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+#   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+# end

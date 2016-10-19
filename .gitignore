@@ -13,9 +13,21 @@
 # Ignore cache
 /.sass-cache
 /.cache
+/.tmp
 
 # Ignore .DS_store file
 .DS_Store
 
 # Ignore bower components
 /bower_components
+
+# project
+middleman.log
+vendor/bundle
+node_modules
+build
+
+# Ignore bundler binaries
+/bin/*
+!/bin/lint
+!/bin/start

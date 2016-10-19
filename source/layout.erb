@@ -14,19 +14,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-    <%= stylesheet_link_tag 'assets/stylesheets/site' %>
+    <%= stylesheet_link_tag :site %>
     <link rel="canonical" href="http://dlavin23.github.io">
   </head>
   <body>
 
-    <%= render partial: "header" %>
+    <%= partial "header" %>
 
     <main class="bg-white-offset py-base px-half px-md" role="main">
       <%= yield %>
     </main>
 
-    <%= render partial: "footer" %>
+    <%= partial "footer" %>
 
-    <%= javascript_include_tag 'assets/javascripts/app' %>
+    <%= javascript_include_tag :app %>
   </body>
 </html>
