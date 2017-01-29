@@ -1,0 +1,95 @@
+// Image replacement
+
+@mixin ir {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+}
+
+// Basic Icon
+
+@mixin i-icon {
+  @include ir;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+// Center Elements
+
+@mixin center($alignment) {
+  @if $alignment == "x" or $alignment == "xy" {
+    left: 50%;
+  }
+
+  @if $alignment == "y" or $alignment == "xy" {
+    top: 50%;
+  }
+
+  @if $alignment == "x" {
+    transform: translateX(-50%);
+  }
+
+  @if $alignment == "y" {
+    transform: translateY(-50%);
+  }
+
+  @if $alignment == "xy" {
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+
+// REM conversion
+// ========================================
+
+// Strip the unit from a value
+
+@function remove-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Mixin
+
+@mixin rem($property, $values) {
+  $font-size-base: 16px;
+
+  $root: remove-unit($font-size-base);
+
+  $px-values:  ();
+  $rem-values: ();
+
+  @each $value in $values {
+    @if $value == 0 or type-of($value) != "number" {
+      $px-values:  append($px-values,  $value);
+      $rem-values: append($rem-values, $value);
+    }
+
+    @else {
+      $unit: unit($value);
+      $val:  remove-unit($value);
+
+      @if $unit == "px" {
+        $px-values:  append($px-values,  ($val + px));
+        $rem-values: append($rem-values, ($val / $root + rem));
+      }
+
+      @if $unit == "rem" {
+        $px-values:  append($px-values,  ($val * $root + px));
+        $rem-values: append($rem-values, ($val + rem));
+      }
+    }
+
+    @if $rem-values == $px-values {
+      #{$property}: $rem-values;
+    }
+
+    @else {
+      #{$property}: $px-values;
+      #{$property}: $rem-values;
+    }
+  }
+}
+

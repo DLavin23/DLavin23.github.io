@@ -4,13 +4,13 @@
 
 # Time.zone = "UTC"
 activate :blog do |blog|
-  blog.prefix = "thoughts"
+  blog.prefix = "writing"
   blog.permalink = "{year}/{month}/{day}/{title}.html"
   blog.sources = "{year}-{month}-{day}-{title}.html"
   blog.taglink = "tags/{tag}.html"
   blog.layout = "thought_layout"
   # blog.summary_separator = /(READMORE)/
-  blog.summary_length = 310
+  blog.summary_length = 200
   blog.year_link = "{year}.html"
   blog.month_link = "{year}/{month}.html"
   blog.day_link = "{year}/{month}/{day}.html"
@@ -21,7 +21,7 @@ activate :blog do |blog|
 
   # Enable pagination
   # blog.paginate = true
-  # blog.per_page = 10
+  blog.per_page = 20
   # blog.page_link = "page/{num}"
 end
 
@@ -46,7 +46,7 @@ activate :external_pipeline,
 #
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
-page "thoughts/*", :layout => :thought_layout
+page "tag/*", :layout => :thought_layout
 
 # A path which all have the same layout
 # with_layout :admin do
@@ -69,7 +69,7 @@ end
 # Minify Assets
 # set :css_dir, 'stylesheets'
 # set :js_dir, 'javascripts'
-# set :images_dir, 'assets/images'
+set :images_dir, 'images'
 
 # Auto-prefix vendor prefixes to styles post-processing
 # activate :autoprefixer
@@ -77,7 +77,7 @@ end
 # Activate syntax highlighting
 set :markdown_engine, :redcarpet
 set :markdown, :smartypants => true, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
-
+activate :syntax
 
 # Methods defined in the helpers block are available in templates
 # helpers do

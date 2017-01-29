@@ -1,0 +1,38 @@
+// Settings
+// ========================================
+
+// Manage z-indexes
+
+$z-index-1: 100;
+$z-index-2: 200;
+$z-index-3: 300;
+$z-index-4: 400;
+$z-index-5: 500;
+
+// Common Media Query Breakpoints
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+// Vertical Spacing
+
+$baseline-step:     6px;
+$baseline-x-small:  $baseline-step * 2; // 12px
+$baseline-small:    $baseline-step * 3; // 18px
+$baseline-base:     $baseline-step * 4; // 24px
+$baseline-large:    $baseline-step * 5; // 30px
+$baseline-x-large:  $baseline-step * 6; // 36px
+$baseline-xx-large: $baseline-step * 7; // 42px
+
+// Gutters
+
+$gutter:          30px;
+$gutter-half:     $gutter / 2;
+$gutter-third:    $gutter / 3;
+$gutter-quarter:  $gutter / 4;
+
+// Custom Colors
+
+$blue: #357EDD;

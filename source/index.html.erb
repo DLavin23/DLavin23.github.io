@@ -1,41 +1,65 @@
-<section>
-	<header class="mw-lg mx-auto">
-		<h2>Hello, I'm Dan.</h2>
-		<h3>A Product Manager, Engineer, and Designer based in Chicago, IL.</h3>
-	</header>
-</section>
-
-<section>
-	<header class="mw-lg mx-auto">
-		<h3>About Me</h3>
-	</header>
-
-	<div class="mw-lg mx-auto">
-		<p>I currently work at <a href="http://www.bellycard.com/">Belly</a>, where I focus on building scalable and maintainble user interfaces that work seamlessly across all platforms (see responsive design). I believe <a href="https://developers.google.com/speed/pagespeed/insights/?url=dan-lavin.com">performance</a> is design. I strive to write clean and understandable code using object oriented and <a href="https://smacss.com/">SMACSS</a> based principles. I speed up and automate front end workflows with gulp and have experience working with tools, libraries and frameworks such as: node, express, middleman, ruby on rails, bower, jQuery, Angular, and Sass. I try to approach every problem with a <a href="http://shop.oreilly.com/product/9780596518387.do">"beginners mind"</a> and strive to embrace constraints.</p>
-
-		<p>Outside of work, I enjoy spending time with my wife, traveling, reading, learning, drinking ample amounts of <a href="http://revbrew.com/home"><span >beer</span></a> &amp; <a href="http://www.heritagebicycles.com/"><span>coffee</span></a>, and trying all of great <a href="http://www.yelp.com/search?find_desc=Restaurants&find_loc=Chicago%2C+IL&ns=1#start=0&sortby=review_count">food</a> the Windy City has to offer. When the Chicago weather permits, I love spending time outdoors. In the summer you can usually find me running along the lake, attempting to golf, or playing sand volleyball.</p>
+<section class="cf pv5 bb b--light-gray">
+	<div class="mw9 center ph3 ph4-m ph5-l">
+		<h3 class="f3 f2-ns f-headline measure lh-title mt0 mb3 mw7 dark-gray">Good <span data-time-of-day></span>, I'm Dan! </h3>
+		<h4 class="f5 f2-ns f-subheadline measure lh-title mt0 mb3 mw7 dark-gray">A <span class="dib td-underline">product</span> manager with passion for design, engineering, and user experience.</h4>
+		<p class="f5 lh-copy mw8 mid-gray">I love products that solve real problems. I enjoy design that is both simple and intuitive. I believe that talking to actual customers is the best way to ensure you're building the <strong>right</strong> product. I strive to embrace change. I acknowledge that failure happens from time to time, but it doesn't need to define you. Failure leads to growth, so fail fast and learn from your mistakes. I value strong communication. It's impossible to build a great product if design, engineering, and the business are not working as one team. Finally, I approach every problem with an <a href="/empty-cup" class="no-underline blue">"empty cup"</a> and a <a href="http://shop.oreilly.com/product/9780596518387.do" class="no-underline blue">"beginners mind"</a>.</p>
+		<p class="f5 lh-copy mid-gray">I'm currently based in Chicago and spend most of my time building awesome products at <a href="bellycard.com" class="no-underline blue">Belly</a>.</p>
+		<a href="/about.html" class="f5 no-underline grow pa3 br2 bg-blue white dib">Learn More</a>
 	</div>
-
 </section>
 
-<section>
-	<div class="mw-lg mx-auto">
-		<h3>Recent Thoughts</h3>
-		<div class="group">
-		  <% blog.articles[0...4].each do |article| %>
-				<article class="grid-col grid-1-1 grid-1-2-md px-quarter pb-base">
-					<div class="bg-white b-all br-all py-base px-half">
-						<header>
-							<h5>
-								<%= link_to article.title, article %>
-								<span><%= article.date.strftime('%b %e') %></span>
-							</h5>
-						</header>
-						<p><%= article.summary %></p>
-						<a href="<%= article.url %>">Read more</a>
+<section class="cf pv5 dark-gray bb b--light-gray">
+	<div class="mw9 center ph3 ph4-m ph5-l">
+		<h3 class="mid-gray section-header f2 lh-title">Experience</h3>
+		<div class="cf">
+			<div class="fl pv2 w-100 w-third-l pr4-l tc">
+				<%= image_tag "i-product-management.svg", class: "dib", style: "width: 70px;" %>
+				<h4 class="lh-title gray-dark fw8">Product Management</h4>
+				<p class="f6 lh-copy ma0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat accusantium odit cum</p>
+			</div>
+
+			<div class="fl pv2 w-100 w-third-l pr4-l tc">
+				<%= image_tag "i-code.svg", class: "dib", style: "width: 80px;" %>
+				<h4 class="lh-title gray-dark fw8">Web Development</h4>
+				<p class="f6 lh-copy ma0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat accusantium odit cum</p>
+			</div>
+
+			<div class="fl pv2 w-100 w-third-l pr4-l tc">
+				<%= image_tag "i-layout-design.svg", class: "dib", style: "width: 80px;" %>
+				<h4 class="lh-title gray-dark fw8">Product Design</h4>
+				<p class="f6 lh-copy ma0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat accusantium odit cum</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="cf pv5 dark-gray ba b--light-gray bg-near-white">
+	<div class="mw9 center ph3 ph4-m ph5-l">
+		<h3 class="mid-gray section-header f2 lh-title">Featured Post</h3>
+
+		<div class="cf">
+		  <% blog.articles[0...1].each do |article| %>
+				<article class="fl w-100 w-50-l bg-white pa4 ba b--black-10 br2">
+					<header>
+						<h5 class="f4 mt0 lh-title">
+							<%= link_to article.title, article, class: "blue no-underline" %>
+							<span class="gray f6 db"><%= article.date.strftime('%b %e') %></span>
+						</h5>
+					</header>
+
+					<div class="mm-blog-copy">
+						<%= article.summary %>
 					</div>
+					<a href="<%= article.url %>" class="blue no-underline grow dib">Read more</a>
 				</article>
 		  <% end %>
 		</div>
+	</div>
+</section>
+
+<section class="cf pv5 dark-gray" >
+	<div class="mw9 center ph3 ph4-m ph5-l pb4">
+		<h3 class="mid-gray section-header f2 lh-title">Currently Reading</h3>
+		<p>List current book</p>
 	</div>
 </section>

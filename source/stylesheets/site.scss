@@ -1,33 +1,9 @@
-// =======================================
-// Settings
-// =======================================
+@import "base/settings";
+@import "base/mixins";
+@import "utilities";
+@import "components/icons";
+@import "components/animation";
+@import "components/nav";
+@import "components/highlight";
+@import "components/tags";
 
-@import "settings/settings";
-
-// =======================================
-// Base
-// =======================================
-
-@import "base/normalize";
-@import "base/typography";
-
-// =======================================
-// Components
-// =======================================
-
-@import "components/align";
-@import "components/borders";
-@import "components/colors";
-@import "components/display";
-@import "components/grid";
-@import "components/grid_responsive";
-@import "components/hide";
-@import "components/layout";
-@import "components/margin";
-@import "components/opacity";
-@import "components/padding";
-@import "components/position";
-@import "components/show";
-@import "components/type_scale";
-@import "components/typography";
-@import "components/width";

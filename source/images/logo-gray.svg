@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>logo-gray</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo-gray" transform="translate(0.000000, -3.000000)">
+            <circle id="Oval" fill="#4A4A4A" cx="50" cy="53" r="50"></circle>
+            <text id="D" font-family="OpenSans-Semibold, Open Sans" font-size="64" font-weight="500" fill="#FFFFFF">
+                <tspan x="25.5058594" y="68">D</tspan>
+            </text>
+            <rect id="Rectangle" fill="#FFFFFF" x="45" y="38" width="7" height="47"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" transform="translate(60.500000, 82.000000) scale(-1, -1) rotate(90.000000) translate(-60.500000, -82.000000) " x="57" y="67" width="7" height="30"></rect>
+        </g>
+    </g>
+</svg>

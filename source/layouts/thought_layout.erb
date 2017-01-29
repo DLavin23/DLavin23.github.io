@@ -7,34 +7,39 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
-    <title>Dan Lavin<%= ' - ' + current_article.title unless current_article.nil? %></title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <title>Dan Lavin | Product Person <%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <meta name="author" content="Dan Lavin">
+    <meta name="description" content="Dan Lavin: Chicago based product manager, designer, and developer">
+    <meta name="keywords" content="product management, product design, web development">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-    <%= stylesheet_link_tag 'assets/stylesheets/site' %>
-    <%= stylesheet_link_tag 'assets/stylesheets/highlight' %>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/>
     <link rel="canonical" href="http://dlavin23.github.io">
+    <%= stylesheet_link_tag :site %>
+    <%= stylesheet_link_tag :highlight %>
+    <%= favicon_tag 'images/favicon.png' %>
   </head>
-  <body>
+  <body class="<%= page_classes %> sans-serif">
 
     <%= partial "header" %>
 
-    <section role="main">
-      <section>
-        <header>
-          <h1><%= current_resource.data.title %></h1>
+    <section class="cf dark-gray bb bt b--black-10 pv5 bg-near-white">
+      <div class="tc ph3 ph4-m ph5-l">
+        <header class="tc pv4">
+          <h2 class="f3 f2-m f1-ns lh-title mt0 mb2 dark-gray"><%= current_resource.data.title %></h2>
+          <h3 class="f5 f4-ns lh-title ma0 fw2 gray"><%= current_resource.data.date %> | <%= current_resource.data.tags %></h3>
         </header>
-      </section>
+      </div>
+    </section>
 
-      <article>
+    <section class="cf pv5 mid-gray bb b--light-gray">
+      <article class="mw7 center ph3 ph4-m ph5-l lh-copy f5 f4-l black-70 fw4">
         <%= yield %>
       </article>
     </section>
 
     <%= partial "footer" %>
 
-    <%= javascript_include_tag 'assets/javascripts/app' %>
+    <%= javascript_include_tag :app %>
   </body>
 </html>

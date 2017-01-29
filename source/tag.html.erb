@@ -2,24 +2,46 @@
 pageable: true
 per_page: 12
 ---
-<h1>Articles tagged '<%= tagname %>'</h1>
 
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
+<section class="cf dark-gray bb bt b--black-10 pv5 bg-near-white">
+  <div class="tc ph3 ph4-m ph5-l">
+    <header class="pv4">
+      <h2 class="f3 f2-m f1-ns lh-title mt0 mb2 dark-gray">A Collection of Thoughts On</h2>
+      <h3 class="f5 f4-ns lh-title ma0 fw2 gray">Product Management, Design, Development, and More. </h3>
+    </header>
+  </div>
+</section>
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
+<section class="cf">
+  <div class="mw8 center pv4">
+    <ul class="tags list pl0 ma0 tc">
+      <li class="dib mh1">
+        <%= link_to "All", 'writing.html', class: "f5 no-underline pv3 ph4 br2 dib bg-animate" %>
+      </li>
 
-<ul>
-  <% page_articles.each_with_index do |article, i| %>
-    <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-  <% end %>
-</ul>
+      <% blog.tags.each do |tag, article| %>
+        <li class="dib mh1"><%= link_to "#{tag}", tag_path(tag), :class=>"f5 no-underline pa3 br2 bg-near-white mid-gray dib bg-animate hover-bg-moon-gray" %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
 
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
-<% end %>
+<section class="cf dark-gray pv3">
+  <div class="mw8 center ph3 ph4-m ph5-l">
+    <% page_articles.each_with_index do |article, i| %>
+      <article class="article-list fl pa3 pa4-m pa5-l">
+        <header>
+          <h5 class="f4 mt0 lh-title">
+            <%= link_to article.title, article, class: "dark-gray no-underline" %>
+            <span class="gray f6 db"><%= article.date.strftime('%b %e') %></span>
+          </h5>
+        </header>
+
+        <div class="mm-blog-copy">
+          <%= article.summary %>
+        </div>
+        <a href="<%= article.url %>" class="blue no-underline grow dib">Read more</a>
+      </article>
+    <% end %>
+  </div>
+</section>

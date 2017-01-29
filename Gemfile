@@ -9,4 +9,5 @@ gem 'middleman-livereload'
 gem 'nokogiri'
 gem "rake"
 gem "redcarpet"
+gem "middleman-syntax"
 gem "builder" # For feed.xml.builder

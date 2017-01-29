@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>menu-close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu-close" transform="translate(-2.000000, -2.000000)" fill="#FFFFFF">
+            <rect id="Rectangle" transform="translate(30.500000, 31.000000) rotate(45.000000) translate(-30.500000, -31.000000) " x="-7.90909091" y="26.3703704" width="76.8181818" height="9.25925926" rx="4.62962963"></rect>
+            <rect id="Rectangle" transform="translate(30.519505, 30.552319) rotate(135.000000) translate(-30.519505, -30.552319) " x="-7.88958583" y="25.9226892" width="76.8181818" height="9.25925926" rx="4.62962963"></rect>
+        </g>
+    </g>
+</svg>

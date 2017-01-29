@@ -1,0 +1,8 @@
+.i-nav-toggle {
+  @include i-icon;
+  background-image: url('/images/i-nav-menu.svg');
+  background-size: cover;
+  @include rem(height, 25px);
+  @include rem(width, 32px);
+}
+

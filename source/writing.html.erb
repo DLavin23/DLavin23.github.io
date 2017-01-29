@@ -1,0 +1,64 @@
+---
+pageable: true
+per_page: 20
+---
+
+<section class="cf dark-gray bb bt b--black-10 pv5 bg-near-white">
+  <div class="tc ph3 ph4-m ph5-l">
+    <header class="pv4">
+      <h2 class="f3 f2-m f1-ns lh-title mt0 mb2 dark-gray">A Collection of Thoughts On</h2>
+      <h3 class="f5 f4-ns lh-title ma0 fw2 gray">Product Management, Design, Development, and More. </h3>
+    </header>
+  </div>
+</section>
+
+<section class="cf">
+  <div class="mw8 center pv4">
+    <ul class="tags list pl0 ma0 tc">
+      <li class="dib mh1">
+        <%= link_to "All", 'writing.html', class: "f5 no-underline pv3 ph4 br2 dib bg-animate" %>
+      </li>
+
+      <% blog.tags.each do |tag, article| %>
+        <li class="dib mh1"><%= link_to "#{tag}", tag_path(tag), :class=>"f5 no-underline pa3 br2 bg-near-white mid-gray dib bg-animate hover-bg-moon-gray" %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
+<section class="cf dark-gray pv3">
+  <div class="mw8 center ph3 ph4-m ph5-l">
+    <% blog.articles[0...20].each do |article| %>
+      <article class="article-list fl pa3 pa4-m pa5-l">
+        <header>
+          <h5 class="f4 mt0 lh-title">
+            <%= link_to article.title, article, class: "dark-gray no-underline" %>
+            <span class="gray f6 fw3 db"><%= article.date.strftime('%b %e') %></span>
+          </h5>
+        </header>
+
+        <div class="mm-blog-copy">
+          <%= article.summary %>
+        </div>
+        <a href="<%= article.url %>" class="blue no-underline grow dib">Read more</a>
+      </article>
+    <% end %>
+  </div>
+</section>
+
+
+<!-- Once, a long time ago, there was a wise Zen master. People from far and near would seek his counsel and ask for his wisdom. Many would come and ask him to teach them, enlighten them in the way of Zen. He seldom turned any away.
+
+One day an important man, a man used to command and obedience came to visit the master. “I have come today to ask you to teach me about Zen. Open my mind to enlightenment.” The tone of the important man’s voice was one used to getting his own way.
+
+The Zen master smiled and said that they should discuss the matter over a cup of tea. When the tea was served the master poured his visitor a cup. He poured and he poured and the tea rose to the rim and began to spill over the table and finally onto the robes of the wealthy man. Finally the visitor shouted, “Enough. You are spilling the tea all over. Can’t you see the cup is full?”
+
+The master stopped pouring and smiled at his guest. “You are like this tea cup, so full that nothing more can be added. Come back to me when the cup is empty. Come back to me with an empty mind.”
+
+Here is another version:
+
+Nan-in, a Japanese master during the Meiji era, received a university professor who came to inquire about Zen.
+
+Nan-in served tea. He poured his visitor’s cup full, and then kept on pouring. The professor watched the overflow until he no longer could restrain himself. “It is overfull. No more will go in!”
+
+Like this cup, Nan-in said, you are full of your own opinions and speculations. How can I show you Zen unless you first empty your cup? -->

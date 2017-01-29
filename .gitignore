@@ -23,6 +23,7 @@
 
 # project
 middleman.log
+npm-debug.log
 vendor/bundle
 node_modules
 build
