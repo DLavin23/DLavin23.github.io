@@ -3,7 +3,7 @@ pageable: true
 per_page: 12
 ---
 
-<section class="cf dark-gray bb bt b--black-10 pv5 bg-near-white">
+<section class="cf dark-gray bb b--black-10 pv5 bg-near-white">
   <div class="tc ph3 ph4-m ph5-l">
     <header class="pv4">
       <h2 class="f3 f2-m f1-ns lh-title mt0 mb2 dark-gray">A Collection of Thoughts On</h2>
@@ -15,12 +15,12 @@ per_page: 12
 <section class="cf">
   <div class="mw8 center pv4">
     <ul class="tags list pl0 ma0 tc">
-      <li class="dib mh1">
+      <li class="dib mh1 mb3 mb0-ns">
         <%= link_to "All", 'writing.html', class: "f5 no-underline pv3 ph4 br2 dib bg-animate" %>
       </li>
 
       <% blog.tags.each do |tag, article| %>
-        <li class="dib mh1"><%= link_to "#{tag}", tag_path(tag), :class=>"f5 no-underline pa3 br2 bg-near-white mid-gray dib bg-animate hover-bg-moon-gray" %></li>
+        <li class="dib mh1 mb3 mb0-ns"><%= link_to "#{tag}", tag_path(tag), :class=>"f5 no-underline pa3 br2 bg-near-white mid-gray dib bg-animate hover-bg-moon-gray" %></li>
       <% end %>
     </ul>
   </div>
@@ -32,7 +32,7 @@ per_page: 12
       <article class="article-list fl pa3 pa4-m pa5-l">
         <header>
           <h5 class="f4 mt0 lh-title">
-            <%= link_to article.title, article, class: "dark-gray no-underline" %>
+            <%= link_to article.title, article, class: "dark-gray no-underline hover-blue" %>
             <span class="gray f6 db"><%= article.date.strftime('%b %e') %></span>
           </h5>
         </header>
