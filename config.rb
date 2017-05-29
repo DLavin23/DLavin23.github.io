@@ -97,45 +97,8 @@ end
 # set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-# Auto-prefix vendor prefixes to styles post-processing
-# activate :autoprefixer
 
 # Activate syntax highlighting
 set :markdown_engine, :redcarpet
 set :markdown, :smartypants => true, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
 activate :syntax
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
-
-
-# Build-specific configuration
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-#   # activate :asset_hash
-#   activate :gzip
-#   activate :imageoptim
-
-#   # Use relative URLs
-#   # activate :relative_assets
-
-#   # Or use a different image path
-#   # set :http_prefix, "/Content/images/"
-# end
-
-# activate :deploy do |deploy|
-#   deploy.method = :git
-#   deploy.branch = "master"
-#   deploy.build_before = true
-
-#   # Optional Settings
-#   # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
-#   # deploy.branch   = 'custom-branch' # default: gh-pages
-#   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
-#   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
-# end

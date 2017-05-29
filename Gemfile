@@ -6,8 +6,8 @@ source 'http://rubygems.org'
 gem 'middleman'
 gem "middleman-blog"
 gem 'middleman-livereload'
+gem "middleman-syntax"
 gem 'nokogiri'
 gem "rake"
 gem "redcarpet"
-gem "middleman-syntax"
 gem "builder" # For feed.xml.builder

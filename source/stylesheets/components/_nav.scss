@@ -94,13 +94,21 @@
   color: white;
 
   @media (min-width: $breakpoint-sm) {
-    // color: #777777;
     color: $gray;
     font-size: 14px;
     font-weight: 500;
     position: relative;
     text-decoration: none;
     z-index: 1;
+  }
+
+  &.active {
+    color: $blue;
+  }
+
+  &.active:before {
+    transform: scaleX(1);
+    visibility: visible;
   }
 
   &:hover {
@@ -130,8 +138,8 @@
 
   &:hover:before {
     @media (min-width: $breakpoint-sm) {
-      visibility: visible;
       transform: scaleX(1);
+      visibility: visible;
     }
   }
 }

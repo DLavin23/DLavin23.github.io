@@ -9,36 +9,13 @@ blog: reading
   </header>
 </section>
 
-<section class="cf dark-gray pv3">
+<section class="cf bb b--black-10 pv4 pv5-ns black-70">
   <div class="mw8 center ph3 ph4-m ph5-l">
     <ul>
       <% blog("books").articles.each do |book| %>
         <li><%= book.title %></li>
       <% end %>
+        <li>WIP. More coming soon...</li>
     </ul>
-
-<!--     <% blog("books").articles.each do |book| %>
-      <%= book.title %>
-      <% link_to book, class: "article-list db no-underline hover-blue" do %>
-        <article class="cf pa3 pa4-m pa5-l">
-          <div class="fl w-100 w-20-ns pa2">
-            <%= image_tag("books/#{book.data.image_path}", class: "br2") %>
-          </div>
-
-          <div class="fl w-100 w-80-ns pa2">
-            <header>
-              <h5 class="f4 fw6 mt0 lh-title fw3 db mid-gray">
-                <%= book.title %>
-                <span class="gray f6 fw3 db"><%= book.data.author %></span>
-              </h5>
-            </header>
-
-            <div class="mm-blog-copy mid-gray">
-              <%= book.summary %>
-            </div>
-          </div>
-        </article>
-      <% end %>
-    <% end %> -->
   </div>
 </section>

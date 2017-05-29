@@ -25,24 +25,18 @@ per_page: 20
   </div>
 </section> -->
 
-<section class="cf pv3">
-  <div class="mw7 center">
+<section class="cf bb b--black-10 pv4 pv5-ns black-70">
+  <div class="mw8 center ph3 ph4-m ph5-l">
     <% blog("writing").articles[0...20].each do |article| %>
-      <article class="article-list pa3 pa4-m pa5-l">
+      <article class="article-list mw7 pv5 ph3">
         <header>
           <h5 class="f4 f3-ns lh-title lh-solid ma0">
-            <%= link_to article.title, article, class: "black-70 no-underline hover-black-60" %>
-            <span class="gray f6 fw3 db">
-<!--               <object data="/images/icons/i-clock.svg" type="image/svg+xml" style="width: 15px;">
-                <img src="/images/icons/i-clock.png" alt="clock">
-              </object> -->
-              Written <%= article.date.strftime('%b %e') %>
-              <!-- include tags -->
-            </span>
+            <%= link_to article.title, article, class: "black-70 hover-blue no-underline" %>
+            <span class="black-50 f6 fw6 db"><%= article.date.strftime('%b %e') %></span>
           </h5>
         </header>
 
-        <div class="mm-blog-copy black-70">
+        <div class="nested-copy-line-height nested-img color-gray">
           <%= article.summary %>
         </div>
         <a href="<%= article.url %>" class="blue no-underline grow dib">Read More</a>
