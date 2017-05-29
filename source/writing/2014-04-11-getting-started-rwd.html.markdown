@@ -1,10 +1,15 @@
 ---
 title: Getting Started with Responsive Design
+blog: writing
 date: 2014-04-11
 tags: design, development
 ---
 
-It's been a little over 3 years since [Ethan Marcotte](http://ethanmarcotte.com/) coined the term [Responsive Web Design](http://alistapart.com/article/responsive-web-design/), and I think we can all agree that it has proven to be more than just a fad. As the Web continues to evolve into a larger part of our everyday lives, it will become increasingly more important to deliver optimal user experiences for the growing number of Web-enabled devices and contexts.
+It's been a little over 3 years since [Ethan Marcotte](http://ethanmarcotte.com/) coined the term
+[Responsive Web Design](http://alistapart.com/article/responsive-web-design/) and I think we can
+all agree that it has proven to be more than just a fad. As the Web continues to evolve into a
+larger part of our everyday lives, it will become increasingly more important to deliver optimal
+user experiences for the growing number of Web-enabled devices and contexts.
 
 ![Responsive Web Design](/images/flat-rwd.png)
 
@@ -89,3 +94,4 @@ If you'd like to learn more about responsive design and how to start implementin
 4. [Responsive Design Case Studies - Luke W.](http://www.lukew.com/ff/entry.asp?1691)
 5. [Reorganization - Trent Walton](http://trentwalton.com/2013/04/10/reorganization)
 6. [Responsive Design Workflow - Stephen Hay](http://www.amazon.com/Responsive-Design-Workflow-Stephen-Hay/dp/0321887867)
+

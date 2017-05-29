@@ -1,5 +1,6 @@
 ---
 title: Lessons Learned Building a Child's game
+blog: writing
 date: 2012-05-09
 tags: development
 ---

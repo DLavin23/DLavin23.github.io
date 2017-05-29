@@ -14,14 +14,22 @@ a {
 }
 
 .section-header {
+  margin-bottom: 32px;
+  text-align: center;
+
+  @media(min-width: $breakpoint-lg) {
+    text-align: left;
+  }
 
   &:after {
-    content: " ";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: #ddd;
-    margin-top: 25px;
+    @media(min-width: $breakpoint-lg) {
+      content: " ";
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: #ddd;
+      margin-top: 25px;
+    }
   }
 }
 
@@ -29,17 +37,22 @@ a {
   @include rem(box-shadow, 0 3px 2px -2px rgba(200,200,200,.15));
 }
 
-.mm-blog-copy p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 .article-list:not(:last-child) {
   @include rem(border-bottom, 1px solid #eee);
 }
 
-.underline {
+.td-underline {
   text-decoration: none;
   text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
   box-shadow: inset 0 -1px 0 0 #fff, inset 0 -3px 0 0 #357edd;
+}
+
+.box-shadow {
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07)
+}
+
+.box-shadow-ns {
+  @media(min-width: 30em) {
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07)
+  }
 }

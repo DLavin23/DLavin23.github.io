@@ -1,5 +1,6 @@
 ---
 title: Learning Animation, with Bob Ross
+blog: writing
 date: 2015-03-19
 tags: design, development
 ---

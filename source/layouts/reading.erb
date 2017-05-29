@@ -12,7 +12,7 @@
     <meta name="description" content="Dan Lavin: Chicago based product manager, designer, and developer">
     <meta name="keywords" content="product management, product design, web development">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+    <%= feed_tag :atom, "#{blog("writing").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/>
     <link rel="canonical" href="http://dlavin23.github.io">
     <%= stylesheet_link_tag :site %>
@@ -23,13 +23,11 @@
 
     <%= partial "header" %>
 
-    <section class="cf dark-gray bb bt b--black-10 pv5 bg-near-white">
-      <div class="tc ph3 ph4-m ph5-l">
-        <header class="tc pv4">
-          <h2 class="f3 f2-m f1-ns lh-title mt0 mb2 dark-gray"><%= current_resource.data.title %></h2>
-          <h3 class="f5 f4-ns lh-title ma0 fw2 gray"><%= current_resource.data.date %> | <%= current_resource.data.tags %></h3>
-        </header>
-      </div>
+    <section class="cf bb b--black-10 pv4 pv5-ns bgc-white-offset">
+      <header class="tc ph3 pv4 pv5-ns">
+        <h2 class="f2 f1-ns lh-title mt0 mb2 black-70"><%= current_resource.data.title %></h2>
+        <h3 class="f5 f4-ns lh-title ma0 fw3 gray"><%= current_resource.data.date.strftime('%A %b %d, %Y') %></h3>
+      </header>
     </section>
 
     <section class="cf pv5 mid-gray bb b--light-gray">

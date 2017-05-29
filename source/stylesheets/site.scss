@@ -1,9 +1,19 @@
+// Import Tachyons
+// https://www.npmjs.com/package/tachyons
+// http://tachyons.io/
+@import "~tachyons/css/tachyons.min.css";
+
+// Base Styles
 @import "base/settings";
 @import "base/mixins";
+
+// Custom utilities/functional classes
 @import "utilities";
+
+// Custom components
+@import "components/colors";
 @import "components/icons";
 @import "components/animation";
 @import "components/nav";
 @import "components/highlight";
 @import "components/tags";
-

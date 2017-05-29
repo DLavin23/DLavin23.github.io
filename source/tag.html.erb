@@ -1,25 +1,24 @@
 ---
+blog: writing
 pageable: true
 per_page: 12
 ---
 
-<section class="cf dark-gray bb b--black-10 pv5 bg-near-white">
-  <div class="tc ph3 ph4-m ph5-l">
-    <header class="pv4">
-      <h2 class="f3 f2-m f1-ns lh-title mt0 mb2 dark-gray">A Collection of Thoughts On</h2>
-      <h3 class="f5 f4-ns lh-title ma0 fw2 gray">Product Management, Design, Development, and More. </h3>
-    </header>
-  </div>
+<section class="cf bb b--black-10 pv4 pv5-ns bgc-white-offset">
+  <header class="tc ph3 pv4 pv5-ns">
+    <h2 class="f2 f1-ns lh-title mt0 mb2 black-70">Writing</h2>
+    <h3 class="f5 f4-ns lh-title ma0 fw3 gray">Thoughts on Product Management, Design, Development, and More. </h3>
+  </header>
 </section>
 
 <section class="cf">
   <div class="mw8 center pv4">
     <ul class="tags list pl0 ma0 tc">
       <li class="dib mh1 mb3 mb0-ns">
-        <%= link_to "All", 'writing.html', class: "f5 no-underline pv3 ph4 br2 dib bg-animate" %>
+        <%= link_to "All", 'writing', class: "f5 no-underline pv3 ph4 br2 dib bg-animate" %>
       </li>
 
-      <% blog.tags.each do |tag, article| %>
+      <% blog("writing").tags.each do |tag, article| %>
         <li class="dib mh1 mb3 mb0-ns"><%= link_to "#{tag}", tag_path(tag), :class=>"f5 no-underline pa3 br2 bg-near-white mid-gray dib bg-animate hover-bg-moon-gray" %></li>
       <% end %>
     </ul>

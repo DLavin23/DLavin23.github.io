@@ -1,5 +1,6 @@
 ---
 title: When We Build
+blog: writing
 date: 2012-01-26
 tags: design
 ---

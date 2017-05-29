@@ -1,51 +1,55 @@
 ---
+blog: writing
 pageable: true
 per_page: 20
 ---
 
-<section class="cf dark-gray bb b--black-10 pv5 bg-near-white">
-  <div class="tc ph3 ph4-m ph5-l">
-    <header class="pv4">
-      <h2 class="f3 f2-m f1-ns lh-title mt0 mb2 dark-gray">A Collection of Thoughts On</h2>
-      <h3 class="f5 f4-ns lh-title ma0 fw2 gray">Product Management, Design, Development, and More. </h3>
-    </header>
-  </div>
+<section class="cf bb b--black-10 pv4 pv5-ns bgc-white-offset">
+  <header class="tc ph3 pv4 pv5-ns">
+    <h2 class="f2 f1-ns lh-title mt0 mb2 black-70">Writing</h2>
+    <h3 class="f5 f4-ns lh-title ma0 fw3 gray">Thoughts on Product Management, Design, Development, and More. </h3>
+  </header>
 </section>
 
-<section class="cf">
+<!-- <section class="cf">
   <div class="mw8 center pv4">
     <ul class="tags list pl0 ma0 tc">
       <li class="dib mh1 mb3 mb0-ns">
-        <%= link_to "All", 'writing.html', class: "f5 no-underline pv3 ph4 br2 dib bg-animate" %>
+        <%= link_to "All", 'writing', class: "f5 no-underline pv3 ph4 br2 dib bg-animate" %>
       </li>
 
-      <% blog.tags.each do |tag, article| %>
-        <li class="dib mh1 mb3 mb0-ns"><%= link_to "#{tag}", tag_path(tag), :class=>"f5 no-underline pa3 br2 bg-near-white mid-gray dib bg-animate hover-bg-moon-gray" %></li>
+      <% blog("writing").tags.each do |tag, article| %>
+        <li class="dib mh1 mb3 mb0-ns"><%= link_to "#{tag}", tag_path(tag), :class=>"f5 pa3 br2 bg-near-white mid-gray db bg-animate hover-bg-moon-gray" %></li>
       <% end %>
     </ul>
   </div>
-</section>
+</section> -->
 
-<section class="cf dark-gray pv3">
-  <div class="mw8 center ph3 ph4-m ph5-l">
-    <% blog.articles[0...20].each do |article| %>
-      <article class="article-list fl pa3 pa4-m pa5-l">
+<section class="cf pv3">
+  <div class="mw7 center">
+    <% blog("writing").articles[0...20].each do |article| %>
+      <article class="article-list pa3 pa4-m pa5-l">
         <header>
-          <h5 class="f4 mt0 lh-title">
-            <%= link_to article.title, article, class: "dark-gray no-underline hover-blue" %>
-            <span class="gray f6 fw3 db"><%= article.date.strftime('%b %e') %></span>
+          <h5 class="f4 f3-ns lh-title lh-solid ma0">
+            <%= link_to article.title, article, class: "black-70 no-underline hover-black-60" %>
+            <span class="gray f6 fw3 db">
+<!--               <object data="/images/icons/i-clock.svg" type="image/svg+xml" style="width: 15px;">
+                <img src="/images/icons/i-clock.png" alt="clock">
+              </object> -->
+              Written <%= article.date.strftime('%b %e') %>
+              <!-- include tags -->
+            </span>
           </h5>
         </header>
 
-        <div class="mm-blog-copy">
+        <div class="mm-blog-copy black-70">
           <%= article.summary %>
         </div>
-        <a href="<%= article.url %>" class="blue no-underline grow dib">Read more</a>
+        <a href="<%= article.url %>" class="blue no-underline grow dib">Read More</a>
       </article>
     <% end %>
   </div>
 </section>
-
 
 <!-- Once, a long time ago, there was a wise Zen master. People from far and near would seek his counsel and ask for his wisdom. Many would come and ask him to teach them, enlighten them in the way of Zen. He seldom turned any away.
 

@@ -1,5 +1,6 @@
 ---
 title: Story Mapping Workshop
+blog: writing
 date: 2012-05-16
 tags: design
 ---

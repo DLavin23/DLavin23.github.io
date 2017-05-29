@@ -1,9 +1,9 @@
 // Greeting in hero displays today's date.
+
 (function() {
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   Date.prototype.getDayName = function() {
-    console.log(this)
     return days[ this.getDay() ];
   };
 
@@ -16,20 +16,22 @@ var timeOfDay = document.querySelector('[data-time-of-day]');
 
 if (dataToday) {
   dataToday.innerHTML = today;
-} else {
-  console.log('fooo')
 }
 
 var getTimeOfDay = function(date) {
   var hours = date.getHours();
 
-  if (hours < 12 ) {
+  console.log('hours: ', hours)
+
+  if (hours >= 0 && hours < 12) {
     timeOfDay.innerHTML = "Morning";
   }
-  if (hours > 12 && hours < 17) {
+
+  if (hours >= 12 && hours < 17) {
     timeOfDay.innerHTML = "Afternoon";
   }
-  else {
+
+  if (hours > 17 && hours <= 24) {
     timeOfDay.innerHTML = "Evening";
   }
 }
@@ -37,6 +39,8 @@ var getTimeOfDay = function(date) {
 if (timeOfDay) {
   getTimeOfDay(now);
 }
+
+// Toggle Nav
 
 (function() {
 
@@ -50,6 +54,30 @@ if (timeOfDay) {
     navListClass.toggle('is-active');
     navToggleClass.toggle('nav-toggle-close');
   });
+
+})();
+
+// Fixed header on scroll
+
+(function() {
+
+  var fixedHeader, DEFAULT_HEADER_POSITION, calculateScroll;
+
+  DEFAULT_HEADER_POSITION = 50;
+  fixedHeader = document.querySelector('[data-header]');
+
+  calculateScroll = function() {
+    if ((window.pageYOffset || document.documentElement.scrollTop) > DEFAULT_HEADER_POSITION) {
+      fixedHeader.classList.add('on-scroll');
+    } else {
+      fixedHeader.classList.remove('on-scroll');
+    }
+  };
+
+  window.onscroll = function() {
+    console.log('scrolling');
+    calculateScroll();
+  };
 
 })();
 

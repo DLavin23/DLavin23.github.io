@@ -1,19 +1,44 @@
-<section class="cf dark-gray bb b--light-gray">
-  <div class="mw9 ph3 ph4-m ph5-l pb4">
-    <h3 class="f3 f2-ns lh-title mb3 mw7">Reading List</h3>
-<!--     <h4 class="f4 f2-ns lh-title mt0 mb3 mw7">A <span class="dib td-underline">product</span> manager with passion for design, engineering, and user experience.</h4>
-    <p class="f5 lh-copy mw8">I love products that solve real problems. I enjoy design that is both simple and intuitive. I believe that talking to actual customers is the best way to ensure you're building the <strong>right</strong> product. I strive to embrace change. I acknowledge that failure happens from time to time, but it doesn't need to define you. Failure leads to growth, so fail fast and learn from your mistakes. I value strong communication. It's impossible to build a great product if design, engineering, and the business are not working as one team. Finally, I approach every problem with an <a href="/empty-cup" class="no-underline blue">"empty cup"</a> and a <a href="http://shop.oreilly.com/product/9780596518387.do" class="no-underline blue">"beginners mind"</a>.</p>
-    <p class="f5 lh-copy">I'm currently based in Chicago and spend most of my time building awesome products at <a href="bellycard.com" class="no-underline blue">Belly</a>.</p> -->
-  </div>
+---
+blog: reading
+---
+
+<section class="cf bb b--black-10 pv4 pv5-ns bgc-white-offset">
+  <header class="tc ph3 pv4 pv5-ns">
+    <h2 class="f2 f1-ns lh-title mt0 mb2 black-70">Reading List</h2>
+    <h3 class="f5 f4-ns lh-title ma0 fw3 gray">A collection of some of my favorite books.</h3>
+  </header>
 </section>
 
-<section class="cf dark-gray bb b--light-gray">
-  <div class="mw9 ph3 ph4-m ph5-l">
-    <ul class="ma0 pv2">
-      <li class="dib ph2">All</li>
-      <li class="dib ph2">Business</li>
-      <li class="dib ph2">Business</li>
-      <li class="dib ph2">Business</li>
+<section class="cf dark-gray pv3">
+  <div class="mw8 center ph3 ph4-m ph5-l">
+    <ul>
+      <% blog("books").articles.each do |book| %>
+        <li><%= book.title %></li>
+      <% end %>
     </ul>
+
+<!--     <% blog("books").articles.each do |book| %>
+      <%= book.title %>
+      <% link_to book, class: "article-list db no-underline hover-blue" do %>
+        <article class="cf pa3 pa4-m pa5-l">
+          <div class="fl w-100 w-20-ns pa2">
+            <%= image_tag("books/#{book.data.image_path}", class: "br2") %>
+          </div>
+
+          <div class="fl w-100 w-80-ns pa2">
+            <header>
+              <h5 class="f4 fw6 mt0 lh-title fw3 db mid-gray">
+                <%= book.title %>
+                <span class="gray f6 fw3 db"><%= book.data.author %></span>
+              </h5>
+            </header>
+
+            <div class="mm-blog-copy mid-gray">
+              <%= book.summary %>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    <% end %> -->
   </div>
 </section>

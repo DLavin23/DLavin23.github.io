@@ -1,5 +1,6 @@
 ---
 title: Code Academy Week 3
+blog: writing
 date: 2012-01-28
 tags: learning, development
 ---

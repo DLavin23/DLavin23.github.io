@@ -14,7 +14,8 @@ $z-index-5: 500;
 $breakpoint-xs: 480px;
 $breakpoint-sm: 640px;
 $breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
+$breakpoint-lg: 960px;
+$breakpoint-x-lg: 1024px;
 
 // Vertical Spacing
 
@@ -35,4 +36,33 @@ $gutter-quarter:  $gutter / 4;
 
 // Custom Colors
 
-$blue: #357EDD;
+$blue:          #357EDD;
+// $slate:         #4C5C68;
+$slate:         #40445E;
+$slate-light:   #83869F;
+$black:         #333;
+$black-offset:  #46494C;
+$white:         #ffffff;
+// $white-offset:  #F1F3F6;
+// $white-offset:  #F6F9FC;
+$white-offset:  #F9F9F9;
+// $white-offset:  #f5f9fc;
+$gray:          #777777;
+$gray-medium:   #4a4a4a;
+$gray-light:    #DCDCDD;
+// $gray-light: #f6f9fc;
+
+
+
+$colors: (
+  "blue":         $blue,
+  "slate":        $slate,
+  "black":        $black,
+  "white":        $white,
+  "white-offset": $white-offset,
+  "gray":         $gray,
+  "gray-light":   $gray-light,
+  "gray-medium":  $gray-medium,
+);
+
+

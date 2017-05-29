@@ -4,10 +4,9 @@
   "description": "Portfolio of Dan Lavin",
   "main": "site.js",
   "scripts": {
-    "start": "bundle exec middleman server",
-    "build": "bundle exec middleman build --clean",
-    "deploy": "bundle exec middleman s3_sync --environment=production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "bundle exec middleman",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "bundle exec middleman build --clean"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "node-sass": "^3.10.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "tachyons": "^4.6.2",
     "webpack": "^1.13.2"
   }
 }

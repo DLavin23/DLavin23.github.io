@@ -1,5 +1,6 @@
 ---
 title: Code Academy Demo Day
+blog: writing
 date: 2012-03-27
 tags: learning, development
 ---

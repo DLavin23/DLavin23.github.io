@@ -1,0 +1,10 @@
+---
+title: Inspired
+date: 2017-02-05
+blog: books
+tags: product
+author: Marty Cagan
+image_path: "design-of-everyday-things.jpg"
+---
+
+This was a very good book on product management.

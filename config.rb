@@ -2,13 +2,16 @@
 # Blog settings
 ###
 
+activate :directory_indexes
+
 # Time.zone = "UTC"
 activate :blog do |blog|
+  blog.name = "writing"
   blog.prefix = "writing"
   blog.permalink = "{year}/{month}/{day}/{title}.html"
   blog.sources = "{year}-{month}-{day}-{title}.html"
   blog.taglink = "tags/{tag}.html"
-  blog.layout = "thought_layout"
+  blog.layout = "writing"
   # blog.summary_separator = /(READMORE)/
   blog.summary_length = 200
   blog.year_link = "{year}.html"
@@ -22,6 +25,29 @@ activate :blog do |blog|
   # Enable pagination
   # blog.paginate = true
   blog.per_page = 20
+  # blog.page_link = "page/{num}"
+end
+
+activate :blog do |blog|
+  blog.name = "books"
+  blog.prefix = "books"
+  blog.permalink = "books/:title"
+  blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.taglink = "tags/{tag}.html"
+  blog.layout = "reading"
+  # blog.summary_separator = /(READMORE)/
+  blog.summary_length = 200
+  blog.year_link = "{year}.html"
+  blog.month_link = "{year}/{month}.html"
+  blog.day_link = "{year}/{month}/{day}.html"
+  blog.default_extension = ".markdown"
+
+  blog.tag_template = "tag.html"
+  # blog.calendar_template = "calendar.html"
+
+  # Enable pagination
+  # blog.paginate = true
+  # blog.per_page = 20
   # blog.page_link = "page/{num}"
 end
 
@@ -46,7 +72,7 @@ activate :external_pipeline,
 #
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
-page "tag/*", :layout => :thought_layout
+page "tag/*", :layout => :writing
 
 # A path which all have the same layout
 # with_layout :admin do
