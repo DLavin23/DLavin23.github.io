@@ -6,3 +6,6 @@
   @include rem(width, 32px);
 }
 
+.social-icons li a {
+    @include rem(width, 20px);
+}
