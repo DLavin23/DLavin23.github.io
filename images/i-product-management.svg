@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="150px" viewBox="0 0 160 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>pm-venn-opacity</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.5">
+        <g id="pm-venn-opacity" fill="#4A4A4A">
+            <ellipse id="Oval" cx="49.0797546" cy="100" rx="49.0797546" ry="50"></ellipse>
+            <ellipse id="Oval" cx="75.5828221" cy="50" rx="49.0797546" ry="50"></ellipse>
+            <ellipse id="Oval" cx="110.920245" cy="100" rx="49.0797546" ry="50"></ellipse>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/writing</id>
+  <link href="http://blog.url.com/writing"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2015-03-18T19:00:00-05:00</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>Learning Animation, with Bob Ross</title>
+    <link rel="alternate" href="http://blog.url.com/writing/2015/03/19/learning-animation-with-bob-ross/"/>
+    <id>http://blog.url.com/writing/2015/03/19/learning-animation-with-bob-ross/</id>
+    <published>2015-03-18T19:00:00-05:00</published>
+    <updated>2017-08-14T08:31:35-05:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I remember flipping through the channels one Saturday morning, trying to find something good to watch,
+when I suddenly came across a goofy looking man with a paintbrush and one of the best damn afros you&amp;rsquo;ve ever seen. That man was none other than Bob Ross, artist and host of the PBS series,
+&amp;ldquo;The Joys of Painting.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/bob_ross.jpg" alt="Bob Ross" /&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s very easy to get distracted by the physical appearance of Mr. Ross, but all joking aside, there
+was something quite magical about his style of painting. I distinctly remember being being mesmerized
+by his methodical, yet simplistic approach. Ross was an amazing teacher with this innate
+ability to take something that most people viewed as complex and make it approachable. This trait,
+along with patience and passion for his craft are what made him so great. In fact, the more I
+reflect, the more I can&amp;rsquo;t help but think he would have made a fantastic developer.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s a great story, but what does this have to do with animation? Well, as someone still
+relatively new to the developer profession, I&amp;rsquo;ll be the first to admit when I don&amp;rsquo;t
+know something. In an industry where things are in flux, it&amp;rsquo;s very easy to feel like you&amp;rsquo;re drowning
+in new things to learn. I often feel like I&amp;rsquo;m falling behind or that there&amp;rsquo;s some new technology
+I need to better understand in order to call myself a &amp;ldquo;front-end developer.&amp;rdquo; I believe there are a
+lot similarities between painting and front end development, especially when you&amp;rsquo;re first getting
+started. Trying to learn everything at once is impossible, but if take your time, follow your
+passion, and keep practicing, the possibilities are endless.&lt;/p&gt;
+
+&lt;div class="pa4"&gt;
+  &lt;blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue"&gt;
+    &lt;p class="f5 f4-m f3-l lh-copy measure mt0"&gt;&amp;ldquo;Talent is a pursued interest. Anything that you&amp;rsquo;re willing to practice, you can do.&amp;rdquo;&lt;/p&gt;
+    &lt;cite class="f6 ttu tracked fs-normal"&gt;- Bob Ross&lt;/cite&gt;
+  &lt;/blockquote&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With that said, lets see if we can channel our inner Bob Ross, as we attempt to take a challenging
+subject like CSS animation and make it less daunting. Our goal is to create this beautiful animated
+portrait of a happy little sailboat, floating on the ocean. Before we start, I would just like to
+address a couple of things.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;This post assumes some basic knowledge of HTML and CSS. I will do my best to keep things as
+simple as possible and provide additional links to advanced topics or techniques for further
+reading.&lt;/li&gt;
+&lt;li&gt;The &amp;ldquo;final&amp;rdquo; version linked below, will differ slightly from the code examples in the post as it
+utilizes &lt;a href="http://sass-lang.com/"&gt;Sass,&lt;/a&gt; and some more advanced techniques that I won&amp;rsquo;t
+focus on in this particular post.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;iframe height='450' scrolling='no' src='//codepen.io/DLavin23/embed/WbaWmY/?height=450&amp;theme-id=0' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'&gt;See the Pen &lt;a href='http://codepen.io/DLavin23/pen/WbaWmY/'&gt;Animation Blog Tutorial&lt;/a&gt; by Dan Lavin (&lt;a href='http://codepen.io/DLavin23'&gt;@DLavin23&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+
+&lt;h2&gt;Defining our canvas&lt;/h2&gt;
+
+&lt;p&gt;The first thing we need to do is create our world. This world can contain anything. The only limit
+or constraint is our own imagination. In that case, I&amp;rsquo;ve always found it quite relaxing to be out
+on the water, under the sun &amp;hellip; so let&amp;rsquo;s start there! The first thing I like to do when building
+something new is think of all the things that our world might need. Off the top of my head, we&amp;rsquo;ll
+need a sky, some water, the sun, the moon, and maybe even a happy little cloud. Let&amp;rsquo;s see
+how this might look in our markup:&lt;/p&gt;
+&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"sky"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"sun"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"moon"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"cloud"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"clouds"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"water"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Great, we&amp;rsquo;ve defined our world, now it&amp;rsquo;s time to start bringing these objects to life. I find that
+it&amp;rsquo;s much easier to focus on one thing at a time (we don&amp;rsquo;t want to get greedy!), so let&amp;rsquo;s start by
+building a beautiful sky! To do that, we&amp;rsquo;re going to use a few basic properties to set the color,
+height, width, and positioning. Also, I want my world to stand out a little bit so I&amp;rsquo;m going use the
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow"&gt;box shadow&lt;/a&gt; property to make it pop a
+little bit more. Remember, this is your creation, feel free to change anything as your heart
+desires.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="nc"&gt;.sky&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#acc6d6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;box-shadow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="m"&gt;5px&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;50&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;50&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;50&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="mi"&gt;.75&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;26em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nb"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;50em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;relative&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;z-index&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;-1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="/images/animation-sky.png" alt="Static Sky" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Awesome, look at that beautiful sky! Next, we&amp;rsquo;re going to pretend that we&amp;rsquo;re water, just floating
+along, having a great day. We&amp;rsquo;ll add a nice ocean blue to our canvas and blend it all together using
+the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient"&gt;linear gradient&lt;/a&gt;
+function to give our water some contrast. Also, since we want the sky to always be in the
+background, we need to position our water absolutely and give it a z-index higher than our sky.
+Finally, we&amp;rsquo;ll need to define a height and width depending on how much of our canvas we want to take
+up with the water.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="nc"&gt;.water&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0deg&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#55a5d9&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#20638f&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="nl"&gt;bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;8em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;z-index&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="/images/animation-sky-water.png" alt="static sky and water" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking good! Moving along, we&amp;rsquo;re going to add in the sun, moon, and just because they&amp;rsquo;re free, lets
+add a happy little cloud that floats around the sky. The sun and the moon are pretty similar so
+we&amp;rsquo;ll start with those. To make rounded objects we need to use our friend,
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"&gt;border radius&lt;/a&gt;. If you make an
+element the same height and width, then add a border radius of 50%,you&amp;rsquo;ll end up with a nice little
+circle! I&amp;rsquo;m going to position those absolutely and place the sun in the bottom right
+corner and the moon in the top left corner of our canvas until they&amp;rsquo;re ready to be animated.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="nc"&gt;.sun&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#FBB829&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;50%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;4em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;right&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;4em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;z-index&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nc"&gt;.moon&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#ecf0f1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;50%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;4em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;4em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;z-index&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, we&amp;rsquo;re going to add that happy cloud we mentioned earlier. CSS clouds are very scary at
+first, but if we use our imagination there&amp;rsquo;s nothing we can&amp;rsquo;t do. Start by defining an object that&amp;rsquo;s
+height is smaller than its width and then use our old friend border radius to round the edges until
+it looks like a pill.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="nc"&gt;.cloud&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#a1aab0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;relative&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;4em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;z-index&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then using the CSS &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after"&gt;:after&lt;/a&gt; pseudo element,
+we can create two circles and place them on top of the pill shaped object we created earlier. This
+will give us the cloud shaped object we&amp;rsquo;re looking for.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="nc"&gt;.cloud&lt;/span&gt;&lt;span class="nd"&gt;:before&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;span class="nc"&gt;.cloud&lt;/span&gt;&lt;span class="nd"&gt;:after&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#a1aab0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nc"&gt;.cloud&lt;/span&gt;&lt;span class="nd"&gt;:before&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;-1em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nc"&gt;.cloud&lt;/span&gt;&lt;span class="nd"&gt;:after&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;5em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;right&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;2em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;-2em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;5em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I know this can be very hard to visualize so let&amp;rsquo;s imagine each cloud object as a different color
+and maybe this will become more clear:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/cloud-description.png" alt="CSS cloud description" /&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s better! Now it&amp;rsquo;s a little easier to see how the different shaped objects can be used to make
+one unified and happy cloud. Finally, we&amp;rsquo;re ready to show off our un-animated canvas in its entirety!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/unanimated-canvas.png" alt="CSS static canvas" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Animating Our Canvas&lt;/h2&gt;
+
+&lt;p&gt;CSS animations are super easy to use and they&amp;rsquo;re a great way to really bring your designs to life!
+Simply put, CSS animations let you gradually change the appearance or style of an element at each
+stage of the animation time line.  This is done using two fundamental concepts:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes"&gt;Keyframes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_animations#Configuring_the_animation"&gt;Animation Properties&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;A Quick Note on Support&lt;/h3&gt;
+
+&lt;p&gt;I would like to briefly point out that CSS animations are only &lt;a href="http://caniuse.com/#feat=css-animation"&gt;partially supported&lt;/a&gt;, therefore you&amp;rsquo;ll need some vendor prefixes in order to get your animations
+to work properly across browsers. To make things easier on yourself, I&amp;rsquo;d recommend using a sass
+mixin to help manage all the prefixing.&lt;/p&gt;
+
+&lt;h3&gt;Using Keyframes&lt;/h3&gt;
+
+&lt;p&gt;In order to properly set up our keyframes we &lt;em&gt;must&lt;/em&gt; consider three things. First, they must have a
+name, which you make up, to describe the animation. Next, we must define the stages of our
+animation. Stages are defined as a percentage, with 0% representing the beginning and 100%
+representing the end. Finally, we must define what CSS properties should be used at each stage of
+our animation.&lt;/p&gt;
+
+&lt;p&gt;Still a little confused? It&amp;rsquo;s OK, try to remember that there are no mistakes, just happy accidents.
+The best way to learn is by rolling up our sleeves and applying our new found knowledge of keyframes
+to our &amp;ldquo;static&amp;rdquo; portrait.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="k"&gt;@keyframes&lt;/span&gt; &lt;span class="nt"&gt;sky&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#233946&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;25&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#acc6d6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;50&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0deg&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#dfe9ef&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#bdd2de&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;100&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#1b2b35&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, we&amp;rsquo;ve set up a keyframe named &amp;ldquo;sky&amp;rdquo; that has 4 stages, 0%, 25%, 50%, and 100%. At each stage
+we&amp;rsquo;re changing the color ever so slightly over the course of the animation &amp;hellip; much like the actual
+sky does over the course of a day! Next, we need to reference this keyframe in the same CSS rule
+that&amp;rsquo;s making our sun look so bright and beautiful.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="nc"&gt;.sky&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sky&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-duration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;15s&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-iteration-count&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;infinite&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Please note that I&amp;rsquo;m defining each animation individually by name. This is definitely
+longer and more verbose; however, I find that writing them out individually helps build up our
+animation muscle memory. That being said, if you think you&amp;rsquo;ve got it down, feel free to use the
+shorthand.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="nc"&gt;.sky&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;animation&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sky&lt;/span&gt; &lt;span class="m"&gt;15s&lt;/span&gt; &lt;span class="n"&gt;infinite&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Insert gif of sky animating colors --&gt;
+
+&lt;p&gt;That&amp;rsquo;s pretty neat! Let&amp;rsquo;s try and bring this all together by animating the rest of our elements.
+Since we&amp;rsquo;re trying to make things realistic, we&amp;rsquo;re probably going to want the sun to rise and fall
+in opposition with the moon. It sounds complicated, but don&amp;rsquo;t worry; anything is possible,
+especially with our friend, &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"&gt;CSS transforms&lt;/a&gt;.
+The CSS transform property lets you translate, rotate, scale, and/or skew element(s) based on values
+that you set. Don&amp;rsquo;t worry, that didn&amp;rsquo;t make sense to me the first time I read it.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s talk this out, starting with the sun. We want the sun to rise up from behind the water
+and then move across the top of our sky before descending back into the water. The transform
+property lets us pass in multiple &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#CSS_transform_functions"&gt;transform-functions&lt;/a&gt;, which we can use to not only move our sun but
+also scale its size. The combination will add some life to our sun as it gets bigger at the peak of
+the day and then shrinks as it fades into the night. Let&amp;rsquo;s see how this plays out in the code:&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="k"&gt;@keyframes&lt;/span&gt; &lt;span class="nt"&gt;sun&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;25&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nv"&gt;$sun-yellow&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-20em&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;scale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="mi"&gt;.5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;50&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nv"&gt;$sun-yellow&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-20em&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;translateX&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-25em&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;scale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="mi"&gt;.25&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;100&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;translateX&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-20em&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;scale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="mi"&gt;.75&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nc"&gt;.sun&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sun&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-duration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;15s&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-iteration-count&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;infinite&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Moving on to the moon, we&amp;rsquo;re going to use the transform property to translate it along the y axis
+and then scale it in size as it rises and lowers into the water.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="k"&gt;@keyframes&lt;/span&gt; &lt;span class="nt"&gt;moon&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;opacity&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;25&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;20em&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;50&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;scale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="mi"&gt;.25&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;20em&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;100&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateX&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1em&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;translateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1em&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;scale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="mi"&gt;.5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nc"&gt;.moon&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;moon&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-duration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;15s&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-iteration-count&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;infinite&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, we have arrived at our clouds &amp;hellip; our happy, happy cloud. Since it&amp;rsquo;s already positioned
+in the upper left hand corner of our canvas we&amp;rsquo;re just going to move it back and forth along the
+x axis as if it&amp;rsquo;s peacefully floating in the sky.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="k"&gt;@keyframes&lt;/span&gt; &lt;span class="nt"&gt;cloud&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateX&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;50&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateX&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;20em&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nt"&gt;100&lt;/span&gt;&lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translateX&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nc"&gt;.cloud&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;cloud&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-duration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nv"&gt;$animation-duration&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;animation-iteration-count&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;infinite&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Insert GIF of final animation --&gt;
+
+&lt;p&gt;And we&amp;rsquo;re done! We now have a beautiful, animated portrait. Those familiar with the DRY principle
+are probably thinking, &amp;ldquo;hey, there&amp;rsquo;s a lot of repeated code in here, what&amp;rsquo;s up with that?&amp;rdquo; You&amp;rsquo;re
+absolutely right, there is definitely room for improvement. Once you get the basics of animation
+down, I encourage you to try and optimize your code. Using a CSS preprocessor like Sass, we could use
+&lt;a href="http://www.sass-lang.com/guide"&gt;mixins&lt;/a&gt; to clean up our keyframe and animation declarations.
+Additionally, we could store common values in a variable or even better,
+a &lt;a href="http://viget.com/extend/sass-maps-are-awesome"&gt;sass map&lt;/a&gt;. These are definitely more
+advanced features, but they will make our code more readable and maintainable, so give it a shot!&lt;/p&gt;
+
+&lt;h2&gt;In closing&lt;/h2&gt;
+
+&lt;p&gt;I hope you enjoyed our little journey into the world of animation. Learning new things
+can be scary at first, but remember, everyone was a beginner at one point &amp;hellip; just like you.
+Confidence comes with practice, so keep learning, follow your passion, and let your imagination
+run wild. Go forth and animate, my friends!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Getting Started with Responsive Design</title>
+    <link rel="alternate" href="http://blog.url.com/writing/2014/04/11/getting-started-rwd/"/>
+    <id>http://blog.url.com/writing/2014/04/11/getting-started-rwd/</id>
+    <published>2014-04-10T19:00:00-05:00</published>
+    <updated>2017-08-14T08:31:35-05:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;It&amp;rsquo;s been a little over 3 years since &lt;a href="http://ethanmarcotte.com/"&gt;Ethan Marcotte&lt;/a&gt; coined the term
+&lt;a href="http://alistapart.com/article/responsive-web-design/"&gt;Responsive Web Design&lt;/a&gt; and I think we can
+all agree that it has proven to be more than just a fad. As the Web continues to evolve into a
+larger part of our everyday lives, it will become increasingly more important to deliver optimal
+user experiences for the growing number of Web-enabled devices and contexts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/flat-rwd.png" alt="Responsive Web Design" /&gt;&lt;/p&gt;
+
+&lt;div class="pa4"&gt;
+  &lt;blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue"&gt;
+    &lt;p class="f5 f4-m f3-l lh-copy measure mt0"&gt;&amp;ldquo;Day by day, the number of devices, platforms, and browsers that need to work with your site grows. Responsive web design represents a fundamental shift in how we&amp;rsquo;ll build websites for the decade to come.&amp;rdquo;&lt;/p&gt;
+    &lt;cite class="f6 ttu tracked fs-normal"&gt;- Jeffery Veen&lt;/cite&gt;
+  &lt;/blockquote&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Clearly, the days of designing fixed-width websites are in the rearview mirror. Creating a unique experience for every device is hardly an efficient long-term solution, so where does that leave us? How do we navigate an evolving landscape with problems that are constantly in flux? Furthermore, how do we address these concerns in an efficient and cost effective manner? These are all difficult questions that many successful companies are trying to figure out.  Luckily, the people on our team at &lt;a href="http://leapfrogonline.io"&gt;Leapfrog Online (LFO)&lt;/a&gt; have been getting their hands dirty with responsive design in an attempt to answer these very questions! In this article I will share our experience with responsive design, as well as explain what it is, why it&amp;rsquo;s important, and how we decided to implement it at our company.&lt;/p&gt;
+
+&lt;h2&gt;What is responsive design?&lt;/h2&gt;
+
+&lt;p&gt;For those new to Responsive Web Design (RWD), it is an approach, or set of techniques, that when applied, delivers an elegant visual experience to the user interacting with it regardless of device, screen size, platform, and/or orientation.&lt;/p&gt;
+
+&lt;h4&gt;At a high level, RWD is made up of the following concepts:&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://alistapart.com/article/fluidgrids"&gt;Fluid grids:&lt;/a&gt; Contrary to a traditional fixed width layout, where the design is constrained to a fixed number of pixels, say 960, a fluid layout is designed so elements proportionally resize their widths in relation to one another using percentage-based values.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://alistapart.com/article/fluid-images/"&gt;Flexible images:&lt;/a&gt; Setting images and media to use a max-width of 100% (you&amp;rsquo;ll need to use width for older versions of IE) instead of the default image size will ensure that everything scales properly.  This one declaration will make sure images and video render their native dimensions as long as the width of the image does not exceed the width of its container.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries"&gt;Media Queries:&lt;/a&gt; This wonderful CSS3 feature lets you gather information about a user (i.e. screen size, resolution, orientation, etc.) and conditionally apply specific styles based on that information.  This is an incredibly powerful feature. However, be careful not to overuse media queries as it can unnecessarily lead to a complex codebase. A general rule of thumb is to start designing your smallest form factor (mobile) and scale up until your design starts to break; that&amp;rsquo;s your first breakpoint!&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;On the surface it may seem like magic, but don&amp;rsquo;t fall into the trap: RWD is a lot more than adjustable screen sizes, changing layouts, and automatically resizing images. It&amp;rsquo;s a completely different way of thinking about how we design and build Web sites. If you&amp;rsquo;re looking for more technical information with regards to developing responsive sites, there are some excellent resources listed below.&lt;/p&gt;
+
+&lt;h2&gt;Making a business case for responsive web design&lt;/h2&gt;
+
+&lt;p&gt;Before last year, responsive design was more or less a buzzword here at LFO. Very few people truly understood what it was, and the few that did had doubts as to whether or not it was a viable strategy for our platform and service offering. At the time, our solution for device proliferation was to create a unique experience for each of the main device types: phone, tablet, and desktop.  This seemed to work&amp;hellip;for a while. With mobile and tablet usage increasing, creating a specific experience seemed like the best way to cater to our users while still increasing conversions.&lt;/p&gt;
+
+&lt;p&gt;Then, unsurprisingly, technology evolved. New devices, with varying dimensions, resolutions, and capabilities started flooding the market. Eventually, this started to negatively impact a lot of our sites since they were only optimized for the more popular devices at the time, mainly iPhones and iPads. As technical debt started to pile up and efficiency and throughput started to decrease, it became clear that we needed a more proactive strategy.&lt;/p&gt;
+
+&lt;h3&gt;Starting the conversation&lt;/h3&gt;
+
+&lt;p&gt;Like many major changes, there was a lot of conversation and very little action. To be perfectly honest, it was not as easy as we initially thought to get buy-in. Naturally, there were a lot of questions and a fair amount of uncertainty: what is this new responsive design thing? How does it work? How much will it cost? Will it actually help with conversion?&lt;/p&gt;
+
+&lt;p&gt;What eventually got us over the hump was simply proving that it was possible! Our front end development team took it upon themselves to spark some action and picked an existing client site, added a few responsive features, made some design tweaks to get it working accross all devices, and presented our &amp;ldquo;responsive redesign&amp;rdquo; to the Account Team. It was like a lightbulb went off in their heads. They loved it, because it showed how we could accomplish a better result in a more scalable fashion. The interesting thing about this approach is that we had shown them other responsive sites in the past, but it wasn&amp;rsquo;t until we used something they were familiar with that the benefits started to resonate with them.&lt;/p&gt;
+
+&lt;p&gt;Prototyping is a really simple, yet really powerful idea. If you&amp;rsquo;re currently in a situation where people are on the fence about responsive design, I strongly encourage you to take an existing site and try to make it responsive.  Using something real and tangible tends to have a much stronger effect and can help get people more excited about a new responsive project.&lt;/p&gt;
+
+&lt;h3&gt;Technical Overview&lt;/h3&gt;
+
+&lt;p&gt;Once we had support, our focus shifted to research, planning and implementation. A good deal of time was spent educating ourselves on the many different challenges associated with RWD. There are tons of different tools, libraries, and &lt;a href="http://usablica.github.io/front-end-frameworks/compare.html"&gt;frameworks&lt;/a&gt; that help make the leap to responsive design easier.  While we did play around with a couple of the more popular front end frameworks &lt;a href="http://getbootstrap.com/"&gt;Bootstrap&lt;/a&gt; &amp;amp; &lt;a href="http://foundation.zurb.com/"&gt;Foundation&lt;/a&gt;), in the end, we found it better to roll our own. Don&amp;rsquo;t get me wrong, frameworks provide tons of great UI features and functionality. They&amp;rsquo;re incredibly useful for building internal tools and quick prototypes. However, we found that when building complex sites with multiple developers, frameworks tended to get in the way and cause more trouble than they were actually worth, so use with caution!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Below are the main tools we used to build out our own framework:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://sass-lang.com/"&gt;Sass:&lt;/a&gt; is a CSS preprocessing language that helps make increasingly complex CSS easier to write and manage.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://compass-style.org/"&gt;Compass:&lt;/a&gt; is a collection of widely used patterns, functions, and mixins written in Sass (It&amp;rsquo;s kind of like jQuery but for Sass).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://susy.oddbird.net/"&gt;Susy Grids:&lt;/a&gt; is a responsive grid framework built with Sass and Compass.  Susy provides a bunch of mixins that let you create your own responsive grid system.  Simply put, it&amp;rsquo;s awesome and I&amp;rsquo;d highly recommend checking it out on your next project!&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;What we learned&lt;/h3&gt;
+
+&lt;p&gt;So, aside from the fact that responsive design is extremely difficult and requires a lot of time, planning, and collaboration, what did we learn?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;It&amp;rsquo;s very important to start off a responsive design project on the right foot.  Make sure everyone is on the same page, align everyone&amp;rsquo;s goals, and really nail down the process before you start. I&amp;rsquo;ve said it once and I&amp;rsquo;ll say it again; Communication is &lt;strong&gt;very&lt;/strong&gt; important to the success of a responsive web design project.  Both &lt;a href="http://danielmall.com/articles/responsive-mobile-entertainment-weekly/"&gt;Daniel Mall&lt;/a&gt; and &lt;a href="http://bradfrostweb.com/blog/post/entertainment-weekly/"&gt;Brad Frost&lt;/a&gt; talk in depth about the the right way to kick off a responsive design project; definitely worth a read.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Stop using Photoshop mocks as a design deliverable! Using fixed width Photoshop mocks to illustrate a flexible responsive design leads to confusion, missed requirements, and false expectations. Instead, opt for something like &lt;a href="http://styletil.es/"&gt;Style Tiles&lt;/a&gt; and/or &lt;a href="http://danielmall.com/articles/rif-element-collages/"&gt;element collages&lt;/a&gt; to communicate your vision for the design. This tactic will also help clients focus on their goals and preferences instead of the way things look on a page.  What you really want out of this deliverable is to reach a consensus on the direction of your design as quickly as possible, so you can start translating those ideas to code.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Evaluate your design strategy. There&amp;rsquo;s a lot of buzzwords out there, content first, mobile first, progressive enhancement, etc. My advice is to do your research and make sure you understand what these all mean and then pick the one that makes the most sense for your team. In my experience as a developer, it&amp;rsquo;s much easier to focus on the content and build up from your smallest form factor (mobile first).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Performance is a feature! Responsive Design is very powerful; however, if done incorrectly, it can lead to slow, bloated sites that take 5 minutes to load on a mobile device. Trust me on this one: make performance a priority up front, and you&amp;rsquo;ll save a lot of time in the future.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Lastly, change is hard. It&amp;rsquo;s very easy to fall back to the way things used to be. Try not to do that! In his &lt;a href="http://www.creativebloq.com/business/what-responsive-web-design-means-team-organisation-11410353"&gt;article&lt;/a&gt; about what responsive design means for team organization, Ben Callahan said &amp;ldquo;Responsive Design is a catalyst for organizational change&amp;rdquo; and I couldn&amp;rsquo;t agree more.  Responsive web design is a completely different way of looking at the web. If you don&amp;rsquo;t adapt and change your process, you&amp;rsquo;re just making things unnecessarily difficult for yourself.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Moving forward&lt;/h2&gt;
+
+&lt;p&gt;So, was it successful? You bet. Have we perfected it? Absolutely not.  One of the most important takeaways from this experience was our ability, as a team, to recognize a problem, come up with a solution (responsive Web design), and successfully implement it. It was also comforting to learn that everyone else in the Web design industry is dealing with the same problem(s). Responsive design is still very new and we&amp;rsquo;re all learning as we go.&lt;/p&gt;
+
+&lt;p&gt;If there&amp;rsquo;s one thing I hope you take away from this article, it&amp;rsquo;s the need to acknowledge and embrace the unpredictability of the web. Responsive design is just one of many strategies available to help deliver great experiences to users. A few years from now, there will probably be a new strategy for dealing with whatever technology becomess available. It&amp;rsquo;s important to continue to learn, document, and share our experiences with each other so we can move the Web forward.&lt;/p&gt;
+
+&lt;p&gt;If you have questions, comments, or ideas about responsive design I&amp;rsquo;d love to hear from you. Drop me an email here&amp;hellip;&lt;a href="mailto:daniel.e.lavin@gmail.com"&gt;&lt;a href="mailto:daniel.e.lavin@gmail.com"&gt;daniel.e.lavin@gmail.com&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Further Reading&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;d like to learn more about responsive design and how to start implementing it at your company, here is a great list of resources to help get you started!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://alistapart.com/article/responsive-web-design/&amp;quot;"&gt;Responsive Web Design - Ethan Marcotte&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bradfrost.github.io/this-is-responsive/resources.html"&gt;Responsive Design Resources - Brad Frost&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://markboulton.co.uk/journal/thebusinessofrwd"&gt;The Business of Responsive Design - Mark Boulton&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.lukew.com/ff/entry.asp?1691"&gt;Responsive Design Case Studies - Luke W.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://trentwalton.com/2013/04/10/reorganization"&gt;Reorganization - Trent Walton&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.amazon.com/Responsive-Design-Workflow-Stephen-Hay/dp/0321887867"&gt;Responsive Design Workflow - Stephen Hay&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Story Mapping Workshop</title>
+    <link rel="alternate" href="http://blog.url.com/writing/2012/05/16/story-mapping/"/>
+    <id>http://blog.url.com/writing/2012/05/16/story-mapping/</id>
+    <published>2012-05-15T19:00:00-05:00</published>
+    <updated>2017-08-14T08:31:35-05:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Building a new product from scratch is no small task.  In fact, sometimes the most challenging part is getting started!  Having some product/project management experience has definitely helped me take on some of these challenges, but story mapping and user stories are still relatively new concepts for me.  However, thanks to tonights workshop with Groupon’s Todd Webb, I feel much more comfortable tackling product development related challenges through story mapping!&lt;/p&gt;
+
+&lt;h3&gt;Here are some key highlights from workshop:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;User Stories&lt;/strong&gt; are short descriptions meant to help define what a user needs and the actions they must take to use a particular feature. User stories should always be from the users point of view and are used to help you plan. Most User Stories use the following syntax:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="pa4"&gt;
+  &lt;blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue"&gt;
+    &lt;p class="f5 f4-m f3-l lh-copy measure mt0"&gt;As a blank (User, Admin, etc.)…I want to blank (sign up, log in, etc.)…So that I can blank (write a blog post, view a profile, etc.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A &lt;strong&gt;backlog&lt;/strong&gt; is a big collection of User Stories and helps you determine what to do next.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A &lt;strong&gt;Story Map&lt;/strong&gt; acts as placeholders for conversation and encourages multiple business units to participate.  Furthermore, they arrange user stories in such a way that it helps the team understand the functionality of your product, identify holes, and effectively plan releases that deliver value to the end customer.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Creating a Story Map&lt;/strong&gt; using post it notes and arranging them on a wall in such a way that everyone can easily participate and contribute. Each post it note should contain a user story, the person performing the action (i.e. user, admin, etc.), the priority in terms of business value, and the frequency of the action. You should organize the notes in sequential order by priority.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Additional Resources:&lt;/h3&gt;
+
+&lt;p&gt;Check out Jeff Patton and Allastair Cockburn. Hope I didn’t miss anything. Special thanks to @codeacademy and @twebb!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Lessons Learned Building a Child's game</title>
+    <link rel="alternate" href="http://blog.url.com/writing/2012/05/09/tic-tac-toe/"/>
+    <id>http://blog.url.com/writing/2012/05/09/tic-tac-toe/</id>
+    <published>2012-05-08T19:00:00-05:00</published>
+    <updated>2017-08-14T08:31:35-05:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;A few weeks ago I applied for the “software apprenticeship” position at Groupon. As part of the application I was tasked with building a Tic Tac Toe program using the language of my choice.  Sounds simple enough right? Well, turns out building a “children’s” game in Ruby is a little bit harder than I anticipated!  However, thanks to my trusty Ruby “Pickaxe” book, the awesome videos on &lt;a href="http://teamtreehouse.com"&gt;Treehouse&lt;/a&gt;, and hours of testing in IRB, I had myself a program that actually played a game of tic tac toe against a human.&lt;/p&gt;
+
+&lt;p&gt;Was it perfect? No. Was the code elegant and clean? Absolutely not.  Did it work? Yes. Did I learn a ton? Yes. Was I proud of my work? You bet your ass!  If I were to break my experience down in to a 3 part story it would go a little like this:&lt;/p&gt;
+
+&lt;div class="pa4"&gt;
+  &lt;blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue"&gt;
+    &lt;p class="f5 f4-m f3-l lh-copy measure mt0"&gt;Build a tic tac toe game? No problem, I can do that!&lt;/p&gt;
+    &lt;p class="f5 f4-m f3-l lh-copy measure mt0"&gt;Oh S#!@…I hate tic tac toe, I’m never going to be able to figure this out!!!!!!&lt;/p&gt;
+    &lt;p class="f5 f4-m f3-l lh-copy measure mt0"&gt;Oh S#@!…it works, this is awesome!!!!!&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Learning to program is a long and difficult journey, but it’s incredibly fun and rewarding if you can work your way through the bumps in the road. Below are some tips, tricks, and lessons I learned from my tic tac toe experience:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Back to basics:  Implementing a successful solution requires a detailed understanding of the problem you’re trying to solve. I probably thought about how I was going to build the program for 5 hours before I actually wrote a single line of code.  I actually hand wrote tic tac toe boards and played games against myself and other people to make sure I fully understood all of the possible moves and strategies available.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Make it work, then make it right: My code is far from perfect and I have a lot of refactoring to do, but that’s ok. As a beginner, I think it’s more important to make it work first, then try to refactor and make it right. If you don’t know how to work with hashes and/or arrays, you better learn! Ruby is awesome! The more you understand, the more you realize how powerful you can become.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you don’t use IRB, start using it now! While exercises like this may be very challenging, they are excellent practice. Since I played basketball I’ll use a sports metaphor…building a rails app is similar to playing the game. It feels more real and is a lot more fun.  Building a tic tac toe game in ruby is more comparable to practice. It’s like running sprints or shooting thousands of free throws. It may not always be as fun and it may feel more difficult, but it’s what makes you play the game better.  At least that’s how it felt in my head.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In conclusion, building a tic tac toe game was a really fun and challenging exercise.  The amount of ruby knowledge I obtained in one week was stagering and completing the problem was extremely rewarding. Having a challenge, with a deadline, is a great way to not only stretch your ability but also to learn at an accelerated  pace.  I encourage anyone trying to learn programming to try and complete this exercise…at the very least you’ll enhance your problem solving skills!&lt;/p&gt;
+
+&lt;p&gt;If you want to check out my code, here’s a link to my &lt;a href="www.github.com/dlavin23"&gt;github profile&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Code Academy Demo Day</title>
+    <link rel="alternate" href="http://blog.url.com/writing/2012/03/27/tsl-demo-day/"/>
+    <id>http://blog.url.com/writing/2012/03/27/tsl-demo-day/</id>
+    <published>2012-03-26T19:00:00-05:00</published>
+    <updated>2017-08-14T08:31:35-05:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;If you live in Chicago and hate the cold, then I suggest you join Code Academy next winter because this has been the fastest 3 months of my life! I know I vowed to blog every week in my first post, but it turns out that learning web development is pretty damn hard, thus my blogging took a bit of a backseat so I could focus on code and take advantage of the many different events/meetups available to an aspiring developer in Chicago.&lt;/p&gt;
+
+&lt;p&gt;Now that I’ve got my excuse out of the way, you’re probably asking what I’ve learned over the last 3 months, right? Well, to be perfectly honest, the most important thing I learned is that there’s so much more to learn and Code Academy is simply the first step on the right path towards a new and exciting career.  What I really want people to understand is that building great software is a craft and it takes a lot of time and effort before you can call yourself a master. A few months ago I had ZERO programming experience but thanks to Code Academy I not only have a strong technical foundation but also know I’m not alone on this journey. There is an awesome community and a growing network of alumni that are willing to help as long as you’re willing to stay hungry and passionate. After all, that’s what Code Academy is about, following your passion.&lt;/p&gt;
+
+&lt;p&gt;So what’s next? Well, after Code Academy demo day tomorrow, I’m back to building! I consider myself lucky to have found my passion at such an early age and I can’t wait to continue learning. If you found any of these ramblings interesting and would like to talk about my Code Academy experience, a new product idea, or any job opportunities please reach out, I’d love to hear from you!&lt;/p&gt;
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/FyyIm1VNlJw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Code Academy Weeks 5 and 6</title>
+    <link rel="alternate" href="http://blog.url.com/writing/2012/02/17/tsl-week-five-and-six/"/>
+    <id>http://blog.url.com/writing/2012/02/17/tsl-week-five-and-six/</id>
+    <published>2012-02-16T18:00:00-06:00</published>
+    <updated>2017-08-14T08:31:35-05:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;For the few people out there reading this blog (Hey Mom!), I apologize for not posting last week, things have really picked up over the last couple of weeks!  Thus, I’m going to combine the last two weeks into one blog post for the sake of being efficient.&lt;/p&gt;
+
+&lt;p&gt;To be perfectly honest, the last couple of weeks have been quite the blur, as we’re really starting to move at an accelerated pace.  We’ve learned a ton of information over the last month or so and it’s crazy to think that we’re already half way done with the program! In the last few weeks alone we learned the following topics:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Model Associations&lt;/li&gt;
+&lt;li&gt;one to many relationships&lt;/li&gt;
+&lt;li&gt;many to many relationships&lt;/li&gt;
+&lt;li&gt;JSON API’s&lt;/li&gt;
+&lt;li&gt;using ruby gems&lt;/li&gt;
+&lt;li&gt;git and git hub&lt;/li&gt;
+&lt;li&gt;user authentication (login/logout)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Oh and if that isn’t enough, our class also got together and built 6 web apps in 48 hours at the second annual Code Academy “Start-up Weekend,” not too shabby for a group of people that have been programing for less than 2 months!  Start-up weekend was awesome and is deserving of it’s own blog post (I promise I’ll get to it later) but the most valuable thing I got out of that weekend was version 1 InfoGraphic.ly, which is the web app I’m building for demo day. I’ll discuss the idea in more detail in future posts but InfoGraphic.ly aims to provide a simple solution to information overload. The goal is to help people organize and understand the information the consumer on the web using data visualization and infographics. That of course is the final version. Version 1…well let’s just say it’s very “limited” but it’s a working prototype that I’m very proud of.&lt;/p&gt;
+
+&lt;p&gt;For those of you unfamiliar with the Start-Up Weekend concept and want to learn more, check out this blog post on &lt;a href="http://www.builtinchicago.org/profiles/blogs/6-web-apps-one-weekend"&gt;built-in-chicago&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Not only did Start-up weekend provide a great way to put some of the skills we’ve learned to use, it also gave us a glimpse as to what it would be like to work on a software team in a professional environment.  It was really cool to see our team work together to solve problems and it was really cool to see a bunch of people working their ass off all weekend to build something.&lt;/p&gt;
+
+&lt;p&gt;I’ll leave you with some parting advice…If you want to start your own technology based company or want to work for a tech based start-up, I highly encourage you to attend a Start-Up weekend, it’s a phenomenal learning tool. Now, back to building InfoGraphic.ly!&lt;/p&gt;
+</content>
+  </entry>
+</feed>
