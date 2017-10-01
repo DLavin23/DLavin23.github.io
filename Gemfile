@@ -7,7 +7,7 @@ gem 'middleman'
 gem "middleman-blog"
 gem 'middleman-livereload'
 gem "middleman-syntax"
-gem 'middleman-deploy'
+gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 gem 'nokogiri'
 gem "rake"
 gem "redcarpet"
