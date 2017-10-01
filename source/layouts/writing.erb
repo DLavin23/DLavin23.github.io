@@ -24,14 +24,14 @@
     <%= partial "partials/header" %>
 
     <section class="cf bb b--black-10 pv4 pv5-ns bgc-white-offset">
-      <header class="tc ph3 pv4 pv5-ns">
+      <header class="tc mw7 center ph3 pv4 pv5-ns">
         <h2 class="f2 f1-ns lh-title mt0 mb2 black-70"><%= current_resource.data.title %></h2>
         <h3 class="f5 f4-ns lh-title ma0 fw3 gray">Written on <%= current_resource.data.date.strftime('%A %b %d, %Y') %></h3>
       </header>
     </section>
 
     <section class="cf pv5 mid-gray bb b--light-gray">
-      <article class="mw7 center ph3 ph4-m ph5-l lh-copy f5 f4-l black-70 fw4">
+      <article class="mw7 center ph3 ph4-m ph5-l f5 f4-l black-70 fw4 nested-copy-line-height nested-headline-line-height nested-copy-seperator nested-img nested-links">
         <%= yield %>
       </article>
     </section>
