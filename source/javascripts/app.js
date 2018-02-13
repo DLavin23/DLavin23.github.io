@@ -1,86 +1,78 @@
 // Greeting in hero displays today's date.
 
-(function() {
-  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+;(function() {
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
   Date.prototype.getDayName = function() {
-    return days[ this.getDay() ];
-  };
+    return days[this.getDay()]
+  }
+})()
 
-})();
-
-var now = new Date();
-var today = now.getDayName();
-var dataToday = document.querySelector('[data-today]');
-var timeOfDay = document.querySelector('[data-time-of-day]');
+var now = new Date()
+var today = now.getDayName()
+var dataToday = document.querySelector('[data-today]')
+var timeOfDay = document.querySelector('[data-time-of-day]')
 
 if (dataToday) {
-  dataToday.innerHTML = today;
+  dataToday.innerHTML = today
 }
 
 var getTimeOfDay = function(date) {
-  var hours = date.getHours();
-
-  console.log('hours: ', hours)
+  var hours = date.getHours()
 
   if (hours >= 0 && hours < 12) {
-    timeOfDay.innerHTML = "Morning";
+    timeOfDay.innerHTML = 'Morning'
   }
 
   if (hours >= 12 && hours < 17) {
-    timeOfDay.innerHTML = "Afternoon";
+    timeOfDay.innerHTML = 'Afternoon'
   }
 
   if (hours > 17 && hours <= 24) {
-    timeOfDay.innerHTML = "Evening";
+    timeOfDay.innerHTML = 'Evening'
   }
 }
 
 if (timeOfDay) {
-  getTimeOfDay(now);
+  getTimeOfDay(now)
 }
 
 // Toggle Nav
 
-(function() {
-
-  var navToggle = document.querySelector('[data-nav-toggle]');
-  var navList = document.querySelector('[data-nav-list]');
+;(function() {
+  var navToggle = document.querySelector('[data-nav-toggle]')
+  var navList = document.querySelector('[data-nav-list]')
 
   navToggle.addEventListener('click', function() {
-    var navListClass = navList.classList;
-    var navToggleClass = this.classList;
+    var navListClass = navList.classList
+    var navToggleClass = this.classList
 
-    navListClass.toggle('is-active');
-    navToggleClass.toggle('nav-toggle-close');
-  });
-
-})();
+    navListClass.toggle('is-active')
+    navToggleClass.toggle('nav-toggle-close')
+  })
+})()
 
 // Fixed header on scroll
 
-(function() {
+;(function() {
+  var fixedHeader, DEFAULT_HEADER_POSITION, calculateScroll
 
-  var fixedHeader, DEFAULT_HEADER_POSITION, calculateScroll;
-
-  DEFAULT_HEADER_POSITION = 50;
-  fixedHeader = document.querySelector('[data-header]');
+  DEFAULT_HEADER_POSITION = 50
+  fixedHeader = document.querySelector('[data-header]')
 
   calculateScroll = function() {
     if ((window.pageYOffset || document.documentElement.scrollTop) > DEFAULT_HEADER_POSITION) {
-      fixedHeader.classList.add('on-scroll');
+      fixedHeader.classList.add('on-scroll')
     } else {
-      fixedHeader.classList.remove('on-scroll');
+      fixedHeader.classList.remove('on-scroll')
     }
-  };
+  }
 
   window.onscroll = function() {
-    console.log('scrolling');
-    calculateScroll();
-  };
-
-})();
-
+    console.log('scrolling')
+    calculateScroll()
+  }
+})()
 
 // Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz”
 // instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
